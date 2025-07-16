@@ -30,7 +30,7 @@ async function createMediaFile(input) {
   const params = removeNull(input);
 
   const inputParams = {
-    Item: { s3Key, id, userId, rest, lastUpdated: Date.now() },
+    Item: { s3Key, id, userId, ...rest, lastUpdated: Date.now() },
     TableName: tableNames.mediaFilesTable,
   };
 
