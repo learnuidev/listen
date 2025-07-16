@@ -44,9 +44,8 @@ const getContentByIdHandler = async (event) => {
       return response;
     }
 
-    const mediaFile = await getMediaFile(media.mediaFileId);
-
-    if (media?.sourceUrl) {
+    if (media?.mediaFileId) {
+      const mediaFile = await getMediaFile(media.mediaFileId);
       const response = {
         statusCode: 200,
         body: JSON.stringify({

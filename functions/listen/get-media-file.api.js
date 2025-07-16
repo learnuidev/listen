@@ -9,7 +9,7 @@ const dynamodb = new AWS.DynamoDB.DocumentClient({
   region: "us-east-1",
 });
 
-async function getMediaFile({ id }) {
+async function getMediaFile(id) {
   const jettoFile = (
     await dynamodb
       .get({
