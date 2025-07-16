@@ -4,6 +4,7 @@ frameworkVersion: "3"
 plugins:
   - serverless-iam-roles-per-function
   - serverless-step-functions
+  - serverless-export-env
 
 package:
   exclude:
@@ -111,11 +112,11 @@ functions:
           type: dynamodb
           arn: !GetAtt MediaTable.StreamArn
 
-  list-media:
-    handler: functions/listen/list-media.handler
+  list-medias:
+    handler: functions/listen/list-medias.handler
     events:
       - http:
-          path: /v1/list-media
+          path: /v1/list-medias
           method: POST
           cors: true
           authorizer:
