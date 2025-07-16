@@ -66,6 +66,10 @@ const addTranslationsApi = async (newMedia) => {
 
   const { audioData, ...rest } = speechifyResponse;
 
+  console.log("SPEECHIFY RESP", speechifyResponse);
+
+  const audioBuffer = Buffer.from(audioData, "base64");
+
   // 3. convert audio to mp3 and save it in media assets s3 bucket (get presigned url first: copy from nomadmethod)
 
   const resp = await getUploadUrl({
@@ -77,15 +81,24 @@ const addTranslationsApi = async (newMedia) => {
 
   const { s3Key } = resp;
 
+  console.log("Resp", resp);
+
   // 4. once s3 is saved, save the s3 key and save it in media-files table
-  await fetch(resp.signedUrl, {
+  const fetchResponse = await fetch(resp.signedUrl, {
     method: "PUT",
     headers: {
       "Content-Type": "audio/mpeg",
       // Content-Length is auto handled by fetch if needed
     },
-    body: audioData,
+    body: audioBuffer,
   });
+
+  console.log("FETCH RESPONSE", fetchResponse);
+
+  if (!fetchResponse.ok) {
+    throw new Error(`Upload failed: ${fetchResponse.statusText}`);
+  }
+
   // 5. also store transcript in media-files table as well
   const mediaFile = await createMediaFile({ ...resp, ...rest });
 
@@ -156,22 +169,25 @@ const addTranslationsApi = async (newMedia) => {
   return true;
 };
 
-// addTranslationsApi({
-//   userId: "learnuidev@gmail.com",
-//   status: "file-added",
-//   createdAt: 1752640545555,
-//   text: "马克思以前的唯物论，离开人的社会性，离开人的历史发展，去观察认识问题，因此不能了解认识对社会实践的依赖关系，即认识对生产和阶级斗争的依赖关系。",
-//   id: "01K08R8RRJEW8E845HMD8HFM6C",
-//   statusHistory: [
-//     {
-//       type: "file-added",
-//       createdAt: 1752640545555,
-//     },
-//   ],
-//   type: "text",
-// }).then((resp) => {
-//   console.log("DONE", resp);
-// });
+addTranslationsApi({
+  lastUpdated: 1752642624642,
+  userId: "learnuidev@gmail.com",
+  mediaFileId: "01K08T86NJN3STVMR7D5RVN24N",
+  status: "file-added",
+  createdAt: 1752642620805,
+  text: "马克思以前的唯物论，离开人的社会性，离开人的历史发展，去观察认识问题，因此不能了解认识对社会实践的依赖关系，即认识对生产和阶级斗争的依赖关系。",
+  id: "01K08T83C5G6T2QW0TJZHQ3YKE",
+  statusHistory: [
+    {
+      type: "file-added",
+      createdAt: 1752642620805,
+    },
+  ],
+  type: "text",
+  s3Key: "01K08T86NJN3STVMR7D5RVN24N.mp3",
+}).then((resp) => {
+  console.log("DONE", resp);
+});
 
 module.exports = {
   addTranslationsApi,

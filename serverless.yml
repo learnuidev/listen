@@ -158,6 +158,43 @@ functions:
       MEDIA_TABLE: !Ref MediaTable
       MEDIA_FILES_TABLE: !Ref MediaFilesTable
       MEDIA_ASSETS_BUCKET: !Ref MediaAssetsBucket
+  get-upload-url:
+    handler: functions/media/get-upload-url.handler
+    events:
+      - http:
+          path: /v1/get-upload-url
+          method: POST
+          cors: true
+          authorizer:
+            name: CognitoAuthorizer
+            type: COGNITO_USER_POOLS
+            arn: !GetAtt CognitoUserPool.Arn
+    environment:
+      MEDIA_ASSETS_BUCKET: !Ref MediaAssetsBucket
+    iamRoleStatements:
+      - Effect: Allow
+        Action:
+          - s3:PutObject
+          - s3:PutObjectAcl
+        Resource: !Sub ${MediaAssetsBucket.Arn}/*
+  get-presigned-url:
+    handler: functions/media/get-presigned-url.handler
+    events:
+      - http:
+          path: /v1/get-presigned-url
+          method: POST
+          cors: true
+          authorizer:
+            name: CognitoAuthorizer
+            type: COGNITO_USER_POOLS
+            arn: !GetAtt CognitoUserPool.Arn
+    environment:
+      MEDIA_ASSETS_BUCKET: !Ref MediaAssetsBucket
+    iamRoleStatements:
+      - Effect: Allow
+        Action:
+          - s3:GetObject
+        Resource: !Sub ${MediaAssetsBucket.Arn}/*
 
 resources:
   Resources:

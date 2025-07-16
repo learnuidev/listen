@@ -7,6 +7,8 @@ const tableNamesLocal = {
   mediaFilesTable: "listen-api-dev-MediaFilesTable-394TH4YHSPVV",
 };
 
+console.log("isLocalEnv()", isLocalEnv());
+
 const tableNames = isLocalEnv()
   ? tableNamesLocal
   : {
