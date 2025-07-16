@@ -109,7 +109,7 @@ functions:
     events:
       - stream:
           type: dynamodb
-          arn: !GetAtt MEDIA_TABLE.StreamArn
+          arn: !GetAtt MediaTable.StreamArn
 
   list-media:
     handler: functions/listen/list-media.handler

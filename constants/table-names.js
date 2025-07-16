@@ -1,6 +1,7 @@
+/* eslint-disable no-undef */
 const tableNames = {
-  // eslint-disable-next-line no-undef
   mediaTable: process.env.MEDIA_TABLE,
+  mediaFilesTable: process.env.MEDIA_FILES_TABLE,
 };
 
 module.exports = {
