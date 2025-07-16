@@ -43,6 +43,7 @@
     "ulid": "^2.3.0",
     "webvtt-parser": "^2.2.0",
     "x-ray": "^2.3.4",
-    "ytdl-core": "^4.11.5"
+    "ytdl-core": "^4.11.5",
+    "mime-types": "^2.1.35"
   }
 }

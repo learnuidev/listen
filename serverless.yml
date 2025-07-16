@@ -23,6 +23,9 @@ custom:
     default: ALL
     prod: ERROR
 
+  AssetsBucket:
+    Name: ${cf:nomadmethod-api-${self:provider.stage}.AssetsBucketName}
+    Arn: ${cf:nomadmethod-api-${self:provider.stage}.AssetsBucketArn}
   ContentsTable:
     Name: ${cf:nomadmethod-api-${self:provider.stage}.ContentsTableName}
   CharactersTable:
@@ -126,7 +129,9 @@ functions:
     environment:
       MEDIA_TABLE: !Ref MediaTable
       MEDIA_FILES_TABLE: !Ref MediaFilesTable
-      MEDIA_ASSETS_BUCKET: !Ref MediaAssetsBucket
+      MEDIA_ASSETS_BUCKET: ${self:custom.AssetsBucket.Name}
+      # MEDIA_ASSETS_BUCKET: !Ref MediaAssetsBucket
+
   list-medias:
     handler: functions/listen/list-medias.handler
     events:
@@ -141,7 +146,8 @@ functions:
     environment:
       MEDIA_TABLE: !Ref MediaTable
       MEDIA_FILES_TABLE: !Ref MediaFilesTable
-      MEDIA_ASSETS_BUCKET: !Ref MediaAssetsBucket
+      MEDIA_ASSETS_BUCKET: ${self:custom.AssetsBucket.Name}
+      # MEDIA_ASSETS_BUCKET: !Ref MediaAssetsBucket
 
   add-media:
     handler: functions/listen/add-media.handler
@@ -157,7 +163,8 @@ functions:
     environment:
       MEDIA_TABLE: !Ref MediaTable
       MEDIA_FILES_TABLE: !Ref MediaFilesTable
-      MEDIA_ASSETS_BUCKET: !Ref MediaAssetsBucket
+      MEDIA_ASSETS_BUCKET: ${self:custom.AssetsBucket.Name}
+      # MEDIA_ASSETS_BUCKET: !Ref MediaAssetsBucket
   get-upload-url:
     handler: functions/media/get-upload-url.handler
     events:
@@ -168,7 +175,7 @@ functions:
           authorizer:
             name: CognitoAuthorizer
             type: COGNITO_USER_POOLS
-            arn: !GetAtt CognitoUserPool.Arn
+            arn: ${self:custom.CognitoUserPool.Arn}
     environment:
       MEDIA_ASSETS_BUCKET: !Ref MediaAssetsBucket
     iamRoleStatements:
@@ -187,7 +194,7 @@ functions:
           authorizer:
             name: CognitoAuthorizer
             type: COGNITO_USER_POOLS
-            arn: !GetAtt CognitoUserPool.Arn
+            arn: ${self:custom.CognitoUserPool.Arn}
     environment:
       MEDIA_ASSETS_BUCKET: !Ref MediaAssetsBucket
     iamRoleStatements:

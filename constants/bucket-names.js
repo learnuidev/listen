@@ -1,7 +1,8 @@
 const { isLocalEnv } = require("../utils/is-local-env");
 
 const bucketNamesLocal = {
-  mediaAssetsBucket: "listen-api-dev-mediaassetsbucket-22ud0bjy3xgr",
+  // mediaAssetsBucket: "listen-api-dev-mediaassetsbucket-22ud0bjy3xgr",
+  mediaAssetsBucket: "nomadmethod-api-dev-assetsbucket-2u2iqsv5nizc",
 };
 
 const bucketNames = isLocalEnv()
