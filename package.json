@@ -27,6 +27,7 @@
     "@distube/ytdl-core": "^4.15.1",
     "@middy/core": "^4.6.5",
     "@middy/http-cors": "^4.6.5",
+    "@speechify/api": "^1.0.0",
     "adm-zip": "^0.5.12",
     "aws-sdk": "^2.1480.0",
     "axios": "^1.6.8",

@@ -14,6 +14,8 @@ const narakeetApiKey = process.env.NARAKEET_API_KEY;
 const elevenLabsApiKey = process.env.ELEVEN_LABS_API_KEY;
 const speechifyApiKey = process.env.SPEECHIFY_API_KEY;
 
+const env = process.env.ENV;
+
 const apiKeys = {
   openAiApiKey,
   deepSeekApiKey,
@@ -24,6 +26,7 @@ const apiKeys = {
   narakeetApiKey,
 
   speechifyApiKey,
+  env,
 };
 
 module.exports = { ...apiKeys };

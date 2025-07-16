@@ -112,6 +112,21 @@ functions:
           type: dynamodb
           arn: !GetAtt MediaTable.StreamArn
 
+  get-media:
+    handler: functions/listen/get-media.handler
+    events:
+      - http:
+          path: /v1/get-media
+          method: POST
+          cors: true
+          authorizer:
+            name: CognitoAuthorizer
+            type: COGNITO_USER_POOLS
+            arn: ${self:custom.CognitoUserPool.Arn}
+    environment:
+      MEDIA_TABLE: !Ref MediaTable
+      MEDIA_FILES_TABLE: !Ref MediaFilesTable
+      MEDIA_ASSETS_BUCKET: !Ref MediaAssetsBucket
   list-medias:
     handler: functions/listen/list-medias.handler
     events:

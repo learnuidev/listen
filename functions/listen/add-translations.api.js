@@ -144,7 +144,6 @@ const addTranslationsApi = async (newMedia) => {
         tableName: tableNames.mediaTable,
         attributes: removeNull({
           id: newMedia.id,
-          s3Key,
           mediaFileId: mediaFile.id,
           statusHistory,
           status: "transcript-translated",
@@ -153,7 +152,26 @@ const addTranslationsApi = async (newMedia) => {
       })
     )
     .promise();
+
+  return true;
 };
+
+// addTranslationsApi({
+//   userId: "learnuidev@gmail.com",
+//   status: "file-added",
+//   createdAt: 1752640545555,
+//   text: "马克思以前的唯物论，离开人的社会性，离开人的历史发展，去观察认识问题，因此不能了解认识对社会实践的依赖关系，即认识对生产和阶级斗争的依赖关系。",
+//   id: "01K08R8RRJEW8E845HMD8HFM6C",
+//   statusHistory: [
+//     {
+//       type: "file-added",
+//       createdAt: 1752640545555,
+//     },
+//   ],
+//   type: "text",
+// }).then((resp) => {
+//   console.log("DONE", resp);
+// });
 
 module.exports = {
   addTranslationsApi,

@@ -2,8 +2,8 @@ const AWS = require("aws-sdk");
 
 const { tableNames } = require("../../constants/table-names");
 
-const removeNull = require("./libs/utils").removeNull;
 const ulid = require("ulid");
+const { removeNull } = require("../../utils/remove-null");
 
 const addMediaApi = async ({ userId, text, type }) => {
   const dynamodb = new AWS.DynamoDB.DocumentClient({
