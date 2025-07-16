@@ -14,6 +14,8 @@ const narakeetApiKey = process.env.NARAKEET_API_KEY;
 const elevenLabsApiKey = process.env.ELEVEN_LABS_API_KEY;
 const speechifyApiKey = process.env.SPEECHIFY_API_KEY;
 
+const googleXApiKey = process.env.GOOGLE_X_API_KEY;
+
 const env = process.env.ENV;
 
 const apiKeys = {
@@ -26,6 +28,7 @@ const apiKeys = {
   narakeetApiKey,
 
   speechifyApiKey,
+  googleXApiKey,
   env,
 };
 

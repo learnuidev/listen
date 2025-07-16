@@ -20,6 +20,10 @@ const { textToAudio } = require("../../lib/speechify/text-to-audio");
 const { getUploadUrl } = require("../../lib/s3/get-upload-url");
 const { bucketNames } = require("../../constants/bucket-names");
 const mime = require("mime-types");
+const { mandarinoDeepseek } = require("../../lib/mandarino/mandarino-client");
+const {
+  generateTranslations,
+} = require("../../lib/mandarino/generate-translations");
 
 const dynamodb = new AWS.DynamoDB.DocumentClient({
   apiVersion: "2012-08-10",
@@ -40,8 +44,30 @@ async function createMediaFile(input) {
   return params;
 }
 
+function constructSentences(text, lang) {
+  if (lang === "zh") {
+    return text?.split("。").map((textItem) => {
+      return {
+        input: `${textItem}。`,
+        lang,
+      };
+    });
+  }
+
+  return text?.split(".").map((textItem) => {
+    return {
+      input: `${textItem}.`,
+      lang,
+    };
+  });
+}
+
 const addTranslationsApi = async (newMedia) => {
   let statusHistory = newMedia.statusHistory || [];
+
+  const lang = await mandarinoDeepseek.detectLanguage({
+    content: newMedia.text,
+  });
 
   statusHistory = statusHistory.concat({
     type: "generating-transcript",
@@ -54,6 +80,7 @@ const addTranslationsApi = async (newMedia) => {
     attributes: removeNull({
       id: newMedia.id,
       status: "generating-transcript",
+      lang,
       statusHistory,
       lastUpdated: Date.now(),
     }),
@@ -78,6 +105,7 @@ const addTranslationsApi = async (newMedia) => {
   // const audioBuffer = Buffer.from(audioData, "base64");
 
   // Convert Base64 to Buffer
+  // eslint-disable-next-line no-undef
   const audioBuffer = Buffer.from(base64Data, "base64");
 
   // 3. convert audio to mp3 and save it in media assets s3 bucket (get presigned url first: copy from nomadmethod)
@@ -133,6 +161,7 @@ const addTranslationsApi = async (newMedia) => {
     .promise();
 
   // 7. once the transcript has been generated, start the translation pipeline (future work)
+
   // 8. set the status to translating-transcript
   statusHistory = statusHistory.concat({
     type: "translating-transcript",
@@ -148,6 +177,23 @@ const addTranslationsApi = async (newMedia) => {
           mediaFileId: mediaFile.id,
           statusHistory,
           status: "translating-transcript",
+          lastUpdated: Date.now(),
+        }),
+      })
+    )
+    .promise();
+
+  const sentences = constructSentences(newMedia.text, lang);
+
+  const translations = await generateTranslations(sentences);
+
+  await dynamodb
+    .update(
+      constructParams({
+        tableName: tableNames.mediaFilesTable,
+        attributes: removeNull({
+          id: mediaFile.id,
+          translations,
           lastUpdated: Date.now(),
         }),
       })
@@ -178,25 +224,27 @@ const addTranslationsApi = async (newMedia) => {
   return true;
 };
 
-// addTranslationsApi({
-//   lastUpdated: 1752642624642,
-//   userId: "learnuidev@gmail.com",
-//   mediaFileId: "01K08T86NJN3STVMR7D5RVN24N",
-//   status: "file-added",
-//   createdAt: 1752642620805,
-//   text: "马克思以前的唯物论，离开人的社会性，离开人的历史发展，去观察认识问题，因此不能了解认识对社会实践的依赖关系，即认识对生产和阶级斗争的依赖关系。",
-//   id: "01K08T83C5G6T2QW0TJZHQ3YKE",
-//   statusHistory: [
-//     {
-//       type: "file-added",
-//       createdAt: 1752642620805,
-//     },
-//   ],
-//   type: "text",
-//   s3Key: "01K08T86NJN3STVMR7D5RVN24N.mp3",
-// }).then((resp) => {
-//   console.log("DONE", resp);
-// });
+addTranslationsApi({
+  lastUpdated: 1752683563543,
+  userId: "learnuidev@gmail.com",
+  status: "generating-transcript",
+  createdAt: 1752683496716,
+  text: "马克思以前的唯物论，离开人的社会性，离开人的历史发展，去观察认识问题，因此不能了解认识对社会实践的依赖关系，即认识对生产和阶级斗争的依赖关系。",
+  id: "01K0A17H8BYZJ1GD2JVPHYAMZD",
+  statusHistory: [
+    {
+      type: "file-added",
+      createdAt: 1752683496716,
+    },
+    {
+      type: "generating-transcript",
+      createdAt: 1752683563543,
+    },
+  ],
+  type: "text",
+}).then((resp) => {
+  console.log("DONE", resp);
+});
 
 module.exports = {
   addTranslationsApi,
