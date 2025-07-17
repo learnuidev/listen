@@ -46,20 +46,82 @@ async function createMediaFile(input) {
 
 function constructSentences(text, lang) {
   if (lang === "zh") {
-    return text?.split("。").map((textItem) => {
-      return {
-        input: `${textItem}。`,
-        lang,
-      };
-    });
-  }
+    return (
+      text.includes("。")
+        ? text
+            .split("。")
+            .filter(Boolean)
+            .map((textItem) => {
+              return `${textItem}。`;
+            })
+        : [text]
+    )
+      .map((item) => {
+        if (item?.includes("，")) {
+          return (
+            item
+              ?.split("，")
+              // .filter(Boolean)
+              .map((textItem, idx, ctx) => {
+                if (idx === ctx?.length - 1) {
+                  return textItem;
+                } else {
+                  return `${textItem}，`;
+                }
+              })
+          );
+        } else {
+          return [item];
+        }
+      })
+      .flat()
+      .map((item) => {
+        return {
+          input: item,
+          lang,
+        };
+      });
 
-  return text?.split(".").map((textItem) => {
-    return {
-      input: `${textItem}.`,
-      lang,
-    };
-  });
+    // if (text.includes("。")) {
+
+    // }
+  } else {
+    return (
+      text.includes(".")
+        ? text
+            .split(".")
+            .filter(Boolean)
+            .map((textItem) => {
+              return `${textItem}.`;
+            })
+        : [text]
+    )
+      .map((item) => {
+        if (item?.includes(",")) {
+          return (
+            item
+              ?.split(",")
+              // .filter(Boolean)
+              .map((textItem, idx, ctx) => {
+                if (idx === ctx?.length - 1) {
+                  return textItem;
+                } else {
+                  return `${textItem},`;
+                }
+              })
+          );
+        } else {
+          return [item];
+        }
+      })
+      .flat()
+      .map((item) => {
+        return {
+          input: item,
+          lang,
+        };
+      });
+  }
 }
 
 const addTranslationsApi = async (newMedia) => {
@@ -183,7 +245,30 @@ const addTranslationsApi = async (newMedia) => {
     )
     .promise();
 
-  const sentences = constructSentences(newMedia.text, lang);
+  const sentences = constructSentences(newMedia.text, lang).map((item) => {
+    // if (idx === 0) {
+    //   return {
+    //     ...item,
+    //     startChunkIndex: 0,
+    //     endChunkIndex: item.input.length,
+    //   };
+    // }
+
+    // const startChunkIndex = ctx
+    //   .filter((val, idy) => idy < idx)
+    //   .reduce((acc, curr) => {
+    //     return acc + curr.input.length;
+    //   }, 0);
+
+    const startChunkIndex = newMedia.text.indexOf(item.input);
+    const endChunkIndex = startChunkIndex + item?.input?.length;
+
+    return {
+      ...item,
+      startChunkIndex,
+      endChunkIndex,
+    };
+  });
 
   const translations = await generateTranslations(sentences);
 
@@ -224,27 +309,31 @@ const addTranslationsApi = async (newMedia) => {
   return true;
 };
 
-addTranslationsApi({
-  lastUpdated: 1752683563543,
-  userId: "learnuidev@gmail.com",
-  status: "generating-transcript",
-  createdAt: 1752683496716,
-  text: "马克思以前的唯物论，离开人的社会性，离开人的历史发展，去观察认识问题，因此不能了解认识对社会实践的依赖关系，即认识对生产和阶级斗争的依赖关系。",
-  id: "01K0A17H8BYZJ1GD2JVPHYAMZD",
-  statusHistory: [
-    {
-      type: "file-added",
-      createdAt: 1752683496716,
-    },
-    {
-      type: "generating-transcript",
-      createdAt: 1752683563543,
-    },
-  ],
-  type: "text",
-}).then((resp) => {
-  console.log("DONE", resp);
-});
+// const mockMedia = {
+//   lastUpdated: 1752683563543,
+//   userId: "learnuidev@gmail.com",
+//   status: "generating-transcript",
+//   createdAt: 1752683496716,
+//   text: "马克思以前的唯物论，离开人的社会性，离开人的历史发展，去观察认识问题，因此不能了解认识对社会实践的依赖关系，即认识对生产和阶级斗争的依赖关系。",
+//   id: "01K0A17H8BYZJ1GD2JVPHYAMZD",
+//   statusHistory: [
+//     {
+//       type: "file-added",
+//       createdAt: 1752683496716,
+//     },
+//     {
+//       type: "generating-transcript",
+//       createdAt: 1752683563543,
+//     },
+//   ],
+//   type: "text",
+// };
+
+// console.log(constructSentences(mockMedia.text, "zh"));
+
+// addTranslationsApi(mockMedia).then((resp) => {
+//   console.log("DONE", resp);
+// });
 
 module.exports = {
   addTranslationsApi,
