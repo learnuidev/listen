@@ -1,25 +1,12 @@
-const DocumentClient = require("aws-sdk/clients/dynamodb").DocumentClient;
-
-const dynamodb = new DocumentClient();
-
 // Middlewares
 const middy = require("@middy/core");
 const cors = require("@middy/http-cors");
 
-const { tableNames } = require("../../constants/table-names");
 const { getMediaFile } = require("./get-media-file.api");
+const { getMediaById } = require("./get-media.api");
 
-const getMediaById = async (contentId, userId) => {
-  const resp = await dynamodb
-    .get({
-      Key: {
-        id: contentId,
-      },
-      TableName: tableNames.mediaTable,
-    })
-    .promise();
-
-  const media = resp.Item;
+const _getMediaById = async (contentId, userId) => {
+  const media = getMediaById(contentId);
 
   if (media.userId === userId) {
     return media;
@@ -33,7 +20,7 @@ const getContentByIdHandler = async (event) => {
     const userId = event.requestContext.authorizer.claims.email;
     const { mediaId } = JSON.parse(event.body);
 
-    const media = await getMediaById(mediaId, userId);
+    const media = await _getMediaById(mediaId, userId);
 
     if (!media) {
       const response = {

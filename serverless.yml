@@ -102,13 +102,50 @@ provider:
         - bedrock:InvokeModel
       Resource: "*"
 
+stepFunctions:
+  stateMachines:
+    startMediaPipeline:
+      name: startMediaPipeline
+      definition:
+        Comment: Starts the media pipeline
+        StartAt: StartMediaPipeline
+        States:
+          StartMediaPipeline:
+            Type: Task
+            Resource:
+              Fn::GetAtt: [start-media-pipeline, Arn]
+            End: true
+
 functions:
+  start-media-pipeline:
+    handler: functions/pipeline/start-media-pipeline.handler
+
+  trigger-media-pipeline:
+    handler: functions/pipeline/trigger-media-pipeline.handler
+    events:
+      - http:
+          path: /v1/trigger-media-pipeline
+          method: POST
+          cors: true
+          authorizer:
+            name: CognitoAuthorizer
+            type: COGNITO_USER_POOLS
+            arn: ${self:custom.CognitoUserPool.Arn}
+    environment:
+      MEDIA_TABLE: !Ref MediaTable
+      MEDIA_FILES_TABLE: !Ref MediaFilesTable
+      MEDIA_FILES_TABLE_V2: !Ref MediaFilesTableV2
+      MEDIA_ASSETS_BUCKET: ${self:custom.AssetsBucket.Name}
+      START_MEDIA_PIPELINE_STEP_FUNCTION:
+        Fn::GetAtt: [start-media-pipeline, Arn]
+      # MEDIA_ASSETS_BUCKET: !Ref MediaAssetsBucket
   add-translations:
     timeout: 300
     handler: functions/listen/add-translations.handler
     environment:
       MEDIA_TABLE: !Ref MediaTable
       MEDIA_FILES_TABLE: !Ref MediaFilesTable
+      MEDIA_FILES_TABLE_V2: !Ref MediaFilesTableV2
       MEDIA_ASSETS_BUCKET: !Ref MediaAssetsBucket
     events:
       - stream:
@@ -129,6 +166,7 @@ functions:
     environment:
       MEDIA_TABLE: !Ref MediaTable
       MEDIA_FILES_TABLE: !Ref MediaFilesTable
+      MEDIA_FILES_TABLE_V2: !Ref MediaFilesTableV2
       MEDIA_ASSETS_BUCKET: ${self:custom.AssetsBucket.Name}
       # MEDIA_ASSETS_BUCKET: !Ref MediaAssetsBucket
 
@@ -146,6 +184,7 @@ functions:
     environment:
       MEDIA_TABLE: !Ref MediaTable
       MEDIA_FILES_TABLE: !Ref MediaFilesTable
+      MEDIA_FILES_TABLE_V2: !Ref MediaFilesTableV2
       MEDIA_ASSETS_BUCKET: ${self:custom.AssetsBucket.Name}
       # MEDIA_ASSETS_BUCKET: !Ref MediaAssetsBucket
 
@@ -163,6 +202,7 @@ functions:
     environment:
       MEDIA_TABLE: !Ref MediaTable
       MEDIA_FILES_TABLE: !Ref MediaFilesTable
+      MEDIA_FILES_TABLE_V2: !Ref MediaFilesTableV2
       MEDIA_ASSETS_BUCKET: ${self:custom.AssetsBucket.Name}
       # MEDIA_ASSETS_BUCKET: !Ref MediaAssetsBucket
   get-upload-url:
@@ -293,3 +333,32 @@ resources:
             Value: ${self:custom.stage}
           - Key: Name
             Value: media-files-table
+    MediaFilesTableV2:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        BillingMode: PAY_PER_REQUEST
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+          - AttributeName: mediaId
+            AttributeType: S
+        GlobalSecondaryIndexes:
+          - IndexName: byMediaId
+            KeySchema:
+              - AttributeName: mediaId
+                KeyType: HASH
+              - AttributeName: id
+                KeyType: RANGE
+            Projection:
+              ProjectionType: ALL
+        StreamSpecification:
+          StreamViewType: NEW_AND_OLD_IMAGES
+        Tags:
+          # To keep track of user table for diffeent environment
+          - Key: Environment
+            Value: ${self:custom.stage}
+          - Key: Name
+            Value: media-files-table-v2

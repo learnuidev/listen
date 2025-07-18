@@ -16,7 +16,10 @@ const AWS = require("aws-sdk");
 const { tableNames } = require("../../constants/table-names");
 const { removeNull } = require("../../utils/remove-null");
 const { constructParams } = require("../../utils/construct-params");
-const { textToAudio } = require("../../lib/speechify/text-to-audio");
+const {
+  textToAudio,
+  defaultVoiceId,
+} = require("../../lib/speechify/text-to-audio");
 const { getUploadUrl } = require("../../lib/s3/get-upload-url");
 const { bucketNames } = require("../../constants/bucket-names");
 const mime = require("mime-types");
@@ -57,22 +60,7 @@ function constructSentences(text, lang) {
         : [text]
     )
       .map((item) => {
-        if (item?.includes("，")) {
-          return (
-            item
-              ?.split("，")
-              // .filter(Boolean)
-              .map((textItem, idx, ctx) => {
-                if (idx === ctx?.length - 1) {
-                  return textItem;
-                } else {
-                  return `${textItem}，`;
-                }
-              })
-          );
-        } else {
-          return [item];
-        }
+        return [item];
       })
       .flat()
       .map((item) => {
@@ -81,10 +69,6 @@ function constructSentences(text, lang) {
           lang,
         };
       });
-
-    // if (text.includes("。")) {
-
-    // }
   } else {
     return (
       text.includes(".")
@@ -131,6 +115,8 @@ const addTranslationsApi = async (newMedia) => {
     content: newMedia.text,
   });
 
+  console.log("LANG", lang);
+
   statusHistory = statusHistory.concat({
     type: "generating-transcript",
     createdAt: Date.now(),
@@ -152,7 +138,10 @@ const addTranslationsApi = async (newMedia) => {
   await dynamodb.update(updatedContent).promise();
 
   // 2. send text to speewchify api
-  const speechifyResponse = await textToAudio(newMedia.text);
+  const speechifyResponse = await textToAudio(newMedia.text, {
+    voiceId: defaultVoiceId,
+    lang,
+  });
 
   const { audioData, ...rest } = speechifyResponse;
 
@@ -309,31 +298,29 @@ const addTranslationsApi = async (newMedia) => {
   return true;
 };
 
-// const mockMedia = {
-//   lastUpdated: 1752683563543,
-//   userId: "learnuidev@gmail.com",
-//   status: "generating-transcript",
-//   createdAt: 1752683496716,
-//   text: "马克思以前的唯物论，离开人的社会性，离开人的历史发展，去观察认识问题，因此不能了解认识对社会实践的依赖关系，即认识对生产和阶级斗争的依赖关系。",
-//   id: "01K0A17H8BYZJ1GD2JVPHYAMZD",
-//   statusHistory: [
-//     {
-//       type: "file-added",
-//       createdAt: 1752683496716,
-//     },
-//     {
-//       type: "generating-transcript",
-//       createdAt: 1752683563543,
-//     },
-//   ],
-//   type: "text",
-// };
-
+const mockMedia = {
+  lastUpdated: 1752759494561,
+  mediaFileId: "01K0C9NNAJS2VXP8ENT7H0P6YJ",
+  userId: "learnuidev@gmail.com",
+  status: "transcript-translated",
+  createdAt: 1752683496716,
+  text: "马克思以前的唯物论，离开人的社会性，离开人的历史发展，去观察认识问题，因此不能了解认识对社会实践的依赖关系，即认识对生产和阶级斗争的依赖关系。",
+  id: "01K0A17H8BYZJ1GD2JVPHYAMZD",
+  lang: "zh",
+  s3Key: "01K0C9NNAJS2VXP8ENT7H0P6YJ.mp3",
+  statusHistory: [
+    {
+      type: "file-added",
+      createdAt: 1752683496716,
+    },
+  ],
+  type: "text",
+};
 // console.log(constructSentences(mockMedia.text, "zh"));
 
-// addTranslationsApi(mockMedia).then((resp) => {
-//   console.log("DONE", resp);
-// });
+addTranslationsApi(mockMedia).then((resp) => {
+  console.log("DONE", resp);
+});
 
 module.exports = {
   addTranslationsApi,

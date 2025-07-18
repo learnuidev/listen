@@ -5,9 +5,8 @@ const { isLocalEnv } = require("../utils/is-local-env");
 const tableNamesLocal = {
   mediaTable: "listen-api-dev-MediaTable-1TTNRJRBU6AT2",
   mediaFilesTable: "listen-api-dev-MediaFilesTable-394TH4YHSPVV",
+  mediaFilesTableV2: "listen-api-dev-MediaFilesTable-394TH4YHSPVV",
 };
-
-console.log("isLocalEnv()", isLocalEnv());
 
 const tableNames = isLocalEnv()
   ? tableNamesLocal
