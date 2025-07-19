@@ -7,6 +7,9 @@ const tableNamesLocal = {
   mediaFilesTable: "listen-api-dev-MediaFilesTable-394TH4YHSPVV",
   mediaFilesTableV2: "listen-api-dev-MediaFilesTable-394TH4YHSPVV",
   userAssetsTable: "nomadmethod-api-dev-UserAssetsTable-10ZRO2B9VGOR7",
+
+  booksTable: "listen-api-dev-BooksTable-NPGUL667QXPY",
+  chapterSectionsTable: "listen-api-dev-ChapterSectionsTable-1K5V04WQLPZN2",
 };
 
 const tableNames = isLocalEnv()
@@ -16,6 +19,8 @@ const tableNames = isLocalEnv()
       mediaFilesTable: process.env.MEDIA_FILES_TABLE,
       mediaFilesTableV2: process.env.MEDIA_FILES_TABLE_V2,
       userAssetsTable: process.env.USER_ASSETS_TABLE,
+      booksTable: process.env.BOOKS_TABLE,
+      chapterSectionsTable: process.env.CHAPTER_SECTIONS_TABLE,
     };
 
 module.exports = {

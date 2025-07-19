@@ -275,6 +275,87 @@ functions:
             name: CognitoAuthorizer
             type: COGNITO_USER_POOLS
             arn: ${self:custom.CognitoUserPool.Arn}
+  # Books
+  list-books:
+    handler: functions/book/list-books.handler
+    events:
+      - http:
+          path: /v1/list-books
+          method: POST
+          cors: true
+          authorizer:
+            name: CognitoAuthorizer
+            type: COGNITO_USER_POOLS
+            arn: ${self:custom.CognitoUserPool.Arn}
+    environment:
+      BOOKS_TABLE: !Ref BooksTable
+  get-book:
+    handler: functions/book/get-book.handler
+    events:
+      - http:
+          path: /v1/get-book
+          method: POST
+          cors: true
+          authorizer:
+            name: CognitoAuthorizer
+            type: COGNITO_USER_POOLS
+            arn: ${self:custom.CognitoUserPool.Arn}
+    environment:
+      BOOKS_TABLE: !Ref BooksTable
+  update-book:
+    handler: functions/book/update-book.handler
+    events:
+      - http:
+          path: /v1/update-book
+          method: POST
+          cors: true
+          authorizer:
+            name: CognitoAuthorizer
+            type: COGNITO_USER_POOLS
+            arn: ${self:custom.CognitoUserPool.Arn}
+    environment:
+      BOOKS_TABLE: !Ref BooksTable
+  delete-book:
+    handler: functions/book/delete-book.handler
+    events:
+      - http:
+          path: /v1/delete-book
+          method: POST
+          cors: true
+          authorizer:
+            name: CognitoAuthorizer
+            type: COGNITO_USER_POOLS
+            arn: ${self:custom.CognitoUserPool.Arn}
+    environment:
+      BOOKS_TABLE: !Ref BooksTable
+  add-chapter-sections:
+    handler: functions/book/add-chapter-sections.handler
+    events:
+      - http:
+          path: /v1/add-chapter-sections
+          method: POST
+          cors: true
+          authorizer:
+            name: CognitoAuthorizer
+            type: COGNITO_USER_POOLS
+            arn: ${self:custom.CognitoUserPool.Arn}
+    environment:
+      BOOKS_TABLE: !Ref BooksTable
+      CHAPTER_SECTIONS_TABLE: !Ref ChapterSectionsTable
+  list-chapter-detailsx:
+    handler: functions/book/list-chapter-sections.handler
+    events:
+      - http:
+          path: /v1/list-chapter-sections
+          method: POST
+          cors: true
+          authorizer:
+            name: CognitoAuthorizer
+            type: COGNITO_USER_POOLS
+            arn: ${self:custom.CognitoUserPool.Arn}
+    environment:
+      BOOKS_TABLE: !Ref BooksTable
+      CHAPTER_SECTIONS_TABLE: !Ref ChapterSectionsTable
 
 resources:
   Resources:
@@ -393,3 +474,61 @@ resources:
             Value: ${self:custom.stage}
           - Key: Name
             Value: media-files-table-v2
+    BooksTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        BillingMode: PAY_PER_REQUEST
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+          - AttributeName: userId
+            AttributeType: S
+        GlobalSecondaryIndexes:
+          - IndexName: byUserId
+            KeySchema:
+              - AttributeName: userId
+                KeyType: HASH
+              - AttributeName: id
+                KeyType: RANGE
+            Projection:
+              ProjectionType: ALL
+        StreamSpecification:
+          StreamViewType: NEW_AND_OLD_IMAGES
+        Tags:
+          # To keep track of user table for diffeent environment
+          - Key: Environment
+            Value: ${self:custom.stage}
+          - Key: Name
+            Value: books-table
+    ChapterSectionsTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        BillingMode: PAY_PER_REQUEST
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+          - AttributeName: chapterId
+            AttributeType: S
+        GlobalSecondaryIndexes:
+          - IndexName: byChapterId
+            KeySchema:
+              - AttributeName: chapterId
+                KeyType: HASH
+              - AttributeName: id
+                KeyType: RANGE
+            Projection:
+              ProjectionType: ALL
+        StreamSpecification:
+          StreamViewType: NEW_AND_OLD_IMAGES
+        Tags:
+          # To keep track of user table for diffeent environment
+          - Key: Environment
+            Value: ${self:custom.stage}
+          - Key: Name
+            Value: chapter-sections-table
