@@ -1,6 +1,7 @@
 const DynamoDB = require("aws-sdk/clients/dynamodb");
 
 const { addTranslationsApi } = require("./add-translations.api");
+const { humanMediaPipeline } = require("./human-media-pipeline");
 
 module.exports.handler = async (event) => {
   const t0 = performance.now();
@@ -12,6 +13,14 @@ module.exports.handler = async (event) => {
       await addTranslationsApi(newMedia);
 
       console.log("done");
+    }
+
+    if (record.eventName === "UPDATE") {
+      const newMedia = DynamoDB.Converter.unmarshall(record.dynamodb.NewImage);
+
+      await humanMediaPipeline(newMedia);
+
+      console.log("DONE");
     }
   }
 

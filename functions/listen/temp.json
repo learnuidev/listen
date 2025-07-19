@@ -1,0 +1,3544 @@
+{
+  "lastUpdated": 1752873840075,
+  "mediaFileId": "01K0F48ZG09T7D2GZNAW7DW02G",
+  "userId": "learnuidev@gmail.com",
+  "customAudioId": "01K0FNYH8QFB14496CG8B57KPN",
+  "status": "transcript-translated[object Object]",
+  "createdAt": 1752854451847,
+  "text": "德思礼一家什么都不缺，但他们拥有一个秘密，他们最害怕的就是这秘密会被人发现。他们想，一旦有人发现波特一家的事，他们会承受不住的。\n\n波特太太是德思礼太太的妹妹，不过她们已经有好几年不见面了。\n\n实际上，德思礼太太伴装自己根本没有这么个妹妹，因为她妹妹和她那一无是处的妹夫与德思礼一家的为人处世完全不一样。\n\n一想到邻居们会说波特夫妇来到了，德思礼夫妇会吓得胆战心惊。他们知道波特也有个儿子，只是他们从来没有见过。\n\n这孩子也是他们不与波特夫妇来往的一个很好的借口，他们不愿让达力跟这种孩子厮混。",
+  "id": "01K0F48NM7SYWHXD9B223KQARA",
+  "lang": "zh",
+  "s3Key": "01K0F48ZG09T7D2GZNAW7DW02G.mp3",
+  "statusHistory": [
+    { "type": "file-added", "createdAt": 1752854451847 },
+    { "type": "generating-transcript", "createdAt": 1752854459000 },
+    { "type": "transcript-generated", "createdAt": 1752854462417 },
+    { "type": "translating-transcript", "createdAt": 1752854462474 },
+    { "type": "transcript-translated", "createdAt": 1752854467362 }
+  ],
+  "type": "text",
+  "customAudioUrl": "https://nomadmethod-api-dev-assetsbucket-2u2iqsv5nizc.s3-accelerate.amazonaws.com/01K0FNYH8QFB14496CG8B57KPN.m4a?AWSAccessKeyId=ASIA3EL4T6TB6YOCIIAF&Expires=1752960665&Signature=ejtWGkPl%2BKaB%2B1gAamx%2FzW0KQnE%3D&X-Amzn-Trace-Id=Root%3D1-687abd19-102efee01573ed1f77e6df68%3BParent%3D6b3dcc92afe59c94%3BSampled%3D0&x-amz-security-token=IQoJb3JpZ2luX2VjEH4aCXVzLWVhc3QtMSJHMEUCIAeGivlZB%2Bspioycc%2FIjnB1%2F5Bo%2Bj1ig48ZsAX%2Fyu0y1AiEAzhaqNLUKKLFvEc1ggg2R5veYuEcerrTN9i%2FXZ6yvrGwqjQMIl%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgw3NjUzMDI0MDQyOTEiDGLiAaK7wlkGNqsJPirhAjefRihQI5V6BvcZpfe9t6su1spRrAsi0sP2UqQhL7DDgU1VhiWVWNy5jW7trMI9qUCia%2BenRO7UMU1m72c1JAPznLinbpfFjsJODOCeviuWcXPkSZyYr2OqwbcOX2cnOMg5auEHDgHrqRGIfpiIp3uJRJezqMrE%2FlwvbYBlcZK5X5qSiodVJFhkQlIxTOz%2BdrR476oMoXpKIELe8kXhgKTNHq368%2BtDUhlfE0XuFFqZ7d1tKFSXkaSebppANh%2BrieJTobnRxyq8LuXpubvgFrSkn6vqDYqvJWR5cw9LCKC5hL%2FWU95s9ho5zl9ogNLb0OGaOR1tA5bMsBOvUyMRClijv9x9zjVBCRN2lIeKSouhf7Mi80GD504k2v%2BLP2j5v3Xtg3z%2BPkMMchcFRed58AJ%2FcCdDg%2FpbjvGW5p34SCoS4cJObcdy0iZ3ybw%2F9ueAyURwcD4s%2FvIg9qGeFrW4RG8uMIL66sMGOp4BAceOZuMdXHSe24%2Ff5zzhdUATNGXbKQGAq3zZidnx7nGCcfFvBvLGKFjtOHnaIvdjzbwA6xu%2FyC6DIB%2FxKgVqhtEem%2FLRcHG%2FACYbvniSqvn3UJ5YVo7c7N8QhkyiUnF3oAd0b7yUNYqjPXvzoGpydtgV43vpo%2FLOZpxVnskiniIp3I3DqvcOHOL5Dm8fmFA1hPcHliqcfFyYvzI%2Bjfk%3D",
+  "mediaFile": {
+    "lastUpdated": 1752873840203,
+    "speechMarks": {
+      "chunks": [
+        {
+          "start": 0,
+          "end": 1,
+          "startTime": 0,
+          "endTime": 299,
+          "type": "word",
+          "value": "德"
+        },
+        {
+          "start": 1,
+          "end": 2,
+          "startTime": 299,
+          "endTime": 427,
+          "type": "word",
+          "value": "思"
+        },
+        {
+          "start": 2,
+          "end": 3,
+          "startTime": 427,
+          "endTime": 512,
+          "type": "word",
+          "value": "礼"
+        },
+        {
+          "start": 3,
+          "end": 5,
+          "startTime": 512,
+          "endTime": 725,
+          "type": "word",
+          "value": "一家"
+        },
+        {
+          "start": 5,
+          "end": 7,
+          "startTime": 725,
+          "endTime": 811,
+          "type": "word",
+          "value": "什么"
+        },
+        {
+          "start": 7,
+          "end": 9,
+          "startTime": 811,
+          "endTime": 1067,
+          "type": "word",
+          "value": "都不"
+        },
+        {
+          "start": 9,
+          "end": 10,
+          "startTime": 1067,
+          "endTime": 1109,
+          "type": "word",
+          "value": "缺"
+        },
+        {
+          "start": 10,
+          "end": 11,
+          "startTime": 1109,
+          "endTime": 1365,
+          "type": "word",
+          "value": "，"
+        },
+        {
+          "start": 11,
+          "end": 12,
+          "startTime": 1365,
+          "endTime": 1451,
+          "type": "word",
+          "value": "但"
+        },
+        {
+          "start": 12,
+          "end": 14,
+          "startTime": 1451,
+          "endTime": 1792,
+          "type": "word",
+          "value": "他们"
+        },
+        {
+          "start": 14,
+          "end": 16,
+          "startTime": 1792,
+          "endTime": 2048,
+          "type": "word",
+          "value": "拥有"
+        },
+        {
+          "start": 16,
+          "end": 18,
+          "startTime": 2048,
+          "endTime": 2176,
+          "type": "word",
+          "value": "一个"
+        },
+        {
+          "start": 18,
+          "end": 20,
+          "startTime": 2176,
+          "endTime": 2475,
+          "type": "word",
+          "value": "秘密"
+        },
+        {
+          "start": 20,
+          "end": 21,
+          "startTime": 2475,
+          "endTime": 2731,
+          "type": "word",
+          "value": "，"
+        },
+        {
+          "start": 21,
+          "end": 23,
+          "startTime": 2731,
+          "endTime": 2944,
+          "type": "word",
+          "value": "他们"
+        },
+        {
+          "start": 23,
+          "end": 24,
+          "startTime": 2944,
+          "endTime": 3029,
+          "type": "word",
+          "value": "最"
+        },
+        {
+          "start": 24,
+          "end": 26,
+          "startTime": 3029,
+          "endTime": 3285,
+          "type": "word",
+          "value": "害怕"
+        },
+        {
+          "start": 26,
+          "end": 27,
+          "startTime": 3285,
+          "endTime": 3499,
+          "type": "word",
+          "value": "的"
+        },
+        {
+          "start": 27,
+          "end": 29,
+          "startTime": 3499,
+          "endTime": 3669,
+          "type": "word",
+          "value": "就是"
+        },
+        {
+          "start": 29,
+          "end": 30,
+          "startTime": 3669,
+          "endTime": 3840,
+          "type": "word",
+          "value": "这"
+        },
+        {
+          "start": 30,
+          "end": 32,
+          "startTime": 3840,
+          "endTime": 4096,
+          "type": "word",
+          "value": "秘密"
+        },
+        {
+          "start": 32,
+          "end": 33,
+          "startTime": 4096,
+          "endTime": 4224,
+          "type": "word",
+          "value": "会"
+        },
+        {
+          "start": 33,
+          "end": 35,
+          "startTime": 4224,
+          "endTime": 4480,
+          "type": "word",
+          "value": "被人"
+        },
+        {
+          "start": 35,
+          "end": 37,
+          "startTime": 4480,
+          "endTime": 4779,
+          "type": "word",
+          "value": "发现"
+        },
+        {
+          "start": 37,
+          "end": 38,
+          "startTime": 4779,
+          "endTime": 4992,
+          "type": "word",
+          "value": "。"
+        },
+        {
+          "start": 38,
+          "end": 40,
+          "startTime": 4992,
+          "endTime": 5931,
+          "type": "word",
+          "value": "他们"
+        },
+        {
+          "start": 40,
+          "end": 41,
+          "startTime": 5931,
+          "endTime": 6016,
+          "type": "word",
+          "value": "想"
+        },
+        {
+          "start": 41,
+          "end": 42,
+          "startTime": 6016,
+          "endTime": 6101,
+          "type": "word",
+          "value": "，"
+        },
+        {
+          "start": 42,
+          "end": 44,
+          "startTime": 6101,
+          "endTime": 6272,
+          "type": "word",
+          "value": "一旦"
+        },
+        {
+          "start": 44,
+          "end": 46,
+          "startTime": 6272,
+          "endTime": 6400,
+          "type": "word",
+          "value": "有人"
+        },
+        {
+          "start": 46,
+          "end": 48,
+          "startTime": 6400,
+          "endTime": 6656,
+          "type": "word",
+          "value": "发现"
+        },
+        {
+          "start": 48,
+          "end": 50,
+          "startTime": 6656,
+          "endTime": 6912,
+          "type": "word",
+          "value": "波特"
+        },
+        {
+          "start": 50,
+          "end": 52,
+          "startTime": 6912,
+          "endTime": 7083,
+          "type": "word",
+          "value": "一家"
+        },
+        {
+          "start": 52,
+          "end": 53,
+          "startTime": 7083,
+          "endTime": 7168,
+          "type": "word",
+          "value": "的"
+        },
+        {
+          "start": 53,
+          "end": 54,
+          "startTime": 7168,
+          "endTime": 7296,
+          "type": "word",
+          "value": "事"
+        },
+        {
+          "start": 54,
+          "end": 55,
+          "startTime": 7296,
+          "endTime": 7467,
+          "type": "word",
+          "value": "，"
+        },
+        {
+          "start": 55,
+          "end": 57,
+          "startTime": 7467,
+          "endTime": 7680,
+          "type": "word",
+          "value": "他们"
+        },
+        {
+          "start": 57,
+          "end": 58,
+          "startTime": 7680,
+          "endTime": 7723,
+          "type": "word",
+          "value": "会"
+        },
+        {
+          "start": 58,
+          "end": 60,
+          "startTime": 7723,
+          "endTime": 8064,
+          "type": "word",
+          "value": "承受"
+        },
+        {
+          "start": 60,
+          "end": 62,
+          "startTime": 8064,
+          "endTime": 8277,
+          "type": "word",
+          "value": "不住"
+        },
+        {
+          "start": 62,
+          "end": 63,
+          "startTime": 8277,
+          "endTime": 8405,
+          "type": "word",
+          "value": "的"
+        },
+        {
+          "start": 63,
+          "end": 64,
+          "startTime": 8405,
+          "endTime": 8619,
+          "type": "word",
+          "value": "。"
+        },
+        {
+          "start": 66,
+          "end": 68,
+          "startTime": 8619,
+          "endTime": 8789,
+          "type": "word",
+          "value": "波特"
+        },
+        {
+          "start": 68,
+          "end": 70,
+          "startTime": 8789,
+          "endTime": 8960,
+          "type": "word",
+          "value": "太太"
+        },
+        {
+          "start": 70,
+          "end": 71,
+          "startTime": 8960,
+          "endTime": 9088,
+          "type": "word",
+          "value": "是"
+        },
+        {
+          "start": 71,
+          "end": 72,
+          "startTime": 9088,
+          "endTime": 9216,
+          "type": "word",
+          "value": "德"
+        },
+        {
+          "start": 72,
+          "end": 73,
+          "startTime": 9216,
+          "endTime": 9344,
+          "type": "word",
+          "value": "思"
+        },
+        {
+          "start": 73,
+          "end": 74,
+          "startTime": 9344,
+          "endTime": 9472,
+          "type": "word",
+          "value": "礼"
+        },
+        {
+          "start": 74,
+          "end": 76,
+          "startTime": 9472,
+          "endTime": 9685,
+          "type": "word",
+          "value": "太太"
+        },
+        {
+          "start": 76,
+          "end": 77,
+          "startTime": 9685,
+          "endTime": 9813,
+          "type": "word",
+          "value": "的"
+        },
+        {
+          "start": 77,
+          "end": 79,
+          "startTime": 9813,
+          "endTime": 10069,
+          "type": "word",
+          "value": "妹妹"
+        },
+        {
+          "start": 79,
+          "end": 80,
+          "startTime": 10069,
+          "endTime": 10496,
+          "type": "word",
+          "value": "，"
+        },
+        {
+          "start": 80,
+          "end": 82,
+          "startTime": 10496,
+          "endTime": 10667,
+          "type": "word",
+          "value": "不过"
+        },
+        {
+          "start": 82,
+          "end": 84,
+          "startTime": 10667,
+          "endTime": 10795,
+          "type": "word",
+          "value": "她们"
+        },
+        {
+          "start": 84,
+          "end": 87,
+          "startTime": 10795,
+          "endTime": 11051,
+          "type": "word",
+          "value": "已经有"
+        },
+        {
+          "start": 87,
+          "end": 89,
+          "startTime": 11051,
+          "endTime": 11264,
+          "type": "word",
+          "value": "好几"
+        },
+        {
+          "start": 89,
+          "end": 90,
+          "startTime": 11264,
+          "endTime": 11435,
+          "type": "word",
+          "value": "年"
+        },
+        {
+          "start": 90,
+          "end": 91,
+          "startTime": 11435,
+          "endTime": 11520,
+          "type": "word",
+          "value": "不"
+        },
+        {
+          "start": 91,
+          "end": 93,
+          "startTime": 11520,
+          "endTime": 11733,
+          "type": "word",
+          "value": "见面"
+        },
+        {
+          "start": 93,
+          "end": 94,
+          "startTime": 11733,
+          "endTime": 11904,
+          "type": "word",
+          "value": "了"
+        },
+        {
+          "start": 94,
+          "end": 95,
+          "startTime": 11904,
+          "endTime": 12757,
+          "type": "word",
+          "value": "。"
+        },
+        {
+          "start": 97,
+          "end": 99,
+          "startTime": 12757,
+          "endTime": 12971,
+          "type": "word",
+          "value": "实际"
+        },
+        {
+          "start": 99,
+          "end": 100,
+          "startTime": 12971,
+          "endTime": 13099,
+          "type": "word",
+          "value": "上"
+        },
+        {
+          "start": 100,
+          "end": 101,
+          "startTime": 13098,
+          "endTime": 13311,
+          "type": "word",
+          "value": "，"
+        },
+        {
+          "start": 101,
+          "end": 102,
+          "startTime": 13311,
+          "endTime": 13397,
+          "type": "word",
+          "value": "德"
+        },
+        {
+          "start": 102,
+          "end": 103,
+          "startTime": 13397,
+          "endTime": 13482,
+          "type": "word",
+          "value": "思"
+        },
+        {
+          "start": 103,
+          "end": 104,
+          "startTime": 13482,
+          "endTime": 13610,
+          "type": "word",
+          "value": "礼"
+        },
+        {
+          "start": 104,
+          "end": 106,
+          "startTime": 13610,
+          "endTime": 14293,
+          "type": "word",
+          "value": "太太"
+        },
+        {
+          "start": 106,
+          "end": 107,
+          "startTime": 14293,
+          "endTime": 14463,
+          "type": "word",
+          "value": "伴"
+        },
+        {
+          "start": 107,
+          "end": 108,
+          "startTime": 14463,
+          "endTime": 14634,
+          "type": "word",
+          "value": "装"
+        },
+        {
+          "start": 108,
+          "end": 110,
+          "startTime": 14634,
+          "endTime": 14890,
+          "type": "word",
+          "value": "自己"
+        },
+        {
+          "start": 110,
+          "end": 112,
+          "startTime": 14890,
+          "endTime": 15146,
+          "type": "word",
+          "value": "根本"
+        },
+        {
+          "start": 112,
+          "end": 114,
+          "startTime": 15146,
+          "endTime": 15274,
+          "type": "word",
+          "value": "没有"
+        },
+        {
+          "start": 114,
+          "end": 116,
+          "startTime": 15274,
+          "endTime": 15487,
+          "type": "word",
+          "value": "这么"
+        },
+        {
+          "start": 116,
+          "end": 117,
+          "startTime": 15487,
+          "endTime": 15573,
+          "type": "word",
+          "value": "个"
+        },
+        {
+          "start": 117,
+          "end": 119,
+          "startTime": 15573,
+          "endTime": 15786,
+          "type": "word",
+          "value": "妹妹"
+        },
+        {
+          "start": 119,
+          "end": 120,
+          "startTime": 15786,
+          "endTime": 16042,
+          "type": "word",
+          "value": "，"
+        },
+        {
+          "start": 120,
+          "end": 122,
+          "startTime": 16042,
+          "endTime": 16170,
+          "type": "word",
+          "value": "因为"
+        },
+        {
+          "start": 122,
+          "end": 123,
+          "startTime": 16170,
+          "endTime": 16298,
+          "type": "word",
+          "value": "她"
+        },
+        {
+          "start": 123,
+          "end": 125,
+          "startTime": 16298,
+          "endTime": 16554,
+          "type": "word",
+          "value": "妹妹"
+        },
+        {
+          "start": 125,
+          "end": 126,
+          "startTime": 16554,
+          "endTime": 16639,
+          "type": "word",
+          "value": "和"
+        },
+        {
+          "start": 126,
+          "end": 127,
+          "startTime": 16639,
+          "endTime": 16767,
+          "type": "word",
+          "value": "她"
+        },
+        {
+          "start": 127,
+          "end": 129,
+          "startTime": 16767,
+          "endTime": 17535,
+          "type": "word",
+          "value": "那一"
+        },
+        {
+          "start": 129,
+          "end": 130,
+          "startTime": 17535,
+          "endTime": 17621,
+          "type": "word",
+          "value": "无"
+        },
+        {
+          "start": 130,
+          "end": 131,
+          "startTime": 17621,
+          "endTime": 17791,
+          "type": "word",
+          "value": "是"
+        },
+        {
+          "start": 131,
+          "end": 133,
+          "startTime": 17791,
+          "endTime": 18047,
+          "type": "word",
+          "value": "处的"
+        },
+        {
+          "start": 133,
+          "end": 135,
+          "startTime": 18047,
+          "endTime": 18474,
+          "type": "word",
+          "value": "妹夫"
+        },
+        {
+          "start": 135,
+          "end": 136,
+          "startTime": 18474,
+          "endTime": 18602,
+          "type": "word",
+          "value": "与"
+        },
+        {
+          "start": 136,
+          "end": 137,
+          "startTime": 18602,
+          "endTime": 18858,
+          "type": "word",
+          "value": "德"
+        },
+        {
+          "start": 137,
+          "end": 138,
+          "startTime": 18858,
+          "endTime": 18943,
+          "type": "word",
+          "value": "思"
+        },
+        {
+          "start": 138,
+          "end": 139,
+          "startTime": 18943,
+          "endTime": 19114,
+          "type": "word",
+          "value": "礼"
+        },
+        {
+          "start": 139,
+          "end": 141,
+          "startTime": 19114,
+          "endTime": 19455,
+          "type": "word",
+          "value": "一家"
+        },
+        {
+          "start": 141,
+          "end": 142,
+          "startTime": 19455,
+          "endTime": 19626,
+          "type": "word",
+          "value": "的"
+        },
+        {
+          "start": 142,
+          "end": 144,
+          "startTime": 19626,
+          "endTime": 19967,
+          "type": "word",
+          "value": "为人"
+        },
+        {
+          "start": 144,
+          "end": 146,
+          "startTime": 19967,
+          "endTime": 20351,
+          "type": "word",
+          "value": "处世"
+        },
+        {
+          "start": 146,
+          "end": 148,
+          "startTime": 20351,
+          "endTime": 20778,
+          "type": "word",
+          "value": "完全"
+        },
+        {
+          "start": 148,
+          "end": 149,
+          "startTime": 20778,
+          "endTime": 20863,
+          "type": "word",
+          "value": "不"
+        },
+        {
+          "start": 149,
+          "end": 151,
+          "startTime": 20863,
+          "endTime": 21077,
+          "type": "word",
+          "value": "一样"
+        },
+        {
+          "start": 151,
+          "end": 152,
+          "startTime": 21077,
+          "endTime": 21887,
+          "type": "word",
+          "value": "。"
+        },
+        {
+          "start": 154,
+          "end": 155,
+          "startTime": 21887,
+          "endTime": 22229,
+          "type": "word",
+          "value": "一"
+        },
+        {
+          "start": 155,
+          "end": 157,
+          "startTime": 22229,
+          "endTime": 22442,
+          "type": "word",
+          "value": "想到"
+        },
+        {
+          "start": 157,
+          "end": 159,
+          "startTime": 22442,
+          "endTime": 22741,
+          "type": "word",
+          "value": "邻居"
+        },
+        {
+          "start": 159,
+          "end": 160,
+          "startTime": 22741,
+          "endTime": 22869,
+          "type": "word",
+          "value": "们"
+        },
+        {
+          "start": 160,
+          "end": 162,
+          "startTime": 22869,
+          "endTime": 23125,
+          "type": "word",
+          "value": "会说"
+        },
+        {
+          "start": 162,
+          "end": 164,
+          "startTime": 23125,
+          "endTime": 23338,
+          "type": "word",
+          "value": "波特"
+        },
+        {
+          "start": 164,
+          "end": 166,
+          "startTime": 23338,
+          "endTime": 23594,
+          "type": "word",
+          "value": "夫妇"
+        },
+        {
+          "start": 166,
+          "end": 168,
+          "startTime": 23594,
+          "endTime": 23807,
+          "type": "word",
+          "value": "来到"
+        },
+        {
+          "start": 168,
+          "end": 169,
+          "startTime": 23807,
+          "endTime": 23893,
+          "type": "word",
+          "value": "了"
+        },
+        {
+          "start": 169,
+          "end": 170,
+          "startTime": 23893,
+          "endTime": 24021,
+          "type": "word",
+          "value": "，"
+        },
+        {
+          "start": 170,
+          "end": 171,
+          "startTime": 24021,
+          "endTime": 24149,
+          "type": "word",
+          "value": "德"
+        },
+        {
+          "start": 171,
+          "end": 172,
+          "startTime": 24149,
+          "endTime": 24234,
+          "type": "word",
+          "value": "思"
+        },
+        {
+          "start": 172,
+          "end": 173,
+          "startTime": 24234,
+          "endTime": 24362,
+          "type": "word",
+          "value": "礼"
+        },
+        {
+          "start": 173,
+          "end": 175,
+          "startTime": 24362,
+          "endTime": 24661,
+          "type": "word",
+          "value": "夫妇"
+        },
+        {
+          "start": 175,
+          "end": 176,
+          "startTime": 24661,
+          "endTime": 24703,
+          "type": "word",
+          "value": "会"
+        },
+        {
+          "start": 176,
+          "end": 177,
+          "startTime": 24703,
+          "endTime": 24831,
+          "type": "word",
+          "value": "吓"
+        },
+        {
+          "start": 177,
+          "end": 178,
+          "startTime": 24831,
+          "endTime": 24959,
+          "type": "word",
+          "value": "得"
+        },
+        {
+          "start": 178,
+          "end": 179,
+          "startTime": 24959,
+          "endTime": 25087,
+          "type": "word",
+          "value": "胆"
+        },
+        {
+          "start": 179,
+          "end": 180,
+          "startTime": 25087,
+          "endTime": 25258,
+          "type": "word",
+          "value": "战"
+        },
+        {
+          "start": 180,
+          "end": 181,
+          "startTime": 25258,
+          "endTime": 25429,
+          "type": "word",
+          "value": "心"
+        },
+        {
+          "start": 181,
+          "end": 182,
+          "startTime": 25429,
+          "endTime": 25557,
+          "type": "word",
+          "value": "惊"
+        },
+        {
+          "start": 182,
+          "end": 183,
+          "startTime": 25557,
+          "endTime": 26239,
+          "type": "word",
+          "value": "。"
+        },
+        {
+          "start": 183,
+          "end": 185,
+          "startTime": 26239,
+          "endTime": 26495,
+          "type": "word",
+          "value": "他们"
+        },
+        {
+          "start": 185,
+          "end": 187,
+          "startTime": 26495,
+          "endTime": 26623,
+          "type": "word",
+          "value": "知道"
+        },
+        {
+          "start": 187,
+          "end": 189,
+          "startTime": 26623,
+          "endTime": 26879,
+          "type": "word",
+          "value": "波特"
+        },
+        {
+          "start": 189,
+          "end": 191,
+          "startTime": 26879,
+          "endTime": 27050,
+          "type": "word",
+          "value": "也有"
+        },
+        {
+          "start": 191,
+          "end": 192,
+          "startTime": 27050,
+          "endTime": 27093,
+          "type": "word",
+          "value": "个"
+        },
+        {
+          "start": 192,
+          "end": 194,
+          "startTime": 27093,
+          "endTime": 27434,
+          "type": "word",
+          "value": "儿子"
+        },
+        {
+          "start": 194,
+          "end": 195,
+          "startTime": 27434,
+          "endTime": 27605,
+          "type": "word",
+          "value": "，"
+        },
+        {
+          "start": 195,
+          "end": 197,
+          "startTime": 27605,
+          "endTime": 27775,
+          "type": "word",
+          "value": "只是"
+        },
+        {
+          "start": 197,
+          "end": 199,
+          "startTime": 27775,
+          "endTime": 27946,
+          "type": "word",
+          "value": "他们"
+        },
+        {
+          "start": 199,
+          "end": 203,
+          "startTime": 27946,
+          "endTime": 28287,
+          "type": "word",
+          "value": "从来没有"
+        },
+        {
+          "start": 203,
+          "end": 205,
+          "startTime": 28287,
+          "endTime": 28586,
+          "type": "word",
+          "value": "见过"
+        },
+        {
+          "start": 205,
+          "end": 206,
+          "startTime": 28586,
+          "endTime": 29311,
+          "type": "word",
+          "value": "。"
+        },
+        {
+          "start": 208,
+          "end": 209,
+          "startTime": 29311,
+          "endTime": 29397,
+          "type": "word",
+          "value": "这"
+        },
+        {
+          "start": 209,
+          "end": 211,
+          "startTime": 29397,
+          "endTime": 29695,
+          "type": "word",
+          "value": "孩子"
+        },
+        {
+          "start": 211,
+          "end": 213,
+          "startTime": 29695,
+          "endTime": 29866,
+          "type": "word",
+          "value": "也是"
+        },
+        {
+          "start": 213,
+          "end": 215,
+          "startTime": 29866,
+          "endTime": 30122,
+          "type": "word",
+          "value": "他们"
+        },
+        {
+          "start": 215,
+          "end": 216,
+          "startTime": 30122,
+          "endTime": 30165,
+          "type": "word",
+          "value": "不"
+        },
+        {
+          "start": 216,
+          "end": 217,
+          "startTime": 30165,
+          "endTime": 30378,
+          "type": "word",
+          "value": "与"
+        },
+        {
+          "start": 217,
+          "end": 219,
+          "startTime": 30378,
+          "endTime": 30634,
+          "type": "word",
+          "value": "波特"
+        },
+        {
+          "start": 219,
+          "end": 221,
+          "startTime": 30634,
+          "endTime": 30890,
+          "type": "word",
+          "value": "夫妇"
+        },
+        {
+          "start": 221,
+          "end": 223,
+          "startTime": 30890,
+          "endTime": 31146,
+          "type": "word",
+          "value": "来往"
+        },
+        {
+          "start": 223,
+          "end": 224,
+          "startTime": 31146,
+          "endTime": 31231,
+          "type": "word",
+          "value": "的"
+        },
+        {
+          "start": 224,
+          "end": 226,
+          "startTime": 31231,
+          "endTime": 31402,
+          "type": "word",
+          "value": "一个"
+        },
+        {
+          "start": 226,
+          "end": 228,
+          "startTime": 31402,
+          "endTime": 31743,
+          "type": "word",
+          "value": "很好"
+        },
+        {
+          "start": 228,
+          "end": 229,
+          "startTime": 31743,
+          "endTime": 31829,
+          "type": "word",
+          "value": "的"
+        },
+        {
+          "start": 229,
+          "end": 231,
+          "startTime": 31829,
+          "endTime": 32085,
+          "type": "word",
+          "value": "借口"
+        },
+        {
+          "start": 231,
+          "end": 232,
+          "startTime": 32085,
+          "endTime": 32682,
+          "type": "word",
+          "value": "，"
+        },
+        {
+          "start": 232,
+          "end": 234,
+          "startTime": 32682,
+          "endTime": 32853,
+          "type": "word",
+          "value": "他们"
+        },
+        {
+          "start": 234,
+          "end": 236,
+          "startTime": 32853,
+          "endTime": 33066,
+          "type": "word",
+          "value": "不愿"
+        },
+        {
+          "start": 236,
+          "end": 237,
+          "startTime": 33066,
+          "endTime": 33194,
+          "type": "word",
+          "value": "让"
+        },
+        {
+          "start": 237,
+          "end": 238,
+          "startTime": 33194,
+          "endTime": 33279,
+          "type": "word",
+          "value": "达"
+        },
+        {
+          "start": 238,
+          "end": 239,
+          "startTime": 33279,
+          "endTime": 33450,
+          "type": "word",
+          "value": "力"
+        },
+        {
+          "start": 239,
+          "end": 240,
+          "startTime": 33450,
+          "endTime": 33578,
+          "type": "word",
+          "value": "跟"
+        },
+        {
+          "start": 240,
+          "end": 242,
+          "startTime": 33578,
+          "endTime": 33749,
+          "type": "word",
+          "value": "这种"
+        },
+        {
+          "start": 242,
+          "end": 244,
+          "startTime": 33749,
+          "endTime": 34090,
+          "type": "word",
+          "value": "孩子"
+        },
+        {
+          "start": 244,
+          "end": 246,
+          "startTime": 34090,
+          "endTime": 34389,
+          "type": "word",
+          "value": "厮混"
+        },
+        {
+          "start": 246,
+          "end": 247,
+          "startTime": 34389,
+          "endTime": 34560,
+          "type": "word",
+          "value": "。"
+        }
+      ],
+      "start": 0,
+      "end": 247,
+      "startTime": 0,
+      "endTime": 34560,
+      "type": "sentence",
+      "value": "德 思 礼 一家 什么 都不 缺 ， 但 他们 拥有 一个 秘密 ， 他们 最 害怕 的 就是 这 秘密 会 被人 发现 。 他们 想 ， 一旦 有人 发现 波特 一家 的 事 ， 他们 会 承受 不住 的 。 波特 太太 是 德 思 礼 太太 的 妹妹 ， 不过 她们 已经有 好几 年 不 见面 了 。 实际 上 ， 德 思 礼 太太 伴 装 自己 根本 没有 这么 个 妹妹 ， 因为 她 妹妹 和 她 那一 无 是 处的 妹夫 与 德 思 礼 一家 的 为人 处世 完全 不 一样 。 一 想到 邻居 们 会说 波特 夫妇 来到 了 ， 德 思 礼 夫妇 会 吓 得 胆 战 心 惊 。 他们 知道 波特 也有 个 儿子 ， 只是 他们 从来没有 见过 。 这 孩子 也是 他们 不 与 波特 夫妇 来往 的 一个 很好 的 借口 ， 他们 不愿 让 达 力 跟 这种 孩子 厮混 。"
+    },
+    "humanAudioTimestamps": {
+      "words": [
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 0.599,
+          "end": 0.799,
+          "text": "德",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 0.799,
+          "end": 0.939,
+          "text": "斯",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 0.939,
+          "end": 1.12,
+          "text": "里",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 1.12,
+          "end": 1.199,
+          "text": "一",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 1.199,
+          "end": 1.399,
+          "text": "家",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 1.399,
+          "end": 1.5,
+          "text": "什",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 1.5,
+          "end": 1.62,
+          "text": "么",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 1.62,
+          "end": 1.719,
+          "text": "都",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 1.719,
+          "end": 1.919,
+          "text": "不",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 1.919,
+          "end": 2.119,
+          "text": "缺",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 2.119,
+          "end": 2.779,
+          "text": "，",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 2.779,
+          "end": 2.98,
+          "text": "但",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 2.98,
+          "end": 3.099,
+          "text": "他",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 3.099,
+          "end": 3.24,
+          "text": "们",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 3.24,
+          "end": 3.399,
+          "text": "拥",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 3.399,
+          "end": 3.519,
+          "text": "有",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 3.519,
+          "end": 3.799,
+          "text": "一",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 3.799,
+          "end": 3.819,
+          "text": "个",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 3.819,
+          "end": 4.139,
+          "text": "秘",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 4.139,
+          "end": 4.179,
+          "text": "密",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 4.179,
+          "end": 5.159,
+          "text": "，",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 5.159,
+          "end": 5.279,
+          "text": "他",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 5.279,
+          "end": 5.48,
+          "text": "们",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 5.48,
+          "end": 5.759,
+          "text": "最",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 5.759,
+          "end": 5.96,
+          "text": "害",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 5.96,
+          "end": 6.099,
+          "text": "怕",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 6.099,
+          "end": 6.219,
+          "text": "的",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 6.219,
+          "end": 6.559,
+          "text": "就",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 6.559,
+          "end": 7.079,
+          "text": "是",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 7.079,
+          "end": 7.279,
+          "text": "这",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 7.279,
+          "end": 7.519,
+          "text": "秘",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 7.519,
+          "end": 7.699,
+          "text": "密",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 7.699,
+          "end": 7.839,
+          "text": "会",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 7.839,
+          "end": 7.98,
+          "text": "被",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 7.98,
+          "end": 8.22,
+          "text": "人",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 8.22,
+          "end": 8.5,
+          "text": "发",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 8.5,
+          "end": 8.679,
+          "text": "现",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 8.679,
+          "end": 8.779,
+          "text": "。",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 9.399,
+          "end": 9.599,
+          "text": "他",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 9.599,
+          "end": 9.659,
+          "text": "们",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 9.659,
+          "end": 9.88,
+          "text": "想",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 9.88,
+          "end": 10.899,
+          "text": "，",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 10.899,
+          "end": 11.079,
+          "text": "一",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 11.079,
+          "end": 11.259,
+          "text": "旦",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 11.259,
+          "end": 11.399,
+          "text": "有",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 11.399,
+          "end": 11.599,
+          "text": "人",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 11.599,
+          "end": 11.84,
+          "text": "发",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 11.84,
+          "end": 12.039,
+          "text": "现",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 12.039,
+          "end": 12.239,
+          "text": "波",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 12.239,
+          "end": 12.42,
+          "text": "特",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 12.42,
+          "end": 12.579,
+          "text": "一",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 12.579,
+          "end": 12.699,
+          "text": "家",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 12.699,
+          "end": 12.899,
+          "text": "的",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 12.899,
+          "end": 13.019,
+          "text": "事",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 13.019,
+          "end": 13.659,
+          "text": "，",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 13.659,
+          "end": 13.699,
+          "text": "他",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 13.699,
+          "end": 13.96,
+          "text": "们",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 13.96,
+          "end": 14,
+          "text": "会",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 14,
+          "end": 14.239,
+          "text": "承",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 14.239,
+          "end": 14.42,
+          "text": "受",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 14.42,
+          "end": 14.619,
+          "text": "不",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 14.619,
+          "end": 14.899,
+          "text": "住",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 14.899,
+          "end": 14.939,
+          "text": "的",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 14.939,
+          "end": 15.039,
+          "text": "。",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 16.319,
+          "end": 16.479,
+          "text": "波",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 16.479,
+          "end": 16.639,
+          "text": "特",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 16.639,
+          "end": 16.84,
+          "text": "太",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 16.84,
+          "end": 17.139,
+          "text": "太",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 17.139,
+          "end": 17.299,
+          "text": "是",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 17.299,
+          "end": 17.5,
+          "text": "德",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 17.5,
+          "end": 17.619,
+          "text": "斯",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 17.619,
+          "end": 17.839,
+          "text": "里",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 17.84,
+          "end": 17.979,
+          "text": "太",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 17.979,
+          "end": 18.26,
+          "text": "太",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 18.26,
+          "end": 18.28,
+          "text": "的",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 18.28,
+          "end": 18.559,
+          "text": "妹",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 18.559,
+          "end": 18.6,
+          "text": "妹",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 18.6,
+          "end": 19.279,
+          "text": "，",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 19.279,
+          "end": 19.399,
+          "text": "不",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 19.399,
+          "end": 19.559,
+          "text": "过",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 19.559,
+          "end": 19.879,
+          "text": "姐",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 19.879,
+          "end": 19.899,
+          "text": "妹",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 19.899,
+          "end": 20.119,
+          "text": "俩",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 20.119,
+          "end": 20.359,
+          "text": "已",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 20.359,
+          "end": 20.459,
+          "text": "经",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 20.459,
+          "end": 20.68,
+          "text": "有",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 20.68,
+          "end": 20.939,
+          "text": "好",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 20.939,
+          "end": 21.1,
+          "text": "几",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 21.1,
+          "end": 21.359,
+          "text": "年",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 21.359,
+          "end": 21.479,
+          "text": "不",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 21.479,
+          "end": 21.659,
+          "text": "见",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 21.659,
+          "end": 21.879,
+          "text": "面",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 21.879,
+          "end": 22.039,
+          "text": "了",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 22.039,
+          "end": 22.139,
+          "text": "。",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 22.92,
+          "end": 23.079,
+          "text": "实",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 23.079,
+          "end": 23.299,
+          "text": "际",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 23.299,
+          "end": 23.559,
+          "text": "上",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 23.559,
+          "end": 24.059,
+          "text": "，",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 24.059,
+          "end": 24.239,
+          "text": "德",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 24.239,
+          "end": 24.359,
+          "text": "斯",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 24.359,
+          "end": 24.5,
+          "text": "里",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 24.5,
+          "end": 24.84,
+          "text": "太",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 24.84,
+          "end": 24.86,
+          "text": "太",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 24.86,
+          "end": 25.059,
+          "text": "佯",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 25.059,
+          "end": 25.299,
+          "text": "装",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 25.299,
+          "end": 25.559,
+          "text": "自",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 25.559,
+          "end": 25.76,
+          "text": "己",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 25.76,
+          "end": 26.059,
+          "text": "根",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 26.059,
+          "end": 26.18,
+          "text": "本",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 26.18,
+          "end": 26.34,
+          "text": "没",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 26.34,
+          "end": 26.5,
+          "text": "有",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 26.5,
+          "end": 26.579,
+          "text": "这",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 26.579,
+          "end": 26.68,
+          "text": "么",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 26.68,
+          "end": 26.819,
+          "text": "个",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 26.819,
+          "end": 27.019,
+          "text": "妹",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 27.019,
+          "end": 27.159,
+          "text": "妹",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 27.159,
+          "end": 27.959,
+          "text": "，",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 27.959,
+          "end": 28.079,
+          "text": "因",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 28.079,
+          "end": 28.219,
+          "text": "为",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 28.219,
+          "end": 28.379,
+          "text": "她",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 28.379,
+          "end": 28.619,
+          "text": "妹",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 28.619,
+          "end": 28.719,
+          "text": "妹",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 28.719,
+          "end": 28.84,
+          "text": "和",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 28.84,
+          "end": 28.959,
+          "text": "她",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 28.959,
+          "end": 29.099,
+          "text": "那",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 29.099,
+          "end": 29.239,
+          "text": "一",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 29.239,
+          "end": 29.459,
+          "text": "无",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 29.459,
+          "end": 29.659,
+          "text": "是",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 29.659,
+          "end": 29.76,
+          "text": "处",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 29.76,
+          "end": 29.899,
+          "text": "的",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 29.899,
+          "end": 30.139,
+          "text": "妹",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 30.139,
+          "end": 30.639,
+          "text": "夫",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 30.639,
+          "end": 30.799,
+          "text": "与",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 30.799,
+          "end": 31.019,
+          "text": "德",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 31.019,
+          "end": 31.159,
+          "text": "斯",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 31.159,
+          "end": 31.399,
+          "text": "里",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 31.399,
+          "end": 31.459,
+          "text": "一",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 31.459,
+          "end": 31.559,
+          "text": "家",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 31.559,
+          "end": 31.679,
+          "text": "的",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 31.679,
+          "end": 31.879,
+          "text": "为",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 31.879,
+          "end": 32.059,
+          "text": "人",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 32.059,
+          "end": 32.38,
+          "text": "处",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 32.38,
+          "end": 32.819,
+          "text": "世",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 32.819,
+          "end": 33.099,
+          "text": "完",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 33.099,
+          "end": 33.38,
+          "text": "全",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 33.38,
+          "end": 33.68,
+          "text": "不",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 33.68,
+          "end": 33.7,
+          "text": "一",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 33.7,
+          "end": 33.86,
+          "text": "样",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 33.86,
+          "end": 33.96,
+          "text": "。",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 35,
+          "end": 35.2,
+          "text": "一",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 35.2,
+          "end": 35.5,
+          "text": "想",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 35.5,
+          "end": 35.52,
+          "text": "到",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 35.52,
+          "end": 35.719,
+          "text": "邻",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 35.719,
+          "end": 35.86,
+          "text": "居",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 35.86,
+          "end": 36.02,
+          "text": "们",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 36.02,
+          "end": 36.279,
+          "text": "会",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 36.279,
+          "end": 36.879,
+          "text": "说",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 36.88,
+          "end": 37.059,
+          "text": "波",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 37.059,
+          "end": 37.279,
+          "text": "特",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 37.279,
+          "end": 37.419,
+          "text": "夫",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 37.419,
+          "end": 37.579,
+          "text": "妇",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 37.579,
+          "end": 37.779,
+          "text": "来",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 37.779,
+          "end": 38.479,
+          "text": "了",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 38.479,
+          "end": 38.559,
+          "text": "，",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 38.559,
+          "end": 38.759,
+          "text": "德",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 38.759,
+          "end": 38.899,
+          "text": "斯",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 38.899,
+          "end": 39.099,
+          "text": "里",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 39.099,
+          "end": 39.279,
+          "text": "夫",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 39.279,
+          "end": 39.759,
+          "text": "妇",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 39.759,
+          "end": 40.099,
+          "text": "就",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 40.099,
+          "end": 40.119,
+          "text": "会",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 40.119,
+          "end": 40.419,
+          "text": "吓",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 40.419,
+          "end": 40.439,
+          "text": "得",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 40.439,
+          "end": 40.719,
+          "text": "胆",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 40.719,
+          "end": 41,
+          "text": "战",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 41,
+          "end": 41.259,
+          "text": "心",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 41.259,
+          "end": 41.459,
+          "text": "惊",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 41.459,
+          "end": 41.559,
+          "text": "。",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 42.619,
+          "end": 42.719,
+          "text": "他",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 42.719,
+          "end": 42.879,
+          "text": "们",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 42.879,
+          "end": 43.059,
+          "text": "知",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 43.059,
+          "end": 43.779,
+          "text": "道",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 43.779,
+          "end": 43.979,
+          "text": "波",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 43.979,
+          "end": 44.299,
+          "text": "特",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 44.299,
+          "end": 44.5,
+          "text": "也",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 44.5,
+          "end": 44.68,
+          "text": "有",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 44.68,
+          "end": 44.819,
+          "text": "个",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 44.819,
+          "end": 45.059,
+          "text": "儿",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 45.059,
+          "end": 45.139,
+          "text": "子",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 45.139,
+          "end": 45.779,
+          "text": "，",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 45.779,
+          "end": 45.939,
+          "text": "只",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 45.939,
+          "end": 46.079,
+          "text": "是",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 46.079,
+          "end": 46.18,
+          "text": "他",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 46.18,
+          "end": 46.379,
+          "text": "们",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 46.379,
+          "end": 46.639,
+          "text": "从",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 46.639,
+          "end": 46.819,
+          "text": "来",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 46.819,
+          "end": 46.919,
+          "text": "没",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 46.919,
+          "end": 47.159,
+          "text": "有",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 47.159,
+          "end": 47.379,
+          "text": "见",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 47.379,
+          "end": 47.539,
+          "text": "过",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 47.539,
+          "end": 47.639,
+          "text": "。",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 49.02,
+          "end": 49.279,
+          "text": "这",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 49.279,
+          "end": 49.539,
+          "text": "孩",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 49.539,
+          "end": 50.18,
+          "text": "子",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 50.18,
+          "end": 50.36,
+          "text": "也",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 50.36,
+          "end": 50.5,
+          "text": "是",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 50.5,
+          "end": 50.579,
+          "text": "他",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 50.579,
+          "end": 50.739,
+          "text": "们",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 50.739,
+          "end": 50.879,
+          "text": "不",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 50.879,
+          "end": 51.079,
+          "text": "与",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 51.079,
+          "end": 51.219,
+          "text": "波",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 51.219,
+          "end": 51.399,
+          "text": "特",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 51.399,
+          "end": 51.559,
+          "text": "夫",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 51.559,
+          "end": 51.739,
+          "text": "妇",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 51.739,
+          "end": 51.899,
+          "text": "来",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 51.899,
+          "end": 52.079,
+          "text": "往",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 52.079,
+          "end": 52.199,
+          "text": "的",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 52.199,
+          "end": 52.34,
+          "text": "一",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 52.34,
+          "end": 52.559,
+          "text": "个",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 52.559,
+          "end": 52.86,
+          "text": "很",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 52.86,
+          "end": 53.139,
+          "text": "好",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 53.139,
+          "end": 53.18,
+          "text": "的",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 53.18,
+          "end": 53.379,
+          "text": "借",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 53.379,
+          "end": 53.539,
+          "text": "口",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 53.539,
+          "end": 53.639,
+          "text": "。",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 54.36,
+          "end": 54.539,
+          "text": "他",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 54.539,
+          "end": 54.919,
+          "text": "们",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 54.919,
+          "end": 54.939,
+          "text": "不",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 54.939,
+          "end": 55.139,
+          "text": "愿",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 55.139,
+          "end": 55.34,
+          "text": "让",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 55.34,
+          "end": 55.579,
+          "text": "达",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 55.579,
+          "end": 56.119,
+          "text": "力",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 56.119,
+          "end": 56.36,
+          "text": "跟",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 56.36,
+          "end": 56.559,
+          "text": "这",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 56.559,
+          "end": 56.739,
+          "text": "种",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 56.739,
+          "end": 57.119,
+          "text": "孩",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 57.119,
+          "end": 57.139,
+          "text": "子",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 57.139,
+          "end": 57.36,
+          "text": "厮",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 57.36,
+          "end": 57.479,
+          "text": "混",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 57.479,
+          "end": 57.579,
+          "text": "。",
+          "type": "word"
+        }
+      ],
+      "additional_formats": null,
+      "language_code": "zho",
+      "text": "德斯里一家什么都不缺，但他们拥有一个秘密，他们最害怕的就是这秘密会被人发现。他们想，一旦有人发现波特一家的事，他们会承受不住的。波特太太是德斯里太太的妹妹，不过姐妹俩已经有好几年不见面了。实际上，德斯里太太佯装自己根本没有这么个妹妹，因为她妹妹和她那一无是处的妹夫与德斯里一家的为人处世完全不一样。一想到邻居们会说波特夫妇来了，德斯里夫妇就会吓得胆战心惊。他们知道波特也有个儿子，只是他们从来没有见过。这孩子也是他们不与波特夫妇来往的一个很好的借口。他们不愿让达力跟这种孩子厮混。",
+      "language_probability": 0.9997700452804565
+    },
+    "translations": [
+      {
+        "input": "德思礼一家什么都不缺，但他们拥有一个秘密，他们最害怕的就是这秘密会被人发现。",
+        "pinyin": "Dé sī lǐ yī jiā shén me dōu bù qu缺, dàn tā men yōng yǒu yī gè mì mì, tā men zuì hài pà de jiù shì zhè mì mì huì bèi rén fā xiàn.",
+        "endChunkIndex": 38,
+        "roman": "Désīlǐ yījiā shénme dōu bù quē, dàn tāmen yǒngyǒu yīgè mìmì, tāmen zuì hàipà de jiùshì zhè mìmì huì bèi rén fāxiàn.",
+        "en": "The Dursleys had everything they needed, but they had a secret, and their greatest fear was that someone would discover it.",
+        "startChunkIndex": 0,
+        "lang": "zh",
+        "updatedAt": 1752854466980
+      },
+      {
+        "input": "他们想，一旦有人发现波特一家的事，他们会承受不住的。",
+        "pinyin": "tāmen xiǎng, yī dàn yǒurén fāxiàn bōtè yījiā de shì, tāmen huì chéngshòu bù zhù de.",
+        "endChunkIndex": 64,
+        "roman": "Tāmen xiǎng, yīdàn yǒurén fāxiàn Bōtè yījiā de shì, tāmen huì chéngshòu bù zhù de.",
+        "en": "They thought that if anyone found out about the Potters, they would not be able to bear it.",
+        "startChunkIndex": 38,
+        "lang": "zh",
+        "updatedAt": 1752854465833
+      },
+      {
+        "input": "\n\n波特太太是德思礼太太的妹妹，不过她们已经有好几年不见面了。",
+        "pinyin": "Bōtè tàitài shì Déisīlǐ tàitài de mèimei, búguò tāmen yǐjīng yǒu hǎojǐ nián bùjiànmiàn le.",
+        "endChunkIndex": 95,
+        "roman": "Bōtè tàitài shì Désīlǐ tàitài de mèimei, bùguò tāmen yǐjīng yǒu hǎo jǐ nián bùjiànmiànle.",
+        "en": "Mrs. Potter was Mrs. Dursley's sister, but they had not seen each other for several years.",
+        "startChunkIndex": 64,
+        "lang": "zh",
+        "updatedAt": 1752854466500
+      },
+      {
+        "input": "\n\n实际上，德思礼太太伴装自己根本没有这么个妹妹，因为她妹妹和她那一无是处的妹夫与德思礼一家的为人处世完全不一样。",
+        "pinyin": "shí jì shang, dé sī lǐ tài tài bàn zhuāng zì jǐ gēn běn méi yǒu zhè me gè mèi mèi, yīn wèi tā mèi mèi hé tā nà yī wú shì chù de mèi fū yǔ dé sī lǐ yī jiā de wèi rén chǔ shì wán quán bù yī yàng.",
+        "endChunkIndex": 152,
+        "roman": "Shíjì shang, Désīlǐ tàitài bàn zhuāng zìjǐ gēnběn méiyǒu zhème gè mèimei, yīnwèi tā mèimei hé tā nà yī wú shìchù de mèifū yǔ Désīlǐ yìjiārén de wéirén chǔshì wánquán bù yīyàng.",
+        "en": "In fact, Mrs. Dursley pretended that she didn't have such a sister at all, because her sister and her good-for-nothing brother-in-law were completely different from the Dursleys in their ways of dealing with people.",
+        "startChunkIndex": 95,
+        "lang": "zh",
+        "updatedAt": 1752854467322
+      },
+      {
+        "input": "\n\n一想到邻居们会说波特夫妇来到了，德思礼夫妇会吓得胆战心惊。",
+        "pinyin": "yī xiǎngdào línjūmen huì shuō bōtè fūfù lái dàole, désīlǐ fūfù huì xià de dǎnzhàn xīnjīng.",
+        "endChunkIndex": 183,
+        "roman": "Yī xiǎngdào línjūmen huì shuō Bōtè fūfù lái dào le, Désīlǐ fūfù huì xià de dǎn zhàn xīnjīng.",
+        "en": "The Dursleys would shudder at the thought of their neighbors telling them that the Potters had arrived.",
+        "startChunkIndex": 152,
+        "lang": "zh",
+        "updatedAt": 1752854465930
+      },
+      {
+        "input": "他们知道波特也有个儿子，只是他们从来没有见过。",
+        "pinyin": "tāmen zhīdao bōtè yě yǒu gè érzi, zhǐshì tāmen cónglái méiyǒu jiànguò.",
+        "endChunkIndex": 206,
+        "roman": "Tāmen zhīdào Bōtè yě yǒu gè érzi, zhǐshì tāmen cónglái méiyǒu jiàn guò.",
+        "en": "They knew that Potter also had a son, but they had never seen him.",
+        "startChunkIndex": 183,
+        "lang": "zh",
+        "updatedAt": 1752854465534
+      },
+      {
+        "input": "\n\n这孩子也是他们不与波特夫妇来往的一个很好的借口，他们不愿让达力跟这种孩子厮混。",
+        "pinyin": "zhè háizi yě shì tāmen bù yǔ bōtè fūfù láiwǎng de yī gè hěn hǎo de jiè kǒu, tāmen bù yuàn ràng dá lì gēn zhè zhǒng háizi sīhùn.",
+        "endChunkIndex": 247,
+        "roman": "Zhè háizi yěshì tāmen bù yǔ Bōtè fūfù láiwǎng de yīgè hěn hǎo de jièkǒu, tāmen bù yuàn ràng Dálì gēn zhè zhǒng háizi sīhùn.",
+        "en": "This child was also a good excuse for them not to associate with the Potters. They didn't want Dudley to be around such a child.",
+        "startChunkIndex": 206,
+        "lang": "zh",
+        "updatedAt": 1752854465825
+      }
+    ],
+    "audioFormat": "mp3",
+    "signedUrl": "https://nomadmethod-api-dev-assetsbucket-2u2iqsv5nizc.s3-accelerate.amazonaws.com/01K0F48ZG09T7D2GZNAW7DW02G.mp3?AWSAccessKeyId=ASIA3EL4T6TB5DJRXP73&Content-Type=audio%2Fmpeg&Expires=1752855361&Signature=wjHuCPnwNSdAyF73pe6ENx1%2B43Y%3D&X-Amzn-Trace-Id=Root%3D1-687a6fb4-c388c30da2227e3a783c11f4%3BParent%3D504f3e214524529b%3BSampled%3D0&x-amz-acl=public-read&x-amz-security-token=IQoJb3JpZ2luX2VjEHgaCXVzLWVhc3QtMSJGMEQCIFn9ICMpiycQ3U8j24LMV5I20EjJ5aMdK9qA6GddZxy0AiBb89oze9jy3nEC7pk80KeK6%2B19iKWdFumyWIK9Bjt0dSqcAwiR%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAEaDDc2NTMwMjQwNDI5MSIMF3im%2FmdmbJJL6wHGKvACKMdqgPTDBPorc6JArQVQxY47dwNBCkpk24p8Nssh7cObcLxB0YhNMYVEopKNaZHNpABYrruN8RstBPJHVFj1g7Tk2PLMuDNqbYZoYRmtg2vIodQrCgng90HX23FKZYU3LVK2MdHHNOgovAq3L4UfJWfvoU6nondWekMYjZOaUJmJrk1bTNpvTyiNO9Zv1i%2Fximy1iT2wkp%2B8WPWnBN%2BDFjW4mPFpBa0OAN07QqqKdSlhhRqpqi%2FnheUsWBntlcKIKXRvBBp5kjgPB3DJ20nJ4ZCRVKZpMQOU8SWgmxPWuo9HuvR59wsSYBuDACtgMGqJL4ve8phdnDKzaBUMEXSRAa4mMMyc%2FQh3fZb%2B47Zeyk3%2FOg2xAwxjjVjv4ZMxLsMSFbw1AqjC2ELDqKElIpR%2B6L%2BHFZMtao3n9vBAPexEVIX%2BAesap8nqCCmVTLmditUpJgC79GceywoFNjMTgEDp3wPzTLsMxjYC671mDUiV6eowtN%2FpwwY6ngGMhw1xfkfRqe0gTM14BTsZwfu2M8yDgB5aXKi%2FSDQ62PxI9eeQ5gj4fIctRHvpvmJVgmKkXbFTIJ%2Fxs9Efaio9MyeECf3owS40j9kGfGCwyenbNLscLTJxd2G51LonrnPunoqEZUpTUUF1hRnozwDpBhXQ6UbXg5IFP9jOeAlMPdqrzRtxc87j97Du8vIoYpRk%2FZA46aM43Bz%2BBW8L2A%3D%3D",
+    "billableCharactersCount": 486,
+    "id": "01K0F48ZG09T7D2GZNAW7DW02G",
+    "s3Key": "01K0F48ZG09T7D2GZNAW7DW02G.mp3",
+    "audioUrl": "https://nomadmethod-api-dev-assetsbucket-2u2iqsv5nizc.s3-accelerate.amazonaws.com/01K0F48ZG09T7D2GZNAW7DW02G.mp3?AWSAccessKeyId=ASIA3EL4T6TB6YOCIIAF&Expires=1752960665&Signature=%2FBDehNPWuecXcWd5ACnDJBG1vps%3D&X-Amzn-Trace-Id=Root%3D1-687abd19-102efee01573ed1f77e6df68%3BParent%3D6b3dcc92afe59c94%3BSampled%3D0&x-amz-security-token=IQoJb3JpZ2luX2VjEH4aCXVzLWVhc3QtMSJHMEUCIAeGivlZB%2Bspioycc%2FIjnB1%2F5Bo%2Bj1ig48ZsAX%2Fyu0y1AiEAzhaqNLUKKLFvEc1ggg2R5veYuEcerrTN9i%2FXZ6yvrGwqjQMIl%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgw3NjUzMDI0MDQyOTEiDGLiAaK7wlkGNqsJPirhAjefRihQI5V6BvcZpfe9t6su1spRrAsi0sP2UqQhL7DDgU1VhiWVWNy5jW7trMI9qUCia%2BenRO7UMU1m72c1JAPznLinbpfFjsJODOCeviuWcXPkSZyYr2OqwbcOX2cnOMg5auEHDgHrqRGIfpiIp3uJRJezqMrE%2FlwvbYBlcZK5X5qSiodVJFhkQlIxTOz%2BdrR476oMoXpKIELe8kXhgKTNHq368%2BtDUhlfE0XuFFqZ7d1tKFSXkaSebppANh%2BrieJTobnRxyq8LuXpubvgFrSkn6vqDYqvJWR5cw9LCKC5hL%2FWU95s9ho5zl9ogNLb0OGaOR1tA5bMsBOvUyMRClijv9x9zjVBCRN2lIeKSouhf7Mi80GD504k2v%2BLP2j5v3Xtg3z%2BPkMMchcFRed58AJ%2FcCdDg%2FpbjvGW5p34SCoS4cJObcdy0iZ3ybw%2F9ueAyURwcD4s%2FvIg9qGeFrW4RG8uMIL66sMGOp4BAceOZuMdXHSe24%2Ff5zzhdUATNGXbKQGAq3zZidnx7nGCcfFvBvLGKFjtOHnaIvdjzbwA6xu%2FyC6DIB%2FxKgVqhtEem%2FLRcHG%2FACYbvniSqvn3UJ5YVo7c7N8QhkyiUnF3oAd0b7yUNYqjPXvzoGpydtgV43vpo%2FLOZpxVnskiniIp3I3DqvcOHOL5Dm8fmFA1hPcHliqcfFyYvzI%2Bjfk%3D"
+  }
+}

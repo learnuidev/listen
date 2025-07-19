@@ -16,68 +16,29 @@ const AWS = require("aws-sdk");
 const { tableNames } = require("../../constants/table-names");
 const { removeNull } = require("../../utils/remove-null");
 const { constructParams } = require("../../utils/construct-params");
-const { getMediaById } = require("./get-media.api");
 
 const dynamodb = new AWS.DynamoDB.DocumentClient({
   apiVersion: "2012-08-10",
   region: "us-east-1",
 });
 
-// human media pipeline
-
-// 1 user uploads audio
-// 2 use elevenlabs to convert audio to text
-// 3 save response in media Files under
-
-const audioToTranscript = async ({ audioUrl }) => {
-  return audioUrl;
-};
-
-const updateMediaStatus = async ({ mediaId }) => {
-  const media = await getMediaById(mediaId);
-
+const updateMediaApi = async ({ id, ...rest }) => {
+  // 1. update media status: to "generating-transcript"
   const updatedMedia = constructParams({
     tableName: tableNames.mediaTable,
     attributes: removeNull({
-      id: mediaId,
-      status: media.status.concat({
-        type: "human-audio-timestamps-generated",
-        createdAt: Date.now(),
-      }),
+      id,
+      ...rest,
       lastUpdated: Date.now(),
     }),
     // attributes: params,
   });
 
   await dynamodb.update(updatedMedia).promise();
+
+  return updatedMedia;
 };
 
-const updateMediaFile = async ({ mediaFileId, humanAudioTimestamps }) => {
-  const updatedMediaFile = constructParams({
-    tableName: tableNames.mediaFilesTable,
-    attributes: removeNull({
-      id: mediaFileId,
-      humanAudioTimestamps,
-
-      lastUpdated: Date.now(),
-    }),
-    // attributes: params,
-  });
-
-  await dynamodb.update(updatedMediaFile).promise();
+module.exports = {
+  updateMediaApi,
 };
-
-const pipeline = async ({ audioUrl, mediaId }) => {
-  const humanAudioTimestamps = await audioToTranscript({ audioUrl });
-
-  const media = await getMediaById(mediaId);
-
-  await updateMediaStatus({ media });
-
-  await updateMediaFile({
-    mediaFileId: media.mediaFileId,
-    humanAudioTimestamps,
-  });
-};
-
-pipeline();

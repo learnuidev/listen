@@ -318,9 +318,9 @@ const mockMedia = {
 };
 // console.log(constructSentences(mockMedia.text, "zh"));
 
-addTranslationsApi(mockMedia).then((resp) => {
-  console.log("DONE", resp);
-});
+// addTranslationsApi(mockMedia).then((resp) => {
+//   console.log("DONE", resp);
+// });
 
 module.exports = {
   addTranslationsApi,

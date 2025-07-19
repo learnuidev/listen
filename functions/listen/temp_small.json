@@ -1,0 +1,154 @@
+{
+  "lastUpdated": 1752873840075,
+  "mediaFileId": "01K0F48ZG09T7D2GZNAW7DW02G",
+  "userId": "learnuidev@gmail.com",
+  "customAudioId": "01K0FNYH8QFB14496CG8B57KPN",
+  "status": "transcript-translated[object Object]",
+  "createdAt": 1752854451847,
+  "text": "德思礼一家什么都不缺，但他们拥有一个秘密，他们最害怕的就是这秘密会被人发现。他们想，一旦有人发现波特一家的事，他们会承受不住的。\n\n波特太太是德思礼太太的妹妹，不过她们已经有好几年不见面了。\n\n实际上，德思礼太太伴装自己根本没有这么个妹妹，因为她妹妹和她那一无是处的妹夫与德思礼一家的为人处世完全不一样。\n\n一想到邻居们会说波特夫妇来到了，德思礼夫妇会吓得胆战心惊。他们知道波特也有个儿子，只是他们从来没有见过。\n\n这孩子也是他们不与波特夫妇来往的一个很好的借口，他们不愿让达力跟这种孩子厮混。",
+  "id": "01K0F48NM7SYWHXD9B223KQARA",
+  "lang": "zh",
+  "s3Key": "01K0F48ZG09T7D2GZNAW7DW02G.mp3",
+  "statusHistory": [
+    { "type": "file-added", "createdAt": 1752854451847 },
+    { "type": "generating-transcript", "createdAt": 1752854459000 },
+    { "type": "transcript-generated", "createdAt": 1752854462417 },
+    { "type": "translating-transcript", "createdAt": 1752854462474 },
+    { "type": "transcript-translated", "createdAt": 1752854467362 }
+  ],
+  "type": "text",
+  "customAudioUrl": "https://nomadmethod-api-dev-assetsbucket-2u2iqsv5nizc.s3-accelerate.amazonaws.com/01K0FNYH8QFB14496CG8B57KPN.m4a?AWSAccessKeyId=ASIA3EL4T6TB6YOCIIAF&Expires=1752960665&Signature=ejtWGkPl%2BKaB%2B1gAamx%2FzW0KQnE%3D&X-Amzn-Trace-Id=Root%3D1-687abd19-102efee01573ed1f77e6df68%3BParent%3D6b3dcc92afe59c94%3BSampled%3D0&x-amz-security-token=IQoJb3JpZ2luX2VjEH4aCXVzLWVhc3QtMSJHMEUCIAeGivlZB%2Bspioycc%2FIjnB1%2F5Bo%2Bj1ig48ZsAX%2Fyu0y1AiEAzhaqNLUKKLFvEc1ggg2R5veYuEcerrTN9i%2FXZ6yvrGwqjQMIl%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgw3NjUzMDI0MDQyOTEiDGLiAaK7wlkGNqsJPirhAjefRihQI5V6BvcZpfe9t6su1spRrAsi0sP2UqQhL7DDgU1VhiWVWNy5jW7trMI9qUCia%2BenRO7UMU1m72c1JAPznLinbpfFjsJODOCeviuWcXPkSZyYr2OqwbcOX2cnOMg5auEHDgHrqRGIfpiIp3uJRJezqMrE%2FlwvbYBlcZK5X5qSiodVJFhkQlIxTOz%2BdrR476oMoXpKIELe8kXhgKTNHq368%2BtDUhlfE0XuFFqZ7d1tKFSXkaSebppANh%2BrieJTobnRxyq8LuXpubvgFrSkn6vqDYqvJWR5cw9LCKC5hL%2FWU95s9ho5zl9ogNLb0OGaOR1tA5bMsBOvUyMRClijv9x9zjVBCRN2lIeKSouhf7Mi80GD504k2v%2BLP2j5v3Xtg3z%2BPkMMchcFRed58AJ%2FcCdDg%2FpbjvGW5p34SCoS4cJObcdy0iZ3ybw%2F9ueAyURwcD4s%2FvIg9qGeFrW4RG8uMIL66sMGOp4BAceOZuMdXHSe24%2Ff5zzhdUATNGXbKQGAq3zZidnx7nGCcfFvBvLGKFjtOHnaIvdjzbwA6xu%2FyC6DIB%2FxKgVqhtEem%2FLRcHG%2FACYbvniSqvn3UJ5YVo7c7N8QhkyiUnF3oAd0b7yUNYqjPXvzoGpydtgV43vpo%2FLOZpxVnskiniIp3I3DqvcOHOL5Dm8fmFA1hPcHliqcfFyYvzI%2Bjfk%3D",
+  "mediaFile": {
+    "lastUpdated": 1752873840203,
+    "speechMarks": {
+      "chunks": [
+        {
+          "start": 0,
+          "end": 1,
+          "startTime": 0,
+          "endTime": 299,
+          "type": "word",
+          "value": "德"
+        },
+        {
+          "start": 246,
+          "end": 247,
+          "startTime": 34389,
+          "endTime": 34560,
+          "type": "word",
+          "value": "。"
+        }
+      ],
+      "start": 0,
+      "end": 247,
+      "startTime": 0,
+      "endTime": 34560,
+      "type": "sentence",
+      "value": "德 思 礼 一家 什么 都不 缺 ， 但 他们 拥有 一个 秘密 ， 他们 最 害怕 的 就是 这 秘密 会 被人 发现 。 他们 想 ， 一旦 有人 发现 波特 一家 的 事 ， 他们 会 承受 不住 的 。 波特 太太 是 德 思 礼 太太 的 妹妹 ， 不过 她们 已经有 好几 年 不 见面 了 。 实际 上 ， 德 思 礼 太太 伴 装 自己 根本 没有 这么 个 妹妹 ， 因为 她 妹妹 和 她 那一 无 是 处的 妹夫 与 德 思 礼 一家 的 为人 处世 完全 不 一样 。 一 想到 邻居 们 会说 波特 夫妇 来到 了 ， 德 思 礼 夫妇 会 吓 得 胆 战 心 惊 。 他们 知道 波特 也有 个 儿子 ， 只是 他们 从来没有 见过 。 这 孩子 也是 他们 不 与 波特 夫妇 来往 的 一个 很好 的 借口 ， 他们 不愿 让 达 力 跟 这种 孩子 厮混 。"
+    },
+    "humanAudioTimestamps": {
+      "words": [
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 0.599,
+          "end": 0.799,
+          "text": "德",
+          "type": "word"
+        },
+        {
+          "characters": null,
+          "logprob": 0,
+          "speaker_id": "speaker_0",
+          "start": 57.479,
+          "end": 57.579,
+          "text": "。",
+          "type": "word"
+        }
+      ],
+      "additional_formats": null,
+      "language_code": "zho",
+      "text": "德斯里一家什么都不缺，但他们拥有一个秘密，他们最害怕的就是这秘密会被人发现。他们想，一旦有人发现波特一家的事，他们会承受不住的。波特太太是德斯里太太的妹妹，不过姐妹俩已经有好几年不见面了。实际上，德斯里太太佯装自己根本没有这么个妹妹，因为她妹妹和她那一无是处的妹夫与德斯里一家的为人处世完全不一样。一想到邻居们会说波特夫妇来了，德斯里夫妇就会吓得胆战心惊。他们知道波特也有个儿子，只是他们从来没有见过。这孩子也是他们不与波特夫妇来往的一个很好的借口。他们不愿让达力跟这种孩子厮混。",
+      "language_probability": 0.9997700452804565
+    },
+    "translations": [
+      {
+        "input": "德思礼一家什么都不缺，但他们拥有一个秘密，他们最害怕的就是这秘密会被人发现。",
+        "pinyin": "Dé sī lǐ yī jiā shén me dōu bù qu缺, dàn tā men yōng yǒu yī gè mì mì, tā men zuì hài pà de jiù shì zhè mì mì huì bèi rén fā xiàn.",
+        "endChunkIndex": 38,
+        "roman": "Désīlǐ yījiā shénme dōu bù quē, dàn tāmen yǒngyǒu yīgè mìmì, tāmen zuì hàipà de jiùshì zhè mìmì huì bèi rén fāxiàn.",
+        "en": "The Dursleys had everything they needed, but they had a secret, and their greatest fear was that someone would discover it.",
+        "startChunkIndex": 0,
+        "lang": "zh",
+        "updatedAt": 1752854466980
+      },
+      {
+        "input": "他们想，一旦有人发现波特一家的事，他们会承受不住的。",
+        "pinyin": "tāmen xiǎng, yī dàn yǒurén fāxiàn bōtè yījiā de shì, tāmen huì chéngshòu bù zhù de.",
+        "endChunkIndex": 64,
+        "roman": "Tāmen xiǎng, yīdàn yǒurén fāxiàn Bōtè yījiā de shì, tāmen huì chéngshòu bù zhù de.",
+        "en": "They thought that if anyone found out about the Potters, they would not be able to bear it.",
+        "startChunkIndex": 38,
+        "lang": "zh",
+        "updatedAt": 1752854465833
+      },
+      {
+        "input": "\n\n波特太太是德思礼太太的妹妹，不过她们已经有好几年不见面了。",
+        "pinyin": "Bōtè tàitài shì Déisīlǐ tàitài de mèimei, búguò tāmen yǐjīng yǒu hǎojǐ nián bùjiànmiàn le.",
+        "endChunkIndex": 95,
+        "roman": "Bōtè tàitài shì Désīlǐ tàitài de mèimei, bùguò tāmen yǐjīng yǒu hǎo jǐ nián bùjiànmiànle.",
+        "en": "Mrs. Potter was Mrs. Dursley's sister, but they had not seen each other for several years.",
+        "startChunkIndex": 64,
+        "lang": "zh",
+        "updatedAt": 1752854466500
+      },
+      {
+        "input": "\n\n实际上，德思礼太太伴装自己根本没有这么个妹妹，因为她妹妹和她那一无是处的妹夫与德思礼一家的为人处世完全不一样。",
+        "pinyin": "shí jì shang, dé sī lǐ tài tài bàn zhuāng zì jǐ gēn běn méi yǒu zhè me gè mèi mèi, yīn wèi tā mèi mèi hé tā nà yī wú shì chù de mèi fū yǔ dé sī lǐ yī jiā de wèi rén chǔ shì wán quán bù yī yàng.",
+        "endChunkIndex": 152,
+        "roman": "Shíjì shang, Désīlǐ tàitài bàn zhuāng zìjǐ gēnběn méiyǒu zhème gè mèimei, yīnwèi tā mèimei hé tā nà yī wú shìchù de mèifū yǔ Désīlǐ yìjiārén de wéirén chǔshì wánquán bù yīyàng.",
+        "en": "In fact, Mrs. Dursley pretended that she didn't have such a sister at all, because her sister and her good-for-nothing brother-in-law were completely different from the Dursleys in their ways of dealing with people.",
+        "startChunkIndex": 95,
+        "lang": "zh",
+        "updatedAt": 1752854467322
+      },
+      {
+        "input": "\n\n一想到邻居们会说波特夫妇来到了，德思礼夫妇会吓得胆战心惊。",
+        "pinyin": "yī xiǎngdào línjūmen huì shuō bōtè fūfù lái dàole, désīlǐ fūfù huì xià de dǎnzhàn xīnjīng.",
+        "endChunkIndex": 183,
+        "roman": "Yī xiǎngdào línjūmen huì shuō Bōtè fūfù lái dào le, Désīlǐ fūfù huì xià de dǎn zhàn xīnjīng.",
+        "en": "The Dursleys would shudder at the thought of their neighbors telling them that the Potters had arrived.",
+        "startChunkIndex": 152,
+        "lang": "zh",
+        "updatedAt": 1752854465930
+      },
+      {
+        "input": "他们知道波特也有个儿子，只是他们从来没有见过。",
+        "pinyin": "tāmen zhīdao bōtè yě yǒu gè érzi, zhǐshì tāmen cónglái méiyǒu jiànguò.",
+        "endChunkIndex": 206,
+        "roman": "Tāmen zhīdào Bōtè yě yǒu gè érzi, zhǐshì tāmen cónglái méiyǒu jiàn guò.",
+        "en": "They knew that Potter also had a son, but they had never seen him.",
+        "startChunkIndex": 183,
+        "lang": "zh",
+        "updatedAt": 1752854465534
+      },
+      {
+        "input": "\n\n这孩子也是他们不与波特夫妇来往的一个很好的借口，他们不愿让达力跟这种孩子厮混。",
+        "pinyin": "zhè háizi yě shì tāmen bù yǔ bōtè fūfù láiwǎng de yī gè hěn hǎo de jiè kǒu, tāmen bù yuàn ràng dá lì gēn zhè zhǒng háizi sīhùn.",
+        "endChunkIndex": 247,
+        "roman": "Zhè háizi yěshì tāmen bù yǔ Bōtè fūfù láiwǎng de yīgè hěn hǎo de jièkǒu, tāmen bù yuàn ràng Dálì gēn zhè zhǒng háizi sīhùn.",
+        "en": "This child was also a good excuse for them not to associate with the Potters. They didn't want Dudley to be around such a child.",
+        "startChunkIndex": 206,
+        "lang": "zh",
+        "updatedAt": 1752854465825
+      }
+    ],
+    "audioFormat": "mp3",
+    "signedUrl": "https://nomadmethod-api-dev-assetsbucket-2u2iqsv5nizc.s3-accelerate.amazonaws.com/01K0F48ZG09T7D2GZNAW7DW02G.mp3?AWSAccessKeyId=ASIA3EL4T6TB5DJRXP73&Content-Type=audio%2Fmpeg&Expires=1752855361&Signature=wjHuCPnwNSdAyF73pe6ENx1%2B43Y%3D&X-Amzn-Trace-Id=Root%3D1-687a6fb4-c388c30da2227e3a783c11f4%3BParent%3D504f3e214524529b%3BSampled%3D0&x-amz-acl=public-read&x-amz-security-token=IQoJb3JpZ2luX2VjEHgaCXVzLWVhc3QtMSJGMEQCIFn9ICMpiycQ3U8j24LMV5I20EjJ5aMdK9qA6GddZxy0AiBb89oze9jy3nEC7pk80KeK6%2B19iKWdFumyWIK9Bjt0dSqcAwiR%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAEaDDc2NTMwMjQwNDI5MSIMF3im%2FmdmbJJL6wHGKvACKMdqgPTDBPorc6JArQVQxY47dwNBCkpk24p8Nssh7cObcLxB0YhNMYVEopKNaZHNpABYrruN8RstBPJHVFj1g7Tk2PLMuDNqbYZoYRmtg2vIodQrCgng90HX23FKZYU3LVK2MdHHNOgovAq3L4UfJWfvoU6nondWekMYjZOaUJmJrk1bTNpvTyiNO9Zv1i%2Fximy1iT2wkp%2B8WPWnBN%2BDFjW4mPFpBa0OAN07QqqKdSlhhRqpqi%2FnheUsWBntlcKIKXRvBBp5kjgPB3DJ20nJ4ZCRVKZpMQOU8SWgmxPWuo9HuvR59wsSYBuDACtgMGqJL4ve8phdnDKzaBUMEXSRAa4mMMyc%2FQh3fZb%2B47Zeyk3%2FOg2xAwxjjVjv4ZMxLsMSFbw1AqjC2ELDqKElIpR%2B6L%2BHFZMtao3n9vBAPexEVIX%2BAesap8nqCCmVTLmditUpJgC79GceywoFNjMTgEDp3wPzTLsMxjYC671mDUiV6eowtN%2FpwwY6ngGMhw1xfkfRqe0gTM14BTsZwfu2M8yDgB5aXKi%2FSDQ62PxI9eeQ5gj4fIctRHvpvmJVgmKkXbFTIJ%2Fxs9Efaio9MyeECf3owS40j9kGfGCwyenbNLscLTJxd2G51LonrnPunoqEZUpTUUF1hRnozwDpBhXQ6UbXg5IFP9jOeAlMPdqrzRtxc87j97Du8vIoYpRk%2FZA46aM43Bz%2BBW8L2A%3D%3D",
+    "billableCharactersCount": 486,
+    "id": "01K0F48ZG09T7D2GZNAW7DW02G",
+    "s3Key": "01K0F48ZG09T7D2GZNAW7DW02G.mp3",
+    "audioUrl": "https://nomadmethod-api-dev-assetsbucket-2u2iqsv5nizc.s3-accelerate.amazonaws.com/01K0F48ZG09T7D2GZNAW7DW02G.mp3?AWSAccessKeyId=ASIA3EL4T6TB6YOCIIAF&Expires=1752960665&Signature=%2FBDehNPWuecXcWd5ACnDJBG1vps%3D&X-Amzn-Trace-Id=Root%3D1-687abd19-102efee01573ed1f77e6df68%3BParent%3D6b3dcc92afe59c94%3BSampled%3D0&x-amz-security-token=IQoJb3JpZ2luX2VjEH4aCXVzLWVhc3QtMSJHMEUCIAeGivlZB%2Bspioycc%2FIjnB1%2F5Bo%2Bj1ig48ZsAX%2Fyu0y1AiEAzhaqNLUKKLFvEc1ggg2R5veYuEcerrTN9i%2FXZ6yvrGwqjQMIl%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgw3NjUzMDI0MDQyOTEiDGLiAaK7wlkGNqsJPirhAjefRihQI5V6BvcZpfe9t6su1spRrAsi0sP2UqQhL7DDgU1VhiWVWNy5jW7trMI9qUCia%2BenRO7UMU1m72c1JAPznLinbpfFjsJODOCeviuWcXPkSZyYr2OqwbcOX2cnOMg5auEHDgHrqRGIfpiIp3uJRJezqMrE%2FlwvbYBlcZK5X5qSiodVJFhkQlIxTOz%2BdrR476oMoXpKIELe8kXhgKTNHq368%2BtDUhlfE0XuFFqZ7d1tKFSXkaSebppANh%2BrieJTobnRxyq8LuXpubvgFrSkn6vqDYqvJWR5cw9LCKC5hL%2FWU95s9ho5zl9ogNLb0OGaOR1tA5bMsBOvUyMRClijv9x9zjVBCRN2lIeKSouhf7Mi80GD504k2v%2BLP2j5v3Xtg3z%2BPkMMchcFRed58AJ%2FcCdDg%2FpbjvGW5p34SCoS4cJObcdy0iZ3ybw%2F9ueAyURwcD4s%2FvIg9qGeFrW4RG8uMIL66sMGOp4BAceOZuMdXHSe24%2Ff5zzhdUATNGXbKQGAq3zZidnx7nGCcfFvBvLGKFjtOHnaIvdjzbwA6xu%2FyC6DIB%2FxKgVqhtEem%2FLRcHG%2FACYbvniSqvn3UJ5YVo7c7N8QhkyiUnF3oAd0b7yUNYqjPXvzoGpydtgV43vpo%2FLOZpxVnskiniIp3I3DqvcOHOL5Dm8fmFA1hPcHliqcfFyYvzI%2Bjfk%3D"
+  }
+}

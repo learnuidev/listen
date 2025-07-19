@@ -28,6 +28,8 @@ custom:
     Arn: ${cf:nomadmethod-api-${self:provider.stage}.AssetsBucketArn}
   ContentsTable:
     Name: ${cf:nomadmethod-api-${self:provider.stage}.ContentsTableName}
+  UserAssetsTable:
+    Name: ${cf:nomadmethod-api-${self:provider.stage}.UserAssetsTableName}
   CharactersTable:
     Name: ${cf:nomadmethod-api-${self:provider.stage}.CharactersTableName}
   ComponentsTable:
@@ -137,7 +139,7 @@ functions:
       MEDIA_FILES_TABLE_V2: !Ref MediaFilesTableV2
       MEDIA_ASSETS_BUCKET: ${self:custom.AssetsBucket.Name}
       START_MEDIA_PIPELINE_STEP_FUNCTION:
-        Fn::GetAtt: [start-media-pipeline, Arn]
+        Fn::GetAtt: [StartMediaPipeline, Arn]
       # MEDIA_ASSETS_BUCKET: !Ref MediaAssetsBucket
   add-translations:
     timeout: 300
@@ -147,6 +149,7 @@ functions:
       MEDIA_FILES_TABLE: !Ref MediaFilesTable
       MEDIA_FILES_TABLE_V2: !Ref MediaFilesTableV2
       MEDIA_ASSETS_BUCKET: !Ref MediaAssetsBucket
+      USER_ASSETS_TABLE: ${self:custom.UserAssetsTable.Name}
     events:
       - stream:
           type: dynamodb
@@ -157,6 +160,23 @@ functions:
     events:
       - http:
           path: /v1/get-media
+          method: POST
+          cors: true
+          authorizer:
+            name: CognitoAuthorizer
+            type: COGNITO_USER_POOLS
+            arn: ${self:custom.CognitoUserPool.Arn}
+    environment:
+      MEDIA_TABLE: !Ref MediaTable
+      MEDIA_FILES_TABLE: !Ref MediaFilesTable
+      MEDIA_FILES_TABLE_V2: !Ref MediaFilesTableV2
+      MEDIA_ASSETS_BUCKET: ${self:custom.AssetsBucket.Name}
+      # MEDIA_ASSETS_BUCKET: !Ref MediaAssetsBucket
+  update-media:
+    handler: functions/listen/update-media.handler
+    events:
+      - http:
+          path: /v1/update-media
           method: POST
           cors: true
           authorizer:
