@@ -13,16 +13,14 @@ module.exports.handler = async (event) => {
       await addTranslationsApi(newMedia);
       console.log("Added");
       return;
+    } else if (record.eventName === "MODIFY") {
+      const newMedia = DynamoDB.Converter.unmarshall(record.dynamodb.NewImage);
+
+      await humanMediaPipeline(newMedia);
+
+      console.log("Modified");
+      return;
     }
-
-    // if (record.eventName === "MODIFY") {
-    //   const newMedia = DynamoDB.Converter.unmarshall(record.dynamodb.NewImage);
-
-    //   await humanMediaPipeline(newMedia);
-
-    //   console.log("Modified");
-    //   return;
-    // }
   }
 
   const t1 = performance.now();
