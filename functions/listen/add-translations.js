@@ -15,14 +15,14 @@ module.exports.handler = async (event) => {
       return;
     }
 
-    if (record.eventName === "MODIFY") {
-      const newMedia = DynamoDB.Converter.unmarshall(record.dynamodb.NewImage);
+    // if (record.eventName === "MODIFY") {
+    //   const newMedia = DynamoDB.Converter.unmarshall(record.dynamodb.NewImage);
 
-      await humanMediaPipeline(newMedia);
+    //   await humanMediaPipeline(newMedia);
 
-      console.log("Modified");
-      return;
-    }
+    //   console.log("Modified");
+    //   return;
+    // }
   }
 
   const t1 = performance.now();

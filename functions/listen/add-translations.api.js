@@ -27,6 +27,7 @@ const { mandarinoDeepseek } = require("../../lib/mandarino/mandarino-client");
 const {
   generateTranslations,
 } = require("../../lib/mandarino/generate-translations");
+const { getMediaById } = require("./get-media.api");
 
 const dynamodb = new AWS.DynamoDB.DocumentClient({
   apiVersion: "2012-08-10",
@@ -108,7 +109,8 @@ function constructSentences(text, lang) {
   }
 }
 
-const addTranslationsApi = async (newMedia) => {
+const addTranslationsApi = async (media) => {
+  const newMedia = await getMediaById(media.id);
   let statusHistory = newMedia.statusHistory || [];
 
   const lang = await mandarinoDeepseek.detectLanguage({
@@ -299,22 +301,7 @@ const addTranslationsApi = async (newMedia) => {
 };
 
 const mockMedia = {
-  lastUpdated: 1752759494561,
-  mediaFileId: "01K0C9NNAJS2VXP8ENT7H0P6YJ",
-  userId: "learnuidev@gmail.com",
-  status: "transcript-translated",
-  createdAt: 1752683496716,
-  text: "马克思以前的唯物论，离开人的社会性，离开人的历史发展，去观察认识问题，因此不能了解认识对社会实践的依赖关系，即认识对生产和阶级斗争的依赖关系。",
-  id: "01K0A17H8BYZJ1GD2JVPHYAMZD",
-  lang: "zh",
-  s3Key: "01K0C9NNAJS2VXP8ENT7H0P6YJ.mp3",
-  statusHistory: [
-    {
-      type: "file-added",
-      createdAt: 1752683496716,
-    },
-  ],
-  type: "text",
+  id: "01K0HT6H58NN34S4589DJQMEZF",
 };
 // console.log(constructSentences(mockMedia.text, "zh"));
 

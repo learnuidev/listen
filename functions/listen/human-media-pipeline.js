@@ -247,21 +247,24 @@ const humanMediaPipeline = async (updatedMedia) => {
 
   console.log("pre signed url", audioUrl);
 
-  let humanAudioTimestamps = await audioToTranscriptElevenLabs({
-    audioUrl: audioUrl.preSignedUrl,
-    text: media.text,
-  });
-  // try {
-  //   humanAudioTimestamps = await audioToTranscriptElevenLabs({
-  //     audioUrl: audioUrl.preSignedUrl,
-  //     text: media.text,
-  //   });
-  // } catch (err) {
-  //   humanAudioTimestamps = await audioToTranscriptGemini({
-  //     audioUrl: audioUrl.preSignedUrl,
-  //     text: media.text,
-  //   });
-  // }
+  let humanAudioTimestamps;
+
+  // = await audioToTranscriptElevenLabs({
+  //   audioUrl: audioUrl.preSignedUrl,
+  //   text: media.text,
+  // });
+
+  try {
+    humanAudioTimestamps = await audioToTranscriptElevenLabs({
+      audioUrl: audioUrl.preSignedUrl,
+      text: media.text,
+    });
+  } catch (err) {
+    humanAudioTimestamps = await audioToTranscriptGemini({
+      audioUrl: audioUrl.preSignedUrl,
+      text: media.text,
+    });
+  }
 
   await updateMediaStatus({
     mediaId: updatedMedia.id,
