@@ -21,6 +21,7 @@ const { getMediaById } = require("./get-media.api");
 const { bucketNames } = require("../../constants/bucket-names");
 const { getPresignedUrl } = require("../../lib/s3/get-presigned-url");
 const { elevenLabsApiKey, openAiApiKey } = require("../../constants/api-keys");
+const { chineseConverter } = require("mandarino/src/utils/chinese-converter");
 
 const { parseInput } = require("mandarino/src/utils/parse-input");
 
@@ -29,6 +30,7 @@ const elevenlabs = new ElevenLabsClient({
 });
 
 const OpenAI = require("openai");
+const { speechToText } = require("../../lib/google/speech-to-text");
 
 const openai = new OpenAI({
   apiKey: openAiApiKey,
@@ -115,7 +117,7 @@ const dynamodb = new AWS.DynamoDB.DocumentClient({
 // 2 use elevenlabs to convert audio to text
 // 3 save response in media Files under
 
-const audioToTranscript = async ({ audioUrl }) => {
+const audioToTranscriptElevenLabs = async ({ audioUrl }) => {
   const response = await fetch(audioUrl);
   const audioBlob = new Blob([await response.arrayBuffer()], {
     type: "audio/mp3",
@@ -148,6 +150,32 @@ const audioToTranscript = async ({ audioUrl }) => {
         endTime: word?.end * 1000,
         type: word?.type,
         value: word?.text,
+      };
+    }),
+  };
+};
+const audioToTranscriptGemini = async ({ audioUrl, text }) => {
+  const response = await speechToText({ audioUrl, text });
+
+  return {
+    text,
+
+    words: response.map((word, idx, ctx) => {
+      const start = ctx
+        ?.slice(0, idx)
+        ?.reduce((acc, curr) => acc + curr?.text?.length, 0);
+
+      const end = start + word?.text?.length;
+
+      chineseConverter;
+      return {
+        speakerId: word?.speaker_id,
+        start: idx == 0 ? 0 : start,
+        end: idx === 0 ? word?.text?.length : end,
+        startTime: word?.start * 1000,
+        endTime: word?.end * 1000,
+        type: word?.type,
+        value: chineseConverter(word?.text),
       };
     }),
   };
@@ -220,8 +248,9 @@ const humanMediaPipeline = async (updatedMedia) => {
   });
 
   console.log("pre signed url", audioUrl);
-  const humanAudioTimestamps = await audioToTranscript({
+  const humanAudioTimestamps = await audioToTranscriptElevenLabs({
     audioUrl: audioUrl.preSignedUrl,
+    text: media.text,
   });
 
   await updateMediaStatus({
@@ -266,11 +295,11 @@ const humanMediaPipeline = async (updatedMedia) => {
   });
 };
 
-humanMediaPipeline({
-  id: "01K0F48NM7SYWHXD9B223KQARA",
-}).then((resp) => {
-  console.log("yoo", resp);
-});
+// humanMediaPipeline({
+//   id: "01K0F48NM7SYWHXD9B223KQARA",
+// }).then((resp) => {
+//   console.log("yoo", resp);
+// });
 
 module.exports = {
   humanMediaPipeline,
