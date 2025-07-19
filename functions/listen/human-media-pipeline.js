@@ -239,8 +239,6 @@ const humanMediaPipeline = async (updatedMedia) => {
     return;
   }
 
-  console.log("USER ASSET", userAsset);
-
   // get presigned url
   const audioUrl = await getPresignedUrl({
     bucketName: bucketNames.mediaAssetsBucket,

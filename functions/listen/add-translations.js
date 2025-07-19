@@ -11,16 +11,17 @@ module.exports.handler = async (event) => {
       const newMedia = DynamoDB.Converter.unmarshall(record.dynamodb.NewImage);
 
       await addTranslationsApi(newMedia);
-
-      console.log("done");
+      console.log("Added");
+      return;
     }
 
-    if (record.eventName === "UPDATE") {
+    if (record.eventName === "MODIFY") {
       const newMedia = DynamoDB.Converter.unmarshall(record.dynamodb.NewImage);
 
       await humanMediaPipeline(newMedia);
 
-      console.log("DONE");
+      console.log("Modified");
+      return;
     }
   }
 
