@@ -2,17 +2,21 @@
 const middy = require("@middy/core");
 const cors = require("@middy/http-cors");
 
-const { listBooksByUserId } = require("./list-books.api");
+const { listSectionsByChapterId } = require("./list-chapter-sections.api");
 
 module.exports.handler = middy(async (event) => {
   try {
-    const { lastEvaulatedKey } = JSON.parse(event.body);
+    const { lastEvaulatedKey, chapterId } = JSON.parse(event.body);
     const userId = event.requestContext.authorizer.claims.email;
 
-    const medias = await listBooksByUserId({ userId, lastEvaulatedKey });
+    const chapterSections = await listSectionsByChapterId({
+      userId,
+      chapterId,
+      lastEvaulatedKey,
+    });
     const response = {
       statusCode: 200,
-      body: JSON.stringify(medias),
+      body: JSON.stringify(chapterSections),
     };
 
     return response;

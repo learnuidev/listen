@@ -60,12 +60,12 @@ const updateBookApi = async ({ id, ...rest }) => {
   return { ...book, ...updatedAttributes };
 };
 
-updateBookApi({
-  id: "01K0JCW67AX9JRY2ZSD00075TW",
-  chapters: [{ title: "第3章 猫头鹰传书", chapterNumber: 3 }],
-}).then((updatedBook) => {
-  console.log("updated book", updatedBook);
-});
+// updateBookApi({
+//   id: "01K0JCW67AX9JRY2ZSD00075TW",
+//   chapters: [{ title: "第3章 猫头鹰传书", chapterNumber: 3 }],
+// }).then((updatedBook) => {
+//   console.log("updated book", updatedBook);
+// });
 
 module.exports = {
   updateBookApi,

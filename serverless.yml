@@ -342,7 +342,7 @@ functions:
     environment:
       BOOKS_TABLE: !Ref BooksTable
       CHAPTER_SECTIONS_TABLE: !Ref ChapterSectionsTable
-  list-chapter-detailsx:
+  list-chapter-sections:
     handler: functions/book/list-chapter-sections.handler
     events:
       - http:
