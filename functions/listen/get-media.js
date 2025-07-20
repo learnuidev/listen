@@ -1,13 +1,12 @@
 // Middlewares
 const middy = require("@middy/core");
 const cors = require("@middy/http-cors");
-const AWS = require("aws-sdk");
 
 const { getMediaFile } = require("./get-media-file.api");
 const { getMediaById } = require("./get-media.api");
 const { getPresignedUrl } = require("../../lib/s3/get-presigned-url");
 const { bucketNames } = require("../../constants/bucket-names");
-const { tableNames } = require("../../constants/table-names");
+const { getUserAsset } = require("../book/get-user-asset.api");
 
 const _getMediaById = async (contentId, userId) => {
   const media = await getMediaById(contentId);
@@ -18,11 +17,6 @@ const _getMediaById = async (contentId, userId) => {
 
   return null;
 };
-
-const dynamodb = new AWS.DynamoDB.DocumentClient({
-  apiVersion: "2012-08-10",
-  region: "us-east-1",
-});
 
 const getContentByIdHandler = async (event) => {
   try {
@@ -41,16 +35,7 @@ const getContentByIdHandler = async (event) => {
     }
 
     if (media?.customAudioId) {
-      const userAsset = (
-        await dynamodb
-          .get({
-            TableName: tableNames.userAssetsTable,
-            Key: {
-              id: media.customAudioId,
-            },
-          })
-          .promise()
-      )?.Item;
+      const userAsset = await getUserAsset(media.customAudioId);
 
       const audioUrl = await getPresignedUrl({
         bucketName: bucketNames.mediaAssetsBucket,

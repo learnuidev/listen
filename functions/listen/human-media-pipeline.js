@@ -31,11 +31,13 @@ const elevenlabs = new ElevenLabsClient({
 
 const OpenAI = require("openai");
 const { speechToText } = require("../../lib/google/speech-to-text");
+const { getUserAsset } = require("../book/get-user-asset.api");
 
 const openai = new OpenAI({
   apiKey: openAiApiKey,
 });
 
+// eslint-disable-next-line no-unused-vars
 const postProcess = async ({ originalText, aiText, aiChunks }) => {
   const systemContent = `
 
@@ -221,16 +223,7 @@ const humanMediaPipeline = async (updatedMedia) => {
     return;
   }
 
-  const userAsset = (
-    await dynamodb
-      .get({
-        TableName: tableNames.userAssetsTable,
-        Key: {
-          id: media.customAudioId,
-        },
-      })
-      .promise()
-  )?.Item;
+  const userAsset = await getUserAsset(media.customAudioId);
 
   if (!userAsset) {
     console.log(

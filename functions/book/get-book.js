@@ -2,6 +2,7 @@ const middy = require("@middy/core");
 const cors = require("@middy/http-cors");
 
 const { getBookById } = require("./get-book.api");
+const { addCoverPhotoUrl } = require("./add-cover-photo-url");
 
 module.exports.handler = middy(async (event) => {
   const userId = event.requestContext.authorizer.claims.email;
@@ -9,7 +10,7 @@ module.exports.handler = middy(async (event) => {
   try {
     const { bookId } = JSON.parse(event.body);
 
-    const book = await getBookById(bookId);
+    let book = await getBookById(bookId);
 
     if (book.userId !== userId) {
       const response = {
@@ -18,6 +19,10 @@ module.exports.handler = middy(async (event) => {
       };
 
       return response;
+    }
+
+    if (book?.coverPhotoId) {
+      book = await addCoverPhotoUrl(book);
     }
 
     const response = {

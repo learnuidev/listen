@@ -6,6 +6,7 @@ const AWS = require("aws-sdk");
 const S3 = require("aws-sdk/clients/s3");
 const { tableNames } = require("../../constants/table-names");
 const { bucketNames } = require("../../constants/bucket-names");
+const { getUserAsset } = require("../book/get-user-asset.api");
 const s3 = new S3({ useAccelerateEndpoint: true });
 
 const dynamodb = new AWS.DynamoDB.DocumentClient({
@@ -13,17 +14,8 @@ const dynamodb = new AWS.DynamoDB.DocumentClient({
   region: "us-east-1",
 });
 
-const getUserAsset = async ({ userId, id }) => {
-  const resp = await dynamodb
-    .get({
-      Key: {
-        id,
-      },
-      TableName: tableNames.userAssetsTable,
-    })
-    .promise();
-
-  const character = resp.Item;
+const _getUserAsset = async ({ userId, id }) => {
+  const character = await getUserAsset(id);
 
   if (character?.userId === userId) {
     return character;
@@ -34,7 +26,7 @@ const getUserAsset = async ({ userId, id }) => {
 
 const deleteUserAssetApi = async ({ userId, id }) => {
   try {
-    const userAsset = await getUserAsset({ id, userId });
+    const userAsset = await _getUserAsset({ id, userId });
 
     if (!userAsset) {
       return `User asset for ${id} not found`;
