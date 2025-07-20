@@ -1,15 +1,22 @@
 const middy = require("@middy/core");
 const cors = require("@middy/http-cors");
 
-const { deleteBookApi } = require("./delete-book.api");
+const { addBookApi } = require("./add-book.api");
 
 module.exports.handler = middy(async (event) => {
   const userId = event.requestContext.authorizer.claims.email;
 
   try {
-    const { bookId } = JSON.parse(event.body);
+    const { title, author, chapters, tags, lang } = JSON.parse(event.body);
 
-    const params = await deleteBookApi({ bookId, userId });
+    const params = await addBookApi({
+      title,
+      author,
+      chapters,
+      tags,
+      lang,
+      userId,
+    });
 
     const response = {
       statusCode: 200,

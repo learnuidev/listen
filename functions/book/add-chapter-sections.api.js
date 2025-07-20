@@ -17,7 +17,7 @@ const addChapterSectionsApi = async ({ chapterId, sections }) => {
         PutRequest: {
           Item: removeNull({
             chapterId,
-            title: section.title,
+            title: section.title?.slice(0, 48),
             sectionNumber: section?.sectionNumber,
             id: section?.mediaId,
             createdAt: Date.now(),

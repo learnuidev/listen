@@ -225,6 +225,23 @@ functions:
       MEDIA_FILES_TABLE_V2: !Ref MediaFilesTableV2
       MEDIA_ASSETS_BUCKET: ${self:custom.AssetsBucket.Name}
       # MEDIA_ASSETS_BUCKET: !Ref MediaAssetsBucket
+  delete-media:
+    handler: functions/listen/delete-media.handler
+    events:
+      - http:
+          path: /v1/delete-media
+          method: POST
+          cors: true
+          authorizer:
+            name: CognitoAuthorizer
+            type: COGNITO_USER_POOLS
+            arn: ${self:custom.CognitoUserPool.Arn}
+    environment:
+      MEDIA_TABLE: !Ref MediaTable
+      MEDIA_FILES_TABLE: !Ref MediaFilesTable
+      MEDIA_FILES_TABLE_V2: !Ref MediaFilesTableV2
+      MEDIA_ASSETS_BUCKET: ${self:custom.AssetsBucket.Name}
+      # MEDIA_ASSETS_BUCKET: !Ref MediaAssetsBucket
   get-upload-url:
     handler: functions/media/get-upload-url.handler
     events:
@@ -281,6 +298,19 @@ functions:
     events:
       - http:
           path: /v1/list-books
+          method: POST
+          cors: true
+          authorizer:
+            name: CognitoAuthorizer
+            type: COGNITO_USER_POOLS
+            arn: ${self:custom.CognitoUserPool.Arn}
+    environment:
+      BOOKS_TABLE: !Ref BooksTable
+  add-book:
+    handler: functions/book/add-book.handler
+    events:
+      - http:
+          path: /v1/add-book
           method: POST
           cors: true
           authorizer:

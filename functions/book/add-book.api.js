@@ -5,7 +5,7 @@ const { tableNames } = require("../../constants/table-names");
 const ulid = require("ulid");
 const { removeNull } = require("../../utils/remove-null");
 
-const addBookApi = async ({ userId, title, author, chapters, tags }) => {
+const addBookApi = async ({ userId, title, author, chapters, tags, lang }) => {
   const dynamodb = new AWS.DynamoDB.DocumentClient({
     apiVersion: "2012-08-10",
     region: "us-east-1",
@@ -32,6 +32,7 @@ const addBookApi = async ({ userId, title, author, chapters, tags }) => {
     title,
     author,
     tags,
+    lang,
     chapters: _chapters,
     createdAt: Date.now(),
   });
