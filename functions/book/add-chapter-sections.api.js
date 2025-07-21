@@ -1,6 +1,7 @@
 const AWS = require("aws-sdk");
 const { removeNull } = require("../../utils/remove-null");
 const { tableNames } = require("../../constants/table-names");
+const ulid = require("ulid");
 
 // Middlewares
 
@@ -19,7 +20,8 @@ const addChapterSectionsApi = async ({ chapterId, sections }) => {
             chapterId,
             title: section.title?.slice(0, 48),
             sectionNumber: section?.sectionNumber,
-            id: section?.mediaId,
+            id: ulid.ulid(),
+            mediaId: section?.mediaId,
             createdAt: Date.now(),
           }),
         },

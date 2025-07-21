@@ -31,8 +31,12 @@ const listSectionsByChapterId = async ({ chapterId, lastEvaulatedKey }) => {
 
   const items = await Promise.all(
     resp?.Items?.map(async (item) => {
-      const media = await getMediaById(item?.id);
-      return media;
+      const media = await getMediaById(item?.mediaId);
+      return {
+        title: item?.title,
+        sectionNumber: item?.sectionNumber,
+        ...media,
+      };
     })
   );
 
