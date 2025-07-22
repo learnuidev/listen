@@ -32,7 +32,7 @@ async function createAudio(input) {
 }
 
 const createAudioApi = async ({ text, lang }) => {
-  const id = `${text}_${lang}`;
+  const id = `${text}#${lang}`;
 
   // 2. send text to speewchify api
   const speechifyResponse = await textToAudio(text, {

@@ -7,9 +7,7 @@ module.exports.handler = middy(async (event) => {
   try {
     const { text, lang } = JSON.parse(event.body);
 
-    const audioId = `${text}#{lang}`;
-
-    let audio = await getAudioByIdApi(audioId);
+    let audio = await getAudioByIdApi({ text, lang });
 
     if (audio) {
       const response = {
@@ -21,7 +19,7 @@ module.exports.handler = middy(async (event) => {
     } else {
       await createAudioApi({ text, lang });
 
-      const audio = await getAudioByIdApi(audioId);
+      const audio = await getAudioByIdApi({ text, lang });
 
       const response = {
         statusCode: 200,

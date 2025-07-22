@@ -11,7 +11,8 @@ const { tableNames } = require("../../constants/table-names");
 const { getPresignedUrl } = require("../../lib/s3/get-presigned-url");
 const { bucketNames } = require("../../constants/bucket-names");
 
-const getAudioByIdApi = async (audioId) => {
+const getAudioByIdApi = async ({ text, lang }) => {
+  const audioId = `${text}#${lang}`;
   const resp = await dynamodb
     .get({
       Key: {
@@ -33,9 +34,7 @@ const getAudioByIdApi = async (audioId) => {
   }
 };
 
-// getBookById("01K0JCW67AX9JRY2ZSD00075TW").then((book) => {
-//   console.log("book", book);
-// });
+getAudioByIdApi(``);
 
 module.exports = {
   getAudioByIdApi,
