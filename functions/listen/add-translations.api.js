@@ -117,8 +117,6 @@ const addTranslationsApi = async (media) => {
     content: newMedia.text,
   });
 
-  console.log("LANG", lang);
-
   statusHistory = statusHistory.concat({
     type: "generating-transcript",
     createdAt: Date.now(),
@@ -190,7 +188,7 @@ const addTranslationsApi = async (media) => {
   }
 
   // 5. also store transcript in media-files table as well
-  const mediaFile = await createMediaFile({ ...resp, ...rest });
+  const mediaFile = await createMediaFile({ s3Key, ...rest });
 
   // 6. take the id and store it in media table as well as update the status
   statusHistory = statusHistory.concat({
@@ -300,6 +298,7 @@ const addTranslationsApi = async (media) => {
   return true;
 };
 
+// eslint-disable-next-line no-unused-vars
 const mockMedia = {
   id: "01K0HT6H58NN34S4589DJQMEZF",
 };

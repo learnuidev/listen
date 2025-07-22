@@ -23,7 +23,7 @@ async function createAudio(input) {
 
   const inputParams = {
     Item: { s3Key, id, ...rest, lastUpdated: Date.now() },
-    TableName: tableNames.booksTable,
+    TableName: tableNames.textToSpeechTable,
   };
 
   await dynamodb.put(inputParams).promise();
@@ -71,9 +71,13 @@ const createAudioApi = async ({ text, lang }) => {
     throw new Error(`Upload failed: ${fetchResponse.statusText}`);
   }
 
-  const mediaFile = await createAudio({ ...resp, ...rest, id });
+  const newAudio = await createAudio({
+    s3Key: resp.s3Key,
+    speechMarks: rest.speechMarks,
+    id,
+  });
 
-  return mediaFile;
+  return newAudio;
 };
 
 module.exports = {

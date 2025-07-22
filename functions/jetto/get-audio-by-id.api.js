@@ -32,6 +32,8 @@ const getAudioByIdApi = async ({ text, lang }) => {
 
     return { ...audio, audioUrl: presignedUrl.preSignedUrl };
   }
+
+  return audio;
 };
 
 module.exports = {
