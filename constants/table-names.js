@@ -10,6 +10,7 @@ const tableNamesLocal = {
 
   booksTable: "listen-api-dev-BooksTable-NPGUL667QXPY",
   chapterSectionsTable: "listen-api-dev-ChapterSectionsTable-1K5V04WQLPZN2",
+  textToSpeechTable: "listen-api-dev-TextToSpeechTable-RKHUASCCQE4Y",
 };
 
 const tableNames = isLocalEnv()
@@ -21,6 +22,7 @@ const tableNames = isLocalEnv()
       userAssetsTable: process.env.USER_ASSETS_TABLE,
       booksTable: process.env.BOOKS_TABLE,
       chapterSectionsTable: process.env.CHAPTER_SECTIONS_TABLE,
+      textToSpeechTable: process.env.TEXT_TO_SPEECH_TABLE,
     };
 
 module.exports = {

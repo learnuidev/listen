@@ -386,6 +386,19 @@ functions:
     environment:
       BOOKS_TABLE: !Ref BooksTable
       CHAPTER_SECTIONS_TABLE: !Ref ChapterSectionsTable
+  get-audio:
+    handler: functions/jetto/get-audio.handler
+    events:
+      - http:
+          path: /v1/get-audio
+          method: POST
+          cors: true
+          authorizer:
+            name: CognitoAuthorizer
+            type: COGNITO_USER_POOLS
+            arn: ${self:custom.CognitoUserPool.Arn}
+    environment:
+      TEXT_TO_SPEECH_TABLE: !Ref TextToSpeechTable
 
 resources:
   Resources:
@@ -562,3 +575,21 @@ resources:
             Value: ${self:custom.stage}
           - Key: Name
             Value: chapter-sections-table
+    TextToSpeechTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        BillingMode: PAY_PER_REQUEST
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+        StreamSpecification:
+          StreamViewType: NEW_AND_OLD_IMAGES
+        Tags:
+          # To keep track of user table for diffeent environment
+          - Key: Environment
+            Value: ${self:custom.stage}
+          - Key: Name
+            Value: text-to-speech-table
