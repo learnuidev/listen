@@ -1,8 +1,8 @@
 const { getAudioByIdApi } = require("./get-audio-by-id.api");
-// const { createAudioApi } = require("./create-audio.api");
+const { createAudioApi } = require("./create-audio.api");
 const { textToAudio } = require("../../lib/narakeet/text-to-audio");
 
-const getAudioApi = async ({ text, lang }) => {
+const getAudioApi = async ({ text, lang, provider = "narakeet" }) => {
   if (!text || !lang) {
     throw new Error("Lang or text required");
   }
@@ -12,8 +12,11 @@ const getAudioApi = async ({ text, lang }) => {
   if (audio) {
     return audio;
   } else {
-    await textToAudio({ text, lang });
-    // await createAudioApi({ text, lang });
+    if (provider === "speechify") {
+      await textToAudio({ text, lang });
+    } else {
+      await createAudioApi({ text, lang });
+    }
 
     const audio = await getAudioByIdApi({ text, lang });
 
