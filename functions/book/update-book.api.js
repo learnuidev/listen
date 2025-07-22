@@ -31,16 +31,20 @@ const updateBookApi = async ({ id, ...rest }) => {
 
   let _chapters;
   if (rest.chapters?.length > 0) {
-    _chapters = book.chapters.concat(
-      rest.chapters.map((chapter) => {
-        return removeNull({
-          title: chapter.title,
-          chapterNumber: chapter?.chapterNumber,
-          id: ulid.ulid(),
-          createdAt: Date.now(),
-        });
-      })
-    );
+    _chapters = rest.chapters.map((chapter) => {
+      const newId = ulid.ulid();
+      const chapterId = chapter?.id
+        ? chapter?.id?.includes("temp")
+          ? newId
+          : chapter?.id
+        : newId;
+      return removeNull({
+        title: chapter.title,
+        chapterNumber: chapter?.chapterNumber,
+        id: chapterId,
+        createdAt: Date.now(),
+      });
+    });
   }
 
   const updatedAttributes = {
