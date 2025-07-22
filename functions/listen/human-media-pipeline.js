@@ -32,6 +32,7 @@ const elevenlabs = new ElevenLabsClient({
 const OpenAI = require("openai");
 const { speechToText } = require("../../lib/google/speech-to-text");
 const { getUserAsset } = require("../book/get-user-asset.api");
+const { getMediaFile } = require("./get-media-file.api");
 
 const openai = new OpenAI({
   apiKey: openAiApiKey,
@@ -221,6 +222,13 @@ const humanMediaPipeline = async (updatedMedia) => {
   if (!media.customAudioId) {
     console.log("NO custom audio id added, skipping");
     return;
+  }
+
+  const mediaFile = await getMediaFile(media?.mediaFileId);
+
+  if (mediaFile?.humanAudioTimestamps) {
+    console.log(`Human media file exists.. skipping`);
+    return null;
   }
 
   const userAsset = await getUserAsset(media.customAudioId);

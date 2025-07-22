@@ -16,6 +16,7 @@ const AWS = require("aws-sdk");
 const { tableNames } = require("../../constants/table-names");
 const { removeNull } = require("../../utils/remove-null");
 const { constructParams } = require("../../utils/construct-params");
+const ulid = require("ulid");
 const {
   textToAudio,
   defaultVoiceId,
@@ -28,6 +29,7 @@ const {
   generateTranslations,
 } = require("../../lib/mandarino/generate-translations");
 const { getMediaById } = require("./get-media.api");
+const { getMediaFile } = require("./get-media-file.api");
 
 const dynamodb = new AWS.DynamoDB.DocumentClient({
   apiVersion: "2012-08-10",
@@ -35,11 +37,18 @@ const dynamodb = new AWS.DynamoDB.DocumentClient({
 });
 
 async function createMediaFile(input) {
-  const { userId, s3Key, id, ...rest } = input;
-  const params = removeNull(input);
+  const { userId, s3Key, ...rest } = input;
+  const id = ulid.ulid();
+  const params = removeNull({
+    s3Key,
+    id,
+    userId,
+    ...rest,
+    lastUpdated: Date.now(),
+  });
 
   const inputParams = {
-    Item: { s3Key, id, userId, ...rest, lastUpdated: Date.now() },
+    Item: params,
     TableName: tableNames.mediaFilesTable,
   };
 
@@ -110,17 +119,25 @@ function constructSentences(text, lang) {
 }
 
 const addTranslationsApi = async (media) => {
+  console.log(`Fetching media of id: ${media.id}`);
   const newMedia = await getMediaById(media.id);
-  let statusHistory = newMedia.statusHistory || [];
 
+  console.log("media successfully fetched");
+  let statusHistory = [];
+
+  console.log(`Detecting language...`);
   const lang = await mandarinoDeepseek.detectLanguage({
     content: newMedia.text,
   });
+
+  console.log(`Langauge successfully detected: ${lang}`);
 
   statusHistory = statusHistory.concat({
     type: "generating-transcript",
     createdAt: Date.now(),
   });
+
+  console.log(`Generating script`);
 
   // 1. update media status: to "generating-transcript"
   const updatedContent = constructParams({
@@ -137,11 +154,90 @@ const addTranslationsApi = async (media) => {
 
   await dynamodb.update(updatedContent).promise();
 
+  if (newMedia?.mediaFileId) {
+    console.log(`Media file exists skipping...`);
+
+    const mediaFile = await getMediaFile(newMedia?.mediaFileId);
+
+    if (mediaFile?.translations?.length > 0) {
+      console.log("Translations exist... skipping");
+
+      return;
+    }
+
+    const sentences = constructSentences(newMedia.text, lang).map((item) => {
+      // if (idx === 0) {
+      //   return {
+      //     ...item,
+      //     startChunkIndex: 0,
+      //     endChunkIndex: item.input.length,
+      //   };
+      // }
+
+      // const startChunkIndex = ctx
+      //   .filter((val, idy) => idy < idx)
+      //   .reduce((acc, curr) => {
+      //     return acc + curr.input.length;
+      //   }, 0);
+
+      const startChunkIndex = newMedia.text.indexOf(item.input);
+      const endChunkIndex = startChunkIndex + item?.input?.length;
+
+      return {
+        ...item,
+        startChunkIndex,
+        endChunkIndex,
+      };
+    });
+
+    const translations = await generateTranslations(sentences);
+
+    console.log(`Sentences successfully translated...`);
+
+    await dynamodb
+      .update(
+        constructParams({
+          tableName: tableNames.mediaFilesTable,
+          attributes: removeNull({
+            id: mediaFile.id,
+            translations,
+            lastUpdated: Date.now(),
+          }),
+        })
+      )
+      .promise();
+
+    // 9. once the trascript has been translated, set the status to 'transcript-translated'
+    statusHistory = statusHistory.concat({
+      type: "transcript-translated",
+      createdAt: Date.now(),
+    });
+
+    await dynamodb
+      .update(
+        constructParams({
+          tableName: tableNames.mediaTable,
+          attributes: removeNull({
+            id: newMedia.id,
+            mediaFileId: mediaFile.id,
+            statusHistory,
+            status: "transcript-translated",
+            lastUpdated: Date.now(),
+          }),
+        })
+      )
+      .promise();
+
+    return true;
+  }
+
   // 2. send text to speewchify api
   const speechifyResponse = await textToAudio(newMedia.text, {
     voiceId: defaultVoiceId,
     lang,
   });
+
+  console.log(`Speechify transcript generated...`);
 
   const { audioData, ...rest } = speechifyResponse;
 
@@ -161,6 +257,7 @@ const addTranslationsApi = async (media) => {
 
   // 3. convert audio to mp3 and save it in media assets s3 bucket (get presigned url first: copy from nomadmethod)
 
+  console.log(`Fetching upload url...`);
   const resp = await getUploadUrl({
     userId: newMedia.userId,
     contentType,
@@ -168,9 +265,13 @@ const addTranslationsApi = async (media) => {
     extension: "mp3",
   });
 
+  console.log(`Fetched upload url`);
+
   const { s3Key } = resp;
 
   // console.log("Resp", resp);
+
+  console.log(`Uploading assets...`);
 
   // 4. once s3 is saved, save the s3 key and save it in media-files table
   const fetchResponse = await fetch(resp.signedUrl, {
@@ -181,6 +282,8 @@ const addTranslationsApi = async (media) => {
     body: audioBuffer,
   });
 
+  console.log(`Asset successfully uploaded...`);
+
   // console.log("FETCH RESPONSE", fetchResponse);
 
   if (!fetchResponse.ok) {
@@ -188,7 +291,10 @@ const addTranslationsApi = async (media) => {
   }
 
   // 5. also store transcript in media-files table as well
+  console.log(`Creating media file...`);
   const mediaFile = await createMediaFile({ s3Key, ...rest });
+
+  console.log(`Media file created...`);
 
   // 6. take the id and store it in media table as well as update the status
   statusHistory = statusHistory.concat({
@@ -234,6 +340,7 @@ const addTranslationsApi = async (media) => {
     )
     .promise();
 
+  console.log(`Translating sentencees...`);
   const sentences = constructSentences(newMedia.text, lang).map((item) => {
     // if (idx === 0) {
     //   return {
@@ -260,6 +367,8 @@ const addTranslationsApi = async (media) => {
   });
 
   const translations = await generateTranslations(sentences);
+
+  console.log(`Sentences successfully translated...`);
 
   await dynamodb
     .update(
@@ -299,10 +408,10 @@ const addTranslationsApi = async (media) => {
 };
 
 // eslint-disable-next-line no-unused-vars
-const mockMedia = {
-  id: "01K0HT6H58NN34S4589DJQMEZF",
-};
-// console.log(constructSentences(mockMedia.text, "zh"));
+// const mockMedia = {
+//   id: "01K0RA8ADP7HVYY8MZTEKCNR4X",
+// };
+// // console.log(constructSentences(mockMedia.text, "zh"));
 
 // addTranslationsApi(mockMedia).then((resp) => {
 //   console.log("DONE", resp);

@@ -41,7 +41,14 @@ const listSectionsByChapterId = async ({ chapterId, lastEvaulatedKey }) => {
   );
 
   return {
-    items: items,
+    items: items
+      .sort((a, b) => a.createdAt - b.createdAt)
+      .map((item, idx) => {
+        return {
+          ...item,
+          sectionNumber: idx + 1,
+        };
+      }),
     lastEvaulatedKey: resp?.LastEvaluatedKey,
   };
 };

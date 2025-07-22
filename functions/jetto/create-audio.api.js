@@ -1,35 +1,12 @@
-const AWS = require("aws-sdk");
 const mime = require("mime-types");
 
-// Middlewares
-
-const dynamodb = new AWS.DynamoDB.DocumentClient({
-  apiVersion: "2012-08-10",
-  region: "us-east-1",
-});
-
-const { tableNames } = require("../../constants/table-names");
 const {
   textToAudio,
   defaultVoiceId,
 } = require("../../lib/speechify/text-to-audio");
 const { getUploadUrl } = require("../../lib/s3/get-upload-url");
 const { bucketNames } = require("../../constants/bucket-names");
-const { removeNull } = require("../../utils/remove-null");
-
-async function createAudio(input) {
-  const { s3Key, id, ...rest } = input;
-  const params = removeNull(input);
-
-  const inputParams = {
-    Item: { s3Key, id, ...rest, lastUpdated: Date.now() },
-    TableName: tableNames.textToSpeechTable,
-  };
-
-  await dynamodb.put(inputParams).promise();
-
-  return params;
-}
+const { createAudioDB } = require("./create-audio.db");
 
 const createAudioApi = async ({ text, lang }) => {
   const id = `${text}#${lang}`;
@@ -71,7 +48,7 @@ const createAudioApi = async ({ text, lang }) => {
     throw new Error(`Upload failed: ${fetchResponse.statusText}`);
   }
 
-  const newAudio = await createAudio({
+  const newAudio = await createAudioDB({
     s3Key: resp.s3Key,
     speechMarks: rest.speechMarks,
     id,
