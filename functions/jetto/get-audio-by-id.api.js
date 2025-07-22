@@ -34,8 +34,6 @@ const getAudioByIdApi = async ({ text, lang }) => {
   }
 };
 
-getAudioByIdApi(``);
-
 module.exports = {
   getAudioByIdApi,
 };
