@@ -12,7 +12,6 @@
 // Done
 
 const AWS = require("aws-sdk");
-const { ElevenLabsClient } = require("elevenlabs");
 
 const { tableNames } = require("../../constants/table-names");
 const { removeNull } = require("../../utils/remove-null");
@@ -20,19 +19,18 @@ const { constructParams } = require("../../utils/construct-params");
 const { getMediaById } = require("./get-media.api");
 const { bucketNames } = require("../../constants/bucket-names");
 const { getPresignedUrl } = require("../../lib/s3/get-presigned-url");
-const { elevenLabsApiKey, openAiApiKey } = require("../../constants/api-keys");
+const { openAiApiKey } = require("../../constants/api-keys");
 const { chineseConverter } = require("mandarino/src/utils/chinese-converter");
 
 const { parseInput } = require("mandarino/src/utils/parse-input");
-
-const elevenlabs = new ElevenLabsClient({
-  apiKey: elevenLabsApiKey, // Defaults to process.env.ELEVENLABS_API_KEY
-});
 
 const OpenAI = require("openai");
 const { speechToText } = require("../../lib/google/speech-to-text");
 const { getUserAsset } = require("../book/get-user-asset.api");
 const { getMediaFile } = require("./get-media-file.api");
+const {
+  elevenLabsSpeechToText,
+} = require("../../lib/elevenlabs/speech-to-text");
 
 const openai = new OpenAI({
   apiKey: openAiApiKey,
@@ -120,43 +118,6 @@ const dynamodb = new AWS.DynamoDB.DocumentClient({
 // 2 use elevenlabs to convert audio to text
 // 3 save response in media Files under
 
-const audioToTranscriptElevenLabs = async ({ audioUrl }) => {
-  const response = await fetch(audioUrl);
-  const audioBlob = new Blob([await response.arrayBuffer()], {
-    type: "audio/mp3",
-  });
-
-  const transcription = await elevenlabs.speechToText.convert({
-    file: audioBlob,
-    modelId: "scribe_v1", // Model to use, for now only "scribe_v1" is supported.
-    tagAudioEvents: true, // Tag audio events like laughter, applause, etc.
-    languageCode: "eng", // Language of the audio file. If set to null, the model will detect the language automatically.
-    diarize: true, // Whether to annotate who is speaking
-    model_id: "scribe_v1",
-  });
-
-  return {
-    ...transcription,
-
-    words: transcription.words.map((word, idx, ctx) => {
-      const start = ctx
-        ?.slice(0, idx)
-        ?.reduce((acc, curr) => acc + curr?.text?.length, 0);
-
-      const end = start + word?.text?.length;
-
-      return {
-        speakerId: word?.speaker_id,
-        start: idx == 0 ? 0 : start,
-        end: idx === 0 ? word?.text?.length : end,
-        startTime: word?.start * 1000,
-        endTime: word?.end * 1000,
-        type: word?.type,
-        value: word?.text,
-      };
-    }),
-  };
-};
 const audioToTranscriptGemini = async ({ audioUrl, text }) => {
   const response = await speechToText({ audioUrl, text });
 
@@ -256,7 +217,7 @@ const humanMediaPipeline = async (updatedMedia) => {
   // });
 
   try {
-    humanAudioTimestamps = await audioToTranscriptElevenLabs({
+    humanAudioTimestamps = await elevenLabsSpeechToText({
       audioUrl: audioUrl.preSignedUrl,
       text: media.text,
     });
