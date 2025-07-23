@@ -15,9 +15,10 @@ module.exports.handler = async (event) => {
       return;
     }
     if (record.eventName === "MODIFY") {
+      const oldMedia = DynamoDB.Converter.unmarshall(record.dynamodb.OldImage);
       const newMedia = DynamoDB.Converter.unmarshall(record.dynamodb.NewImage);
 
-      await humanMediaPipeline(newMedia);
+      await humanMediaPipeline(newMedia, oldMedia);
 
       console.log("Modified");
       return;

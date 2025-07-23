@@ -176,18 +176,24 @@ const updateMediaFile = async ({ mediaFileId, humanAudioTimestamps }) => {
   await dynamodb.update(updatedMediaFile).promise();
 };
 
-const humanMediaPipeline = async (updatedMedia) => {
+const humanMediaPipeline = async (updatedMedia, oldMedia) => {
   const media = await getMediaById(updatedMedia.id);
 
   console.log("MEDIA", media);
-  if (!media.customAudioId) {
+  if (
+    !media.customAudioId &&
+    oldMedia?.customAudioId === updatedMedia?.customAudioId
+  ) {
     console.log("NO custom audio id added, skipping");
     return;
   }
 
   const mediaFile = await getMediaFile(media?.mediaFileId);
 
-  if (mediaFile?.humanAudioTimestamps) {
+  if (
+    mediaFile?.humanAudioTimestamps &&
+    oldMedia?.customAudioId === updatedMedia?.customAudioId
+  ) {
     console.log(`Human media file exists.. skipping`);
     return null;
   }
