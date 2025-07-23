@@ -207,8 +207,6 @@ const humanMediaPipeline = async (updatedMedia) => {
     bucketKey: userAsset.uploadBucketKey,
   });
 
-  console.log("pre signed url", audioUrl);
-
   let humanAudioTimestamps;
 
   // = await audioToTranscriptElevenLabs({
