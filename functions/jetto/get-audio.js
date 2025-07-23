@@ -4,7 +4,7 @@ const { getAudioApi } = require("./get-audio.api");
 
 module.exports.handler = middy(async (event) => {
   try {
-    const { text, lang, provider = "speechify" } = JSON.parse(event.body);
+    const { text, lang, provider = "narakeet" } = JSON.parse(event.body);
 
     let audio = await getAudioApi({ text, lang, provider });
 

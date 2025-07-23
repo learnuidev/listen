@@ -12,7 +12,7 @@ const getAudioApi = async ({ text, lang, provider = "narakeet" }) => {
   if (audio) {
     return audio;
   } else {
-    if (provider === "speechify") {
+    if (provider === "narakeet") {
       await textToAudio({ text, lang });
     } else {
       await createAudioApi({ text, lang });
