@@ -76,3 +76,10 @@ const deleteMediaApi = async ({ mediaId, userId }) => {
 module.exports = {
   deleteMediaApi,
 };
+
+// deleteMediaApi({
+//   mediaId: "01K12BF65J31DJ2YJ0QE4GTNB2",
+//   userId: "learnuidev@gmail.com",
+// }).then((resp) => {
+//   console.log("done", resp);
+// });

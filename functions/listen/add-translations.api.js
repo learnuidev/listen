@@ -91,22 +91,23 @@ function constructSentences(text, lang) {
         : [text]
     )
       .map((item) => {
-        if (item?.includes(",")) {
-          return (
-            item
-              ?.split(",")
-              // .filter(Boolean)
-              .map((textItem, idx, ctx) => {
-                if (idx === ctx?.length - 1) {
-                  return textItem;
-                } else {
-                  return `${textItem},`;
-                }
-              })
-          );
-        } else {
-          return [item];
-        }
+        return [item];
+        // if (item?.includes(",")) {
+        //   return (
+        //     item
+        //       ?.split(",")
+        //       // .filter(Boolean)
+        //       .map((textItem, idx, ctx) => {
+        //         if (idx === ctx?.length - 1) {
+        //           return textItem;
+        //         } else {
+        //           return `${textItem},`;
+        //         }
+        //       })
+        //   );
+        // } else {
+        //   return [item];
+        // }
       })
       .flat()
       .map((item) => {
