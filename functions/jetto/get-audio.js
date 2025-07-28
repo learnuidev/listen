@@ -2,9 +2,15 @@ const middy = require("@middy/core");
 const cors = require("@middy/http-cors");
 const { getAudioApi } = require("./get-audio.api");
 
+const defaultAudioProvider = "speechify";
+
 module.exports.handler = middy(async (event) => {
   try {
-    const { text, lang, provider = "narakeet" } = JSON.parse(event.body);
+    const {
+      text,
+      lang,
+      provider = defaultAudioProvider,
+    } = JSON.parse(event.body);
 
     let audio = await getAudioApi({ text, lang, provider });
 

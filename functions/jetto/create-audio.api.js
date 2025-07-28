@@ -9,7 +9,7 @@ const { bucketNames } = require("../../constants/bucket-names");
 const { createAudioDB } = require("./create-audio.db");
 
 const createAudioApi = async ({ text, lang }) => {
-  const id = `${text}#${lang}`;
+  const id = `${text}#${lang}#speechify`;
 
   // 2. send text to speewchify api
   const speechifyResponse = await textToAudio(text, {
