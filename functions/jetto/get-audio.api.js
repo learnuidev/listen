@@ -18,7 +18,7 @@ const getAudioApi = async ({ text, lang, provider }) => {
       await createAudioApi({ text, lang, provider });
     }
 
-    const audio = await getAudioByIdApi({ text, lang });
+    const audio = await getAudioByIdApi({ text, lang, provider });
 
     return audio;
   }

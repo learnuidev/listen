@@ -18,6 +18,7 @@ const googleXApiKey = process.env.GOOGLE_X_API_KEY;
 const geminiApiKey = process.env.GEMINI_API_KEY;
 
 const env = process.env.ENV;
+const minimaxApiKey = process.env.MINIMAX_API_KEY;
 
 const apiKeys = {
   openAiApiKey,
@@ -32,6 +33,7 @@ const apiKeys = {
   googleXApiKey,
   geminiApiKey,
   env,
+  minimaxApiKey,
 };
 
 module.exports = { ...apiKeys };
