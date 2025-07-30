@@ -29,6 +29,7 @@
     "@google/generative-ai": "^0.21.0",
     "@middy/core": "^4.6.5",
     "@middy/http-cors": "^4.6.5",
+    "@polar-sh/sdk": "^0.34.8",
     "@speechify/api": "^1.0.0",
     "adm-zip": "^0.5.12",
     "aws-sdk": "^2.1480.0",
