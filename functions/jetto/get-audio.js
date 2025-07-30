@@ -8,9 +8,11 @@ module.exports.handler = middy(async (event) => {
   try {
     const {
       text,
-      lang,
+      lang: _lang,
       provider = defaultAudioProvider,
     } = JSON.parse(event.body);
+
+    const lang = _lang?.split("-")?.[0];
 
     let audio = await getAudioApi({ text, lang, provider });
 
