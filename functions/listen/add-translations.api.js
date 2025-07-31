@@ -357,8 +357,19 @@ const addTranslationsApi = async (media) => {
     //     return acc + curr.input.length;
     //   }, 0);
 
-    const startChunkIndex = newMedia.text.indexOf(item.input);
-    const endChunkIndex = startChunkIndex + item?.input?.length;
+    const _startChunkIndex = newMedia.text.indexOf(item.input);
+    const _endChunkIndex = startChunkIndex + item?.input?.length;
+    const slicedInput = item?.input?.slice(0, -1);
+
+    const startChunkIndex =
+      _startChunkIndex === -1
+        ? newMedia?.text?.indexOf(slicedInput)
+        : _startChunkIndex;
+
+    const endChunkIndex =
+      _startChunkIndex === -1
+        ? startChunkIndex + slicedInput?.length
+        : _endChunkIndex;
 
     return {
       ...item,
