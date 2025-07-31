@@ -9,6 +9,7 @@ const getAudioApi = async ({ text, lang, provider }) => {
   }
 
   let audio = await getAudioByIdApi({ text, lang, provider });
+  audio = null;
 
   if (audio) {
     return audio;
@@ -29,13 +30,21 @@ const getAudioApi = async ({ text, lang, provider }) => {
   }
 };
 
+// const resp = {
+//   text: "麦苏雅和丈夫被关了起来。",
+//   lang: "zh",
+//   provider: "minimax",
+// };
+
 // test case 1: throws error
 // getAudioApi({ text: "脱逃" }).then((resp) => {
 //   console.log("resp", resp);
 // });
-// getAudioApi({ text: "脱逃", lang: "zh" }).then((resp) => {
-//   console.log("resp", JSON.stringify(resp));
-// });
+// getAudioApi({ text: resp.text, lang: "zh", provider: "minimax" }).then(
+//   (resp) => {
+//     console.log("resp", JSON.stringify(resp));
+//   }
+// );
 
 module.exports = {
   getAudioApi,

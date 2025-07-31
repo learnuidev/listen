@@ -16,13 +16,13 @@ const createAudioMinimaxApi = async ({ text, lang, model, emotion }) => {
   // 2. send text to speewchify api
   const minimaxResponse = await textToSpeech({ text, lang, model, emotion });
 
-  const base64Data = minimaxResponse.audio;
+  const hexString = minimaxResponse.audio;
 
   const contentType = mime.lookup("result.mp3");
 
-  // Convert Base64 to Buffer
+  // Convert Hex to Buffer
   // eslint-disable-next-line no-undef
-  const audioBuffer = Buffer.from(base64Data, "base64");
+  const audioBuffer = Buffer.from(hexString, "hex");
 
   // 3. convert audio to mp3 and save it in media assets s3 bucket (get presigned url first: copy from nomadmethod)
 
