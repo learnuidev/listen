@@ -1,6 +1,7 @@
 const { getAudioByIdApi } = require("./get-audio-by-id.api");
 const { createAudioApi } = require("./create-audio.api");
 const { textToAudio } = require("../../lib/narakeet/text-to-audio");
+const { createAudioMinimaxApi } = require("./create-audio-minimax.api");
 
 const getAudioApi = async ({ text, lang, provider }) => {
   if (!text || !lang) {
@@ -14,6 +15,10 @@ const getAudioApi = async ({ text, lang, provider }) => {
   } else {
     if (provider === "narakeet") {
       await textToAudio({ text, lang, provider });
+    }
+
+    if (provider === "minimax") {
+      await createAudioMinimaxApi({ text, lang, provider });
     } else {
       await createAudioApi({ text, lang, provider });
     }

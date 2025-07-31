@@ -2,7 +2,7 @@ const middy = require("@middy/core");
 const cors = require("@middy/http-cors");
 const { getAudioApi } = require("./get-audio.api");
 
-const defaultAudioProvider = "speechify";
+const defaultAudioProvider = "minimax" || "speechify";
 
 module.exports.handler = middy(async (event) => {
   try {
