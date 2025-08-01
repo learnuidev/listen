@@ -399,6 +399,34 @@ functions:
             arn: ${self:custom.CognitoUserPool.Arn}
     environment:
       TEXT_TO_SPEECH_TABLE: !Ref TextToSpeechTable
+  get-content-analytics:
+    handler: functions/content-analytics/get-content-analytics.handler
+    events:
+      - http:
+          path: /v1/get-content-analytics
+          method: POST
+          cors: true
+          authorizer:
+            name: CognitoAuthorizer
+            type: COGNITO_USER_POOLS
+            arn: ${self:custom.CognitoUserPool.Arn}
+    environment:
+      TEXT_TO_SPEECH_TABLE: !Ref TextToSpeechTable
+      CONTENT_ANALYTICS_TABLE: !Ref ContentAnalyticsTable
+  upsert-content-analytics:
+    handler: functions/content-analytics/upsert-content-analytics.handler
+    events:
+      - http:
+          path: /v1/upsert-content-analytics
+          method: POST
+          cors: true
+          authorizer:
+            name: CognitoAuthorizer
+            type: COGNITO_USER_POOLS
+            arn: ${self:custom.CognitoUserPool.Arn}
+    environment:
+      TEXT_TO_SPEECH_TABLE: !Ref TextToSpeechTable
+      CONTENT_ANALYTICS_TABLE: !Ref ContentAnalyticsTable
 
 resources:
   Resources:
@@ -651,3 +679,32 @@ resources:
             Value: ${self:custom.stage}
           - Key: Name
             Value: plans-table-prod
+    ContentAnalyticsTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        BillingMode: PAY_PER_REQUEST
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+          - AttributeName: userId
+            AttributeType: S
+        GlobalSecondaryIndexes:
+          - IndexName: byUserId
+            KeySchema:
+              - AttributeName: userId
+                KeyType: HASH
+              - AttributeName: id
+                KeyType: RANGE
+            Projection:
+              ProjectionType: ALL
+        StreamSpecification:
+          StreamViewType: NEW_AND_OLD_IMAGES
+        Tags:
+          # To keep track of user table for diffeent environment
+          - Key: Environment
+            Value: ${self:custom.stage}
+          - Key: Name
+            Value: content-analytics-table
