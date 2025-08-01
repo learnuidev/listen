@@ -10,15 +10,58 @@ const dynamodb = new AWS.DynamoDB.DocumentClient({
   region: "us-east-1",
 });
 
+function aggregateRepeats(arr1, arr2) {
+  const map = new Map();
+
+  // Helper to add or update entries in the map
+  function addToMap(arr) {
+    arr.forEach((item) => {
+      const key = item.transcriptionId;
+      if (map.has(key)) {
+        map.set(key, {
+          transcriptionId: key,
+          totalRepeats: map.get(key).totalRepeats + item.totalRepeats,
+        });
+      } else {
+        map.set(key, { ...item });
+      }
+    });
+  }
+
+  addToMap(arr1);
+  addToMap(arr2);
+
+  return Array.from(map.values());
+}
+
 const updateContentAnalyticsApi = async ({ userId, contentId, ...rest }) => {
   // 1. update media status: to "generating-transcript"
   const id = `${contentId}#${userId}`;
 
   const contentAnalytics = await getContentAnalyticsApi({ userId, contentId });
 
+  const remoteContentAnalyticsRepeatsPerTranscription =
+    contentAnalytics?.repeatsPerTranscription || [];
+
+  const newContentAnalyticsRepeatsPerTranscription =
+    rest?.repeatsPerTranscription || [];
+  const updatedRepeatsPerTranscription = aggregateRepeats(
+    remoteContentAnalyticsRepeatsPerTranscription,
+    newContentAnalyticsRepeatsPerTranscription
+  );
+
+  const updatedStats = {
+    totalRepeats:
+      (contentAnalytics?.totalRepeats || 0) + (rest?.totalRepeats || 0),
+    totalPlays: (contentAnalytics?.totalPlays || 0) + (rest?.totalRepeats || 0),
+    totalTimePlayed:
+      (contentAnalytics?.totalTimePlayed || 0) + (rest?.totalTimePlayed || 0),
+    repeatsPerTranscription: updatedRepeatsPerTranscription,
+  };
+
   const updatedAttributes = {
     id,
-    ...rest,
+    ...updatedStats,
     lastUpdated: Date.now(),
   };
 

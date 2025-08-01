@@ -1,6 +1,7 @@
 const middy = require("@middy/core");
 const cors = require("@middy/http-cors");
 const { getContentApi } = require("./get-content.api");
+const { upsertContentAnalyticsApi } = require("./upsert-content-analytics.api");
 
 const upsertContentAnalyticsHandler = async (event) => {
   const userId = event.requestContext.authorizer.claims.email;
@@ -18,7 +19,7 @@ const upsertContentAnalyticsHandler = async (event) => {
       return response;
     }
 
-    let contentAnalytics = await upsertContentAnalyticsHandler({
+    let contentAnalytics = await upsertContentAnalyticsApi({
       userId,
       contentId,
       ...rest,

@@ -1,8 +1,9 @@
 const middy = require("@middy/core");
 const cors = require("@middy/http-cors");
 
-const { getContentAnalytics } = require("./get-content-analytics.api");
+// const { getContentAnalytics } = require("./get-content-analytics.api");
 const { getContentApi } = require("./get-content.api");
+const { getContentAnalyticsApi } = require("./get-content-analytics.api");
 
 const getContentAnalyticsHandler = async (event) => {
   const userId = event.requestContext.authorizer.claims.email;
@@ -20,12 +21,17 @@ const getContentAnalyticsHandler = async (event) => {
       return response;
     }
 
-    let contentAnalytics = await getContentAnalytics({ contentId, userId });
+    let contentAnalytics = await getContentAnalyticsApi({ contentId, userId });
 
     if (!contentAnalytics) {
       const response = {
-        statusCode: 404,
-        body: JSON.stringify({ message: "Content Analytics not found" }),
+        statusCode: 200,
+        body: JSON.stringify({
+          totalRepeats: 0,
+          totalPlays: 0,
+          totalTimePlayed: 0,
+          repeatsPerTranscription: [],
+        }),
       };
 
       return response;
