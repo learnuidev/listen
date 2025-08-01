@@ -60,6 +60,7 @@ provider:
     STAGE: ${self:provider.stage}
     LOG_LEVEL: ${self:custom.logLevel.${self:provider.stage}, self:custom.logLevel.default}
     USER_CREDENTIALS_TABLE: ${self:custom.UserCredentialsTable.Name}
+    CONTENTS_TABLE: ${self:custom.ContentsTable.Name}
   iamRoleStatements:
     - Effect: Allow
       Action:
@@ -411,7 +412,6 @@ functions:
             type: COGNITO_USER_POOLS
             arn: ${self:custom.CognitoUserPool.Arn}
     environment:
-      TEXT_TO_SPEECH_TABLE: !Ref TextToSpeechTable
       CONTENT_ANALYTICS_TABLE: !Ref ContentAnalyticsTable
   upsert-content-analytics:
     handler: functions/content-analytics/upsert-content-analytics.handler
@@ -425,7 +425,6 @@ functions:
             type: COGNITO_USER_POOLS
             arn: ${self:custom.CognitoUserPool.Arn}
     environment:
-      TEXT_TO_SPEECH_TABLE: !Ref TextToSpeechTable
       CONTENT_ANALYTICS_TABLE: !Ref ContentAnalyticsTable
 
 resources:
