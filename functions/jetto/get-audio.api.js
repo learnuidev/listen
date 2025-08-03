@@ -9,7 +9,6 @@ const getAudioApi = async ({ text, lang, provider }) => {
   }
 
   let audio = await getAudioByIdApi({ text, lang, provider });
-  audio = null;
 
   if (audio) {
     return audio;
