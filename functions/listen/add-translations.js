@@ -1,7 +1,8 @@
 const DynamoDB = require("aws-sdk/clients/dynamodb");
 
-const { addTranslationsApi } = require("./add-translations.api");
+// const { addTranslationsApi } = require("./add-translations.api");
 const { humanMediaPipeline } = require("./human-media-pipeline");
+const { addTranslationsMinimaxApi } = require("./add-translations.minimax.api");
 
 module.exports.handler = async (event) => {
   const t0 = performance.now();
@@ -10,7 +11,8 @@ module.exports.handler = async (event) => {
     if (record.eventName === "INSERT") {
       const newMedia = DynamoDB.Converter.unmarshall(record.dynamodb.NewImage);
 
-      await addTranslationsApi(newMedia);
+      // await addTranslationsApi(newMedia);
+      await addTranslationsMinimaxApi(newMedia);
       console.log("Added");
       return;
     }

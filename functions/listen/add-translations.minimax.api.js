@@ -17,10 +17,6 @@ const { tableNames } = require("../../constants/table-names");
 const { removeNull } = require("../../utils/remove-null");
 const { constructParams } = require("../../utils/construct-params");
 const ulid = require("ulid");
-const {
-  textToAudio,
-  defaultVoiceId,
-} = require("../../lib/speechify/text-to-audio");
 const { getUploadUrl } = require("../../lib/s3/get-upload-url");
 const { bucketNames } = require("../../constants/bucket-names");
 const mime = require("mime-types");
@@ -56,68 +52,6 @@ async function createMediaFile(input) {
   await dynamodb.put(inputParams).promise();
 
   return params;
-}
-
-function constructSentences(text, lang) {
-  if (lang === "zh") {
-    return (
-      text.includes("。")
-        ? text
-            .split("。")
-            .filter(Boolean)
-            .map((textItem) => {
-              return `${textItem}。`;
-            })
-        : [text]
-    )
-      .map((item) => {
-        return [item];
-      })
-      .flat()
-      .map((item) => {
-        return {
-          input: item,
-          lang,
-        };
-      });
-  } else {
-    return (
-      text.includes(".")
-        ? text
-            .split(".")
-            .filter(Boolean)
-            .map((textItem) => {
-              return `${textItem}.`;
-            })
-        : [text]
-    )
-      .map((item) => {
-        return [item];
-        // if (item?.includes(",")) {
-        //   return (
-        //     item
-        //       ?.split(",")
-        //       // .filter(Boolean)
-        //       .map((textItem, idx, ctx) => {
-        //         if (idx === ctx?.length - 1) {
-        //           return textItem;
-        //         } else {
-        //           return `${textItem},`;
-        //         }
-        //       })
-        //   );
-        // } else {
-        //   return [item];
-        // }
-      })
-      .flat()
-      .map((item) => {
-        return {
-          input: item,
-          lang,
-        };
-      });
-  }
 }
 
 async function minimaxTextToSpeech({ text, lang, userId }) {
@@ -179,72 +113,7 @@ async function minimaxTextToSpeech({ text, lang, userId }) {
   };
 }
 
-async function speechifyTextToSpeech({ text, lang, userId }) {
-  const speechifyResponse = await textToAudio(text, {
-    voiceId: defaultVoiceId,
-    lang,
-  });
-
-  console.log(`Speechify transcript generated...`);
-
-  const { audioData, ...rest } = speechifyResponse;
-
-  const base64Data = audioData;
-
-  const contentType = mime.lookup("result.mp3");
-
-  // console.log("SPEECHIFY RESP", speechifyResponse);
-
-  // console.log("CONTENT TYPE", contentType);
-
-  // const audioBuffer = Buffer.from(audioData, "base64");
-
-  // Convert Base64 to Buffer
-  // eslint-disable-next-line no-undef
-  const audioBuffer = Buffer.from(base64Data, "base64");
-
-  // 3. convert audio to mp3 and save it in media assets s3 bucket (get presigned url first: copy from nomadmethod)
-
-  console.log(`Fetching upload url...`);
-  const resp = await getUploadUrl({
-    userId: userId,
-    contentType,
-    bucketName: bucketNames.mediaAssetsBucket,
-    extension: "mp3",
-  });
-
-  console.log(`Fetched upload url`);
-
-  const { s3Key } = resp;
-
-  // console.log("Resp", resp);
-
-  console.log(`Uploading assets...`);
-
-  // 4. once s3 is saved, save the s3 key and save it in media-files table
-  const fetchResponse = await fetch(resp.signedUrl, {
-    method: "PUT",
-    headers: {
-      "Content-Type": contentType,
-    },
-    body: audioBuffer,
-  });
-
-  console.log(`Asset successfully uploaded...`);
-
-  // console.log("FETCH RESPONSE", fetchResponse);
-
-  if (!fetchResponse.ok) {
-    throw new Error(`Upload failed: ${fetchResponse.statusText}`);
-  }
-
-  return {
-    s3Key,
-    ...rest,
-  };
-}
-
-const addTranslationsApi = async (media) => {
+const addTranslationsMinimaxApi = async (media) => {
   console.log(`Fetching media of id: ${media.id}`);
   const newMedia = await getMediaById(media.id);
 
@@ -275,7 +144,6 @@ const addTranslationsApi = async (media) => {
       statusHistory,
       lastUpdated: Date.now(),
     }),
-    // attributes: params,
   });
 
   await dynamodb.update(updatedContent).promise();
@@ -288,8 +156,6 @@ const addTranslationsApi = async (media) => {
     // console.log("mediaFile", mediaFile);
 
     const chunks = mediaFile?.speechMarks?.chunks;
-
-    console.log("chunk", chunks[0]);
 
     if (mediaFile?.translations?.length > 0) {
       console.log("Translations exist... skipping");
@@ -355,66 +221,6 @@ const addTranslationsApi = async (media) => {
     userId: newMedia.userId,
   });
 
-  // // 2. send text to speewchify api
-  // const speechifyResponse = await textToAudio(newMedia.text, {
-  //   voiceId: defaultVoiceId,
-  //   lang,
-  // });
-
-  // console.log(`Speechify transcript generated...`);
-
-  // const { audioData, ...rest } = speechifyResponse;
-
-  // const base64Data = audioData;
-
-  // const contentType = mime.lookup("result.mp3");
-
-  // // console.log("SPEECHIFY RESP", speechifyResponse);
-
-  // // console.log("CONTENT TYPE", contentType);
-
-  // // const audioBuffer = Buffer.from(audioData, "base64");
-
-  // // Convert Base64 to Buffer
-  // // eslint-disable-next-line no-undef
-  // const audioBuffer = Buffer.from(base64Data, "base64");
-
-  // // 3. convert audio to mp3 and save it in media assets s3 bucket (get presigned url first: copy from nomadmethod)
-
-  // console.log(`Fetching upload url...`);
-  // const resp = await getUploadUrl({
-  //   userId: newMedia.userId,
-  //   contentType,
-  //   bucketName: bucketNames.mediaAssetsBucket,
-  //   extension: "mp3",
-  // });
-
-  // console.log(`Fetched upload url`);
-
-  // const { s3Key } = resp;
-
-  // // console.log("Resp", resp);
-
-  // console.log(`Uploading assets...`);
-
-  // // 4. once s3 is saved, save the s3 key and save it in media-files table
-  // const fetchResponse = await fetch(resp.signedUrl, {
-  //   method: "PUT",
-  //   headers: {
-  //     "Content-Type": contentType,
-  //   },
-  //   body: audioBuffer,
-  // });
-
-  // console.log(`Asset successfully uploaded...`);
-
-  // // console.log("FETCH RESPONSE", fetchResponse);
-
-  // if (!fetchResponse.ok) {
-  //   throw new Error(`Upload failed: ${fetchResponse.statusText}`);
-  // }
-
-  // 5. also store transcript in media-files table as well
   console.log(`Creating media file...`);
   const mediaFile = await createMediaFile({ s3Key, ...rest });
 
@@ -465,25 +271,17 @@ const addTranslationsApi = async (media) => {
     .promise();
 
   console.log(`Translating sentencees...`);
-  const sentences = constructSentences(newMedia.text, lang).map((item) => {
-    const _startChunkIndex = newMedia.text.indexOf(item.input);
-    const _endChunkIndex = startChunkIndex + item?.input?.length;
-    const slicedInput = item?.input?.slice(0, -1);
 
-    const startChunkIndex =
-      _startChunkIndex === -1
-        ? newMedia?.text?.indexOf(slicedInput)
-        : _startChunkIndex;
+  const chunks = rest?.speechMarks?.chunks;
 
-    const endChunkIndex =
-      _startChunkIndex === -1
-        ? startChunkIndex + slicedInput?.length
-        : _endChunkIndex;
-
+  const sentences = chunks?.map((chunk) => {
     return {
-      ...item,
-      startChunkIndex,
-      endChunkIndex,
+      lang,
+      input: chunk?.value,
+      startChunkIndex: chunk?.start,
+      endChunkIndex: chunk?.end,
+      startTime: chunk?.startTime,
+      endTime: chunk?.endTime,
     };
   });
 
@@ -529,15 +327,15 @@ const addTranslationsApi = async (media) => {
 };
 
 // eslint-disable-next-line no-unused-vars
-const mockMedia = {
-  id: "01K237TFPDMZ4D4CPWQ4VGBGEG",
-};
+// const mockMedia = {
+//   id: "01K237TFPDMZ4D4CPWQ4VGBGEG",
+// };
 // // // console.log(constructSentences(mockMedia.text, "zh"));
 
-addTranslationsApi(mockMedia).then((resp) => {
-  console.log("DONE", resp);
-});
+// addTranslationsMinimaxApi(mockMedia).then((resp) => {
+//   console.log("DONE", resp);
+// });
 
 module.exports = {
-  addTranslationsApi,
+  addTranslationsMinimaxApi,
 };
