@@ -426,6 +426,19 @@ functions:
             arn: ${self:custom.CognitoUserPool.Arn}
     environment:
       CONTENT_ANALYTICS_TABLE: !Ref ContentAnalyticsTable
+  get-youtube-video-by-id:
+    handler: functions/youtube/get-video-by-id.handler
+    events:
+      - http:
+          path: /v1/youtube/get-video-by-id
+          method: POST
+          cors: true
+          authorizer:
+            name: CognitoAuthorizer
+            type: COGNITO_USER_POOLS
+            arn: ${self:custom.CognitoUserPool.Arn}
+    environment:
+      CONTENT_ANALYTICS_TABLE: !Ref ContentAnalyticsTable
 
 resources:
   Resources:
