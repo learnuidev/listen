@@ -24,6 +24,13 @@ const getContentApi = async ({ contentId }) => {
   return content;
 };
 
+// testing
+// getContentApi({
+//   contentId: "",
+// }).then((resp) => {
+//   console.log("content", resp);
+// });
+
 module.exports = {
   getContentApi,
 };
