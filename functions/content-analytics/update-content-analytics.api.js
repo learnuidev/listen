@@ -34,6 +34,30 @@ function aggregateRepeats(arr1, arr2) {
   return Array.from(map.values());
 }
 
+function aggregateWordRepeats(arr1, arr2) {
+  const map = new Map();
+
+  // Helper to add or update entries in the map
+  function addToMap(arr) {
+    arr.forEach((item) => {
+      const key = item.word;
+      if (map.has(key)) {
+        map.set(key, {
+          word: key,
+          frequency: map.get(key).frequency + item.frequency,
+        });
+      } else {
+        map.set(key, { ...item });
+      }
+    });
+  }
+
+  addToMap(arr1);
+  addToMap(arr2);
+
+  return Array.from(map.values());
+}
+
 const updateContentAnalyticsApi = async ({ userId, contentId, ...rest }) => {
   // 1. update media status: to "generating-transcript"
   const id = `${contentId}#${userId}`;
@@ -43,8 +67,14 @@ const updateContentAnalyticsApi = async ({ userId, contentId, ...rest }) => {
   const remoteContentAnalyticsRepeatsPerTranscription =
     contentAnalytics?.repeatsPerTranscription || [];
 
+  const remoteWordRepeats = contentAnalytics?.repeatsPerWord || [];
+  const newRepeats = rest?.repeatsPerWord || [];
+
+  const updatedRepeats = aggregateWordRepeats(remoteWordRepeats, newRepeats);
+
   const newContentAnalyticsRepeatsPerTranscription =
     rest?.repeatsPerTranscription || [];
+
   const updatedRepeatsPerTranscription = aggregateRepeats(
     remoteContentAnalyticsRepeatsPerTranscription,
     newContentAnalyticsRepeatsPerTranscription
@@ -57,6 +87,7 @@ const updateContentAnalyticsApi = async ({ userId, contentId, ...rest }) => {
     totalTimePlayed:
       (contentAnalytics?.totalTimePlayed || 0) + (rest?.totalTimePlayed || 0),
     repeatsPerTranscription: updatedRepeatsPerTranscription,
+    repeatsPerWord: updatedRepeats,
   };
 
   const updatedAttributes = {
