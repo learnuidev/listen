@@ -81,6 +81,7 @@ const updateContentAnalyticsApi = async ({ userId, contentId, ...rest }) => {
   );
 
   const updatedStats = {
+    ...rest,
     totalRepeats:
       (contentAnalytics?.totalRepeats || 0) + (rest?.totalRepeats || 0),
     totalPlays: (contentAnalytics?.totalPlays || 0) + (rest?.totalRepeats || 0),
