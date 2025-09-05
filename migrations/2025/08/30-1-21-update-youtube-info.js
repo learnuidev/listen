@@ -33,10 +33,16 @@ const scanAllContents = async ({ contentsTable, jwt, key, res = [] }) => {
   return res.concat(resp?.items);
 };
 
-const updateYoutubeVideos = async () => {
-  const contents = await scanAllContents({
+const updateYoutubeVideos = async (contentIds) => {
+  let contents = await scanAllContents({
     contentsTable: tableNames.contentsTable,
   });
+
+  if (Array.isArray(contentIds)) {
+    contents = contents?.filter((contentItem) => {
+      return contentIds?.includes(contentItem.id);
+    });
+  }
 
   let res = [];
 
@@ -87,4 +93,8 @@ const updateYoutubeVideos = async () => {
   console.log("done");
 };
 
-updateYoutubeVideos();
+module.exports = {
+  updateYoutubeVideos,
+};
+
+// updateYoutubeVideos();

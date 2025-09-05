@@ -7,14 +7,19 @@ const mime = require("mime-types");
 const { getUploadUrl } = require("../../lib/s3/get-upload-url");
 const { bucketNames } = require("../../constants/bucket-names");
 const { createAudioDB } = require("./create-audio.db");
-const { textToSpeech } = require("../../lib/minimax/text-to-speech");
+const { minimaxTextToSpeech } = require("../../lib/minimax/text-to-speech");
 // const { textToAudio } = require("../../lib/speechify/text-to-audio");
 
 const createAudioMinimaxApi = async ({ text, lang, model, emotion }) => {
   const id = `${text}#${lang}#minimax`;
 
   // 2. send text to speewchify api
-  const minimaxResponse = await textToSpeech({ text, lang, model, emotion });
+  const minimaxResponse = await minimaxTextToSpeech({
+    text,
+    lang,
+    model,
+    emotion,
+  });
 
   const hexString = minimaxResponse.audio;
 
