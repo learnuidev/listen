@@ -1,14 +1,11 @@
 const mime = require("mime-types");
 
-// const {
-//   textToAudio,
-//   defaultVoiceId,
-// } = require("../../lib/speechify/text-to-audio");
 const { getUploadUrl } = require("../../lib/s3/get-upload-url");
 const { bucketNames } = require("../../constants/bucket-names");
 const { createAudioDB } = require("./create-audio.db");
-const { minimaxTextToSpeech } = require("../../lib/minimax/text-to-speech");
-// const { textToAudio } = require("../../lib/speechify/text-to-audio");
+const {
+  minimaxTextToSpeech,
+} = require("../../lib/minimax/minimax-text-to-speech");
 
 const createAudioMinimaxApi = async ({ text, lang, model, emotion }) => {
   const id = `${text}#${lang}#minimax`;

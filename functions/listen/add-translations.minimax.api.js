@@ -26,7 +26,9 @@ const {
 } = require("../../lib/mandarino/generate-translations");
 const { getMediaById } = require("./get-media.api");
 const { getMediaFile } = require("./get-media-file.api");
-const { minimaxTextToSpeech } = require("../../lib/minimax/text-to-speech");
+const {
+  minimaxTextToSpeech,
+} = require("../../lib/minimax/minimax-text-to-speech");
 
 const dynamodb = new AWS.DynamoDB.DocumentClient({
   apiVersion: "2012-08-10",
