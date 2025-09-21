@@ -60,16 +60,11 @@ async function minimaxTextToSpeechApi({ text, lang, userId }) {
   // 2. send text to speewchify api
   const { audio, ...rest } = await minimaxTextToSpeech({ text, lang });
 
-  const hexString = audio;
-
   const contentType = mime.lookup("result.mp3");
 
-  // Convert Hex to Buffer
-  // eslint-disable-next-line no-undef
-  const audioBuffer = Buffer.from(hexString, "hex");
+  const audioBuffer = audio;
 
   // 3. convert audio to mp3 and save it in media assets s3 bucket (get presigned url first: copy from nomadmethod)
-
   const resp = await getUploadUrl({
     userId,
     contentType,

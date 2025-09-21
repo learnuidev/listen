@@ -439,6 +439,19 @@ functions:
             arn: ${self:custom.CognitoUserPool.Arn}
     environment:
       CONTENT_ANALYTICS_TABLE: !Ref ContentAnalyticsTable
+  list-youtube-trancriptions:
+    handler: functions/youtube/list-transcriptions.handler
+    events:
+      - http:
+          path: /v1/youtube/list-transcriptions
+          method: POST
+          cors: true
+          authorizer:
+            name: CognitoAuthorizer
+            type: COGNITO_USER_POOLS
+            arn: ${self:custom.CognitoUserPool.Arn}
+    environment:
+      CONTENT_ANALYTICS_TABLE: !Ref ContentAnalyticsTable
 
 resources:
   Resources:
