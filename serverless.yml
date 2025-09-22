@@ -306,7 +306,7 @@ functions:
             type: COGNITO_USER_POOLS
             arn: ${self:custom.CognitoUserPool.Arn}
     environment:
-      BOOKS_TABLE: !Ref BooksTable
+      BOOKS_TABLE: !Ref BooksTableV2
   add-book:
     handler: functions/book/add-book.handler
     events:
@@ -319,7 +319,7 @@ functions:
             type: COGNITO_USER_POOLS
             arn: ${self:custom.CognitoUserPool.Arn}
     environment:
-      BOOKS_TABLE: !Ref BooksTable
+      BOOKS_TABLE: !Ref BooksTableV2
   get-book:
     handler: functions/book/get-book.handler
     events:
@@ -332,7 +332,7 @@ functions:
             type: COGNITO_USER_POOLS
             arn: ${self:custom.CognitoUserPool.Arn}
     environment:
-      BOOKS_TABLE: !Ref BooksTable
+      BOOKS_TABLE: !Ref BooksTableV2
   update-book:
     handler: functions/book/update-book.handler
     events:
@@ -345,7 +345,7 @@ functions:
             type: COGNITO_USER_POOLS
             arn: ${self:custom.CognitoUserPool.Arn}
     environment:
-      BOOKS_TABLE: !Ref BooksTable
+      BOOKS_TABLE: !Ref BooksTableV2
   delete-book:
     handler: functions/book/delete-book.handler
     events:
@@ -358,12 +358,12 @@ functions:
             type: COGNITO_USER_POOLS
             arn: ${self:custom.CognitoUserPool.Arn}
     environment:
-      BOOKS_TABLE: !Ref BooksTable
-  add-chapter-sections:
-    handler: functions/book/add-chapter-sections.handler
+      BOOKS_TABLE: !Ref BooksTableV2
+  add-book-section:
+    handler: functions/book/add-book-section.handler
     events:
       - http:
-          path: /v1/add-chapter-sections
+          path: /v1/add-book-section
           method: POST
           cors: true
           authorizer:
@@ -371,8 +371,8 @@ functions:
             type: COGNITO_USER_POOLS
             arn: ${self:custom.CognitoUserPool.Arn}
     environment:
-      BOOKS_TABLE: !Ref BooksTable
-      CHAPTER_SECTIONS_TABLE: !Ref ChapterSectionsTable
+      BOOKS_TABLE: !Ref BooksTableV2
+      BOOK_SECTIONS_TABLE: !Ref BookSectionsTable
   list-chapter-sections:
     handler: functions/book/list-chapter-sections.handler
     events:
@@ -385,7 +385,7 @@ functions:
             type: COGNITO_USER_POOLS
             arn: ${self:custom.CognitoUserPool.Arn}
     environment:
-      BOOKS_TABLE: !Ref BooksTable
+      BOOKS_TABLE: !Ref BooksTableV2
       CHAPTER_SECTIONS_TABLE: !Ref ChapterSectionsTable
   get-audio:
     handler: functions/jetto/get-audio.handler
@@ -570,7 +570,7 @@ resources:
             Value: ${self:custom.stage}
           - Key: Name
             Value: media-files-table-v2
-    BooksTable:
+    BooksTableV2:
       Type: AWS::DynamoDB::Table
       Properties:
         BillingMode: PAY_PER_REQUEST
@@ -598,7 +598,36 @@ resources:
           - Key: Environment
             Value: ${self:custom.stage}
           - Key: Name
-            Value: books-table
+            Value: books-table-v2
+    BookSectionsTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        BillingMode: PAY_PER_REQUEST
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+          - AttributeName: bookId
+            AttributeType: S
+        GlobalSecondaryIndexes:
+          - IndexName: byBookId
+            KeySchema:
+              - AttributeName: bookId
+                KeyType: HASH
+              - AttributeName: id
+                KeyType: RANGE
+            Projection:
+              ProjectionType: ALL
+        StreamSpecification:
+          StreamViewType: NEW_AND_OLD_IMAGES
+        Tags:
+          # To keep track of user table for diffeent environment
+          - Key: Environment
+            Value: ${self:custom.stage}
+          - Key: Name
+            Value: book-sections-table
     ChapterSectionsTable:
       Type: AWS::DynamoDB::Table
       Properties:

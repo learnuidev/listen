@@ -3,6 +3,7 @@ const cors = require("@middy/http-cors");
 
 const { getBookById } = require("./get-book.api");
 const { addCoverPhotoUrl } = require("./add-cover-photo-url");
+const { listBookSectionsApi } = require("./list-book-sections.api");
 
 module.exports.handler = middy(async (event) => {
   const userId = event.requestContext.authorizer.claims.email;
@@ -24,6 +25,10 @@ module.exports.handler = middy(async (event) => {
     if (book?.coverPhotoId) {
       book = await addCoverPhotoUrl(book);
     }
+
+    const sections = await listBookSectionsApi({ bookId });
+
+    book.sections = sections.items;
 
     const response = {
       statusCode: 200,

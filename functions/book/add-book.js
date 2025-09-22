@@ -7,15 +7,17 @@ module.exports.handler = middy(async (event) => {
   const userId = event.requestContext.authorizer.claims.email;
 
   try {
-    const { title, author, chapters, tags, lang } = JSON.parse(event.body);
+    const { title, author, lang, coverPhotoId, ...rest } = JSON.parse(
+      event.body
+    );
 
     const params = await addBookApi({
       title,
       author,
-      chapters,
-      tags,
       lang,
+      coverPhotoId,
       userId,
+      ...rest,
     });
 
     const response = {

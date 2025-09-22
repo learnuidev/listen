@@ -1,5 +1,4 @@
 const { tableNames } = require("../../constants/table-names");
-const { getMediaById } = require("../listen/get-media.api");
 
 /* eslint-disable no-undef */
 const DocumentClient = require("aws-sdk/clients/dynamodb").DocumentClient;
@@ -8,15 +7,15 @@ const dynamodb = new DocumentClient({
   region: "us-east-1",
 });
 
-const listSectionsByChapterId = async ({ chapterId, lastEvaulatedKey }) => {
+const listBookSectionsApi = async ({ bookId, lastEvaulatedKey }) => {
   const params = {
     ExpressionAttributeValues: {
-      ":chapterId": chapterId,
+      ":bookId": bookId,
     },
-    KeyConditionExpression: "chapterId = :chapterId",
-    IndexName: "byChapterId",
-    TableName: tableNames.chapterSectionsTable,
-    Limit: 100,
+    KeyConditionExpression: "bookId = :bookId",
+    IndexName: "byBookId",
+    TableName: tableNames.bookSectionsTable,
+    Limit: 300,
     ExclusiveStartKey: lastEvaulatedKey,
   };
 
@@ -29,19 +28,24 @@ const listSectionsByChapterId = async ({ chapterId, lastEvaulatedKey }) => {
     };
   }
 
-  const items = await Promise.all(
-    resp?.Items?.map(async (item) => {
-      const media = await getMediaById(item?.mediaId);
-      return {
-        title: item?.title,
-        sectionNumber: item?.sectionNumber,
-        ...media,
-      };
-    })
-  );
+  const requestObject = {
+    RequestItems: {
+      [tableNames.contentsTable]: {
+        Keys: resp.Items?.map((item) => {
+          return {
+            id: item?.id,
+          };
+        }),
+      },
+    },
+  };
+
+  const respNew = await dynamodb.batchGet(requestObject).promise();
+
+  const itemsVal = respNew?.Responses?.[tableNames.contentsTable];
 
   return {
-    items: items
+    items: itemsVal
       .sort((a, b) => a.createdAt - b.createdAt)
       .map((item, idx) => {
         return {
@@ -60,5 +64,5 @@ const listSectionsByChapterId = async ({ chapterId, lastEvaulatedKey }) => {
 // });
 
 module.exports = {
-  listSectionsByChapterId,
+  listBookSectionsApi,
 };

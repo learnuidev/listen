@@ -8,6 +8,8 @@ const tableNames = {
   mediaFilesTableV2: process.env.MEDIA_FILES_TABLE_V2,
   userAssetsTable: process.env.USER_ASSETS_TABLE,
   booksTable: process.env.BOOKS_TABLE,
+  bookSectionsTable: process.env.BOOK_SECTIONS_TABLE,
+
   chapterSectionsTable: process.env.CHAPTER_SECTIONS_TABLE,
   textToSpeechTable: process.env.TEXT_TO_SPEECH_TABLE,
   contentAnalyticsTable: process.env.CONTENT_ANALYTICS_TABLE,
