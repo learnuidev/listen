@@ -4,6 +4,7 @@ require("dotenv").config();
 const openAiApiKey = process.env.OPENAI_API_KEY;
 
 const deepSeekApiKey = process.env.DEEPSEEK_API_KEY;
+const falApiKey = process.env.FAL_API_KEY;
 const moonshotApiKey = process.env.MOONSHOT_API_KEY;
 
 const qwenApiKey = process.env.QWEN_API_KEY;
@@ -34,6 +35,7 @@ const apiKeys = {
   geminiApiKey,
   env,
   minimaxApiKey,
+  falApiKey,
 };
 
 module.exports = { ...apiKeys };
