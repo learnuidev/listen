@@ -8,7 +8,7 @@ const { getBookById } = require("./get-book.api");
 module.exports.handler = middy(async (event) => {
   const userId = event.requestContext.authorizer.claims.email;
   try {
-    const { sectionId, bookId, ...rest } = JSON.parse(event.body);
+    const { sectionId, sectionIds, bookId, ...rest } = JSON.parse(event.body);
 
     const book = await getBookById(bookId);
 
@@ -34,9 +34,29 @@ module.exports.handler = middy(async (event) => {
       return response;
     }
 
+    if (sectionIds?.length > 0) {
+      for (const section of sectionIds) {
+        const { id, ...rest } = section;
+        await addBookSectionApi({
+          bookId,
+          sectionId: id,
+          coverPhotoId: book?.coverPhotoId,
+          ...rest,
+        });
+      }
+
+      const response = {
+        statusCode: 200,
+        body: JSON.stringify(book),
+      };
+
+      return response;
+    }
+
     const newBookSection = await addBookSectionApi({
       bookId,
       sectionId,
+      coverPhotoId: book?.coverPhotoId,
       ...rest,
     });
     const response = {

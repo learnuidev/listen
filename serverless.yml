@@ -72,6 +72,7 @@ provider:
         - dynamodb:ListTables
         - dynamodb:DeleteItem
         - dynamodb:BatchWriteItem
+        - dynamodb:BatchGetItem
       Resource: "*"
     - Effect: Allow
       Action:
@@ -307,6 +308,7 @@ functions:
             arn: ${self:custom.CognitoUserPool.Arn}
     environment:
       BOOKS_TABLE: !Ref BooksTableV2
+      BOOK_SECTIONS_TABLE: !Ref BookSectionsTable
   add-book:
     handler: functions/book/add-book.handler
     events:
@@ -320,6 +322,7 @@ functions:
             arn: ${self:custom.CognitoUserPool.Arn}
     environment:
       BOOKS_TABLE: !Ref BooksTableV2
+      BOOK_SECTIONS_TABLE: !Ref BookSectionsTable
   get-book:
     handler: functions/book/get-book.handler
     events:
@@ -333,6 +336,7 @@ functions:
             arn: ${self:custom.CognitoUserPool.Arn}
     environment:
       BOOKS_TABLE: !Ref BooksTableV2
+      BOOK_SECTIONS_TABLE: !Ref BookSectionsTable
   update-book:
     handler: functions/book/update-book.handler
     events:
@@ -346,6 +350,7 @@ functions:
             arn: ${self:custom.CognitoUserPool.Arn}
     environment:
       BOOKS_TABLE: !Ref BooksTableV2
+      BOOK_SECTIONS_TABLE: !Ref BookSectionsTable
   delete-book:
     handler: functions/book/delete-book.handler
     events:
@@ -359,6 +364,7 @@ functions:
             arn: ${self:custom.CognitoUserPool.Arn}
     environment:
       BOOKS_TABLE: !Ref BooksTableV2
+      BOOK_SECTIONS_TABLE: !Ref BookSectionsTable
   add-book-section:
     handler: functions/book/add-book-section.handler
     events:

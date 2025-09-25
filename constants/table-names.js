@@ -14,6 +14,7 @@ const tableNames = {
   textToSpeechTable: process.env.TEXT_TO_SPEECH_TABLE,
   contentAnalyticsTable: process.env.CONTENT_ANALYTICS_TABLE,
   contentsTable: process.env.CONTENTS_TABLE_V2,
+
   // contentsV2Table: process.env.CONTENTS_TABLE_V2,
 };
 
