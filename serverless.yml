@@ -458,6 +458,19 @@ functions:
             arn: ${self:custom.CognitoUserPool.Arn}
     environment:
       CONTENT_ANALYTICS_TABLE: !Ref ContentAnalyticsTable
+  add-events:
+    handler: functions/analytics/add-events.handler
+    events:
+      - http:
+          path: /v1/analytics/add-events
+          method: POST
+          cors: true
+          # authorizer:
+          #   name: CognitoAuthorizer
+          #   type: COGNITO_USER_POOLS
+          #   arn: ${self:custom.CognitoUserPool.Arn}
+    environment:
+      ANALYTICS_TABLE: !Ref AnalyticsTableV3
 
 resources:
   Resources:
@@ -768,3 +781,42 @@ resources:
             Value: ${self:custom.stage}
           - Key: Name
             Value: content-analytics-table
+    AnalyticsTableV3:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        BillingMode: PAY_PER_REQUEST
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+          - AttributeName: email
+            AttributeType: S
+          - AttributeName: websiteId
+            AttributeType: S
+        GlobalSecondaryIndexes:
+          - IndexName: byEmail
+            KeySchema:
+              - AttributeName: email
+                KeyType: HASH
+              - AttributeName: id
+                KeyType: RANGE
+            Projection:
+              ProjectionType: ALL
+          - IndexName: byWebsiteId
+            KeySchema:
+              - AttributeName: websiteId
+                KeyType: HASH
+              - AttributeName: id
+                KeyType: RANGE
+            Projection:
+              ProjectionType: ALL
+        StreamSpecification:
+          StreamViewType: NEW_AND_OLD_IMAGES
+        Tags:
+          # To keep track of user table for diffeent environment
+          - Key: Environment
+            Value: ${self:custom.stage}
+          - Key: Name
+            Value: analytics-table
