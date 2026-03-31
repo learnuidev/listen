@@ -18,7 +18,7 @@ const { removeNull } = require("../../utils/remove-null");
 const { constructParams } = require("../../utils/construct-params");
 const ulid = require("ulid");
 const {
-  textToAudio,
+  speechifyTextToAudio,
   defaultVoiceId,
 } = require("../../lib/speechify/text-to-audio");
 const { getUploadUrl } = require("../../lib/s3/get-upload-url");
@@ -233,7 +233,7 @@ const addTranslationsApi = async (media) => {
   }
 
   // 2. send text to speewchify api
-  const speechifyResponse = await textToAudio(newMedia.text, {
+  const speechifyResponse = await speechifyTextToAudio(newMedia.text, {
     voiceId: defaultVoiceId,
     lang,
   });

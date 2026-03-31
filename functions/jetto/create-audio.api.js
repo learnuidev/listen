@@ -1,7 +1,7 @@
 const mime = require("mime-types");
 
 const {
-  textToAudio,
+  speechifyTextToAudio,
   defaultVoiceId,
 } = require("../../lib/speechify/text-to-audio");
 const { getUploadUrl } = require("../../lib/s3/get-upload-url");
@@ -12,7 +12,7 @@ const createAudioApi = async ({ text, lang }) => {
   const id = `${text}#${lang}#speechify`;
 
   // 2. send text to speewchify api
-  const speechifyResponse = await textToAudio(text, {
+  const speechifyResponse = await speechifyTextToAudio(text, {
     voiceId: defaultVoiceId,
     lang,
   });
