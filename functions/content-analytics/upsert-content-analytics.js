@@ -1,6 +1,5 @@
 const middy = require("@middy/core");
 const cors = require("@middy/http-cors");
-const { getContentApi } = require("./get-content.api");
 const { upsertContentAnalyticsApi } = require("./upsert-content-analytics.api");
 
 const upsertContentAnalyticsHandler = async (event) => {
@@ -8,16 +7,16 @@ const upsertContentAnalyticsHandler = async (event) => {
   const { contentId, ...rest } = JSON.parse(event.body);
 
   try {
-    const content = await getContentApi({ contentId });
+    // const content = await getContentApi({ contentId });
 
-    if (!content) {
-      const response = {
-        statusCode: 404,
-        body: JSON.stringify({ message: "Content not found" }),
-      };
+    // if (!content) {
+    //   const response = {
+    //     statusCode: 404,
+    //     body: JSON.stringify({ message: "Content not found" }),
+    //   };
 
-      return response;
-    }
+    //   return response;
+    // }
 
     let contentAnalytics = await upsertContentAnalyticsApi({
       userId,
