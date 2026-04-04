@@ -18,6 +18,10 @@ const createAudioMinimaxApi = async ({ text, lang, model, emotion }) => {
     emotion,
   });
 
+  if (minimaxResponse.error) {
+    throw new Error(minimaxResponse.message || minimaxResponse.type);
+  }
+
   const contentType = mime.lookup("result.mp3");
 
   const audioBuffer = minimaxResponse.audio;
