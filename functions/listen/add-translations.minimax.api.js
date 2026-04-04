@@ -26,9 +26,6 @@ const {
 } = require("../../lib/mandarino/generate-translations");
 const { getMediaById } = require("./get-media.api");
 const { getMediaFile } = require("./get-media-file.api");
-const {
-  minimaxTextToSpeech,
-} = require("../../lib/minimax/minimax-text-to-speech");
 
 const dynamodb = new AWS.DynamoDB.DocumentClient({
   apiVersion: "2012-08-10",
@@ -58,7 +55,7 @@ async function createMediaFile(input) {
 
 async function minimaxTextToSpeechApi({ text, lang, userId }) {
   // 2. send text to speewchify api
-  const { audio, ...rest } = await minimaxTextToSpeech({ text, lang });
+  const { audio, ...rest } = await minimaxTextToSpeechApi({ text, lang });
 
   const contentType = mime.lookup("result.mp3");
 

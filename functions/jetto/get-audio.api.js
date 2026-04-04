@@ -36,14 +36,14 @@ const getAudioApi = async ({ text, lang, provider }) => {
 // };
 
 // test case 1: throws error
-// getAudioApi({ text: "脱逃" }).then((resp) => {
+// getAudioApi({
+//   text: `我是美国人成年以后才开始学中文。刚开始的时候一个汉子都不认识，开口也很紧张。现在，我可以用中文聊工作、生活，甚至一些比较复杂的想法。`,
+//   lang: "zh",
+//   provider: "minimax",
+// }).then((resp) => {
 //   console.log("resp", resp);
 // });
-// getAudioApi({ text: resp.text, lang: "zh", provider: "minimax" }).then(
-//   (resp) => {
-//     console.log("resp", JSON.stringify(resp));
-//   }
-// );
+//
 
 module.exports = {
   getAudioApi,
